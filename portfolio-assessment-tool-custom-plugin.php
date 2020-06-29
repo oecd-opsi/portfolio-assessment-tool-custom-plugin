@@ -93,3 +93,6 @@ function pat_submission_post_type() {
 
 }
 add_action( 'init', 'pat_submission_post_type', 0 );
+
+// Call ACF fields registration
+require_once('pat-acf-fields.php');
