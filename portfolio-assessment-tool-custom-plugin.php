@@ -37,3 +37,59 @@ function bs_enqueue_files() {
 	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', '', '1.0.0', true );
 
 }
+
+// Register Portfolio Assessment Tool submission CPT
+function pat_submission_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Portfolio Assessment Tool submissions', 'Post Type General Name', 'opsi' ),
+		'singular_name'         => _x( 'Portfolio Assessment Tool submission', 'Post Type Singular Name', 'opsi' ),
+		'menu_name'             => __( 'PAT submissions', 'opsi' ),
+		'name_admin_bar'        => __( 'PAT submissions', 'opsi' ),
+		'archives'              => __( 'PAT submissions', 'opsi' ),
+		'attributes'            => __( 'Item Attributes', 'opsi' ),
+		'parent_item_colon'     => __( 'Parent Item:', 'opsi' ),
+		'all_items'             => __( 'All Items', 'opsi' ),
+		'add_new_item'          => __( 'Add New Item', 'opsi' ),
+		'add_new'               => __( 'Add New', 'opsi' ),
+		'new_item'              => __( 'New Item', 'opsi' ),
+		'edit_item'             => __( 'Edit Item', 'opsi' ),
+		'update_item'           => __( 'Update Item', 'opsi' ),
+		'view_item'             => __( 'View Item', 'opsi' ),
+		'view_items'            => __( 'View Items', 'opsi' ),
+		'search_items'          => __( 'Search Item', 'opsi' ),
+		'not_found'             => __( 'Not found', 'opsi' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'opsi' ),
+		'featured_image'        => __( 'Featured Image', 'opsi' ),
+		'set_featured_image'    => __( 'Set featured image', 'opsi' ),
+		'remove_featured_image' => __( 'Remove featured image', 'opsi' ),
+		'use_featured_image'    => __( 'Use as featured image', 'opsi' ),
+		'insert_into_item'      => __( 'Insert into item', 'opsi' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this item', 'opsi' ),
+		'items_list'            => __( 'Items list', 'opsi' ),
+		'items_list_navigation' => __( 'Items list navigation', 'opsi' ),
+		'filter_items_list'     => __( 'Filter items list', 'opsi' ),
+	);
+	$args = array(
+		'label'                 => __( 'Portfolio Assessment Tool submission', 'opsi' ),
+		'description'           => __( 'Portfolio Assessment Tool submission', 'opsi' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title' ),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => false,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => false,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+		'show_in_rest'          => true,
+	);
+	register_post_type( 'pat_submission', $args );
+
+}
+add_action( 'init', 'pat_submission_post_type', 0 );
