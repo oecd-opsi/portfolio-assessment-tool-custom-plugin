@@ -1,6 +1,6 @@
-# My Custom Functionality #
+# Portfolio Assessment Tool custom plugin #
 
-A basic plugin to load custom CSS and JS files in WordPress.
+A WordPress plugin to make Portfolio Assessment Tool works on OECD OPSI website.
 
 ## Installation ##
 
