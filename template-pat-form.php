@@ -24,7 +24,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 </div> -->
 
 <div class="col-sm-3 dont-col-sm-push--9">
-	<ul id="acf_steps">
+	<ul id="acf_pat_steps">
 	</ul>
 
 	<?php

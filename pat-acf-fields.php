@@ -17,7 +17,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'step-1',
+				'id' => 'pat-step-1',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -144,7 +144,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'step-2',
+				'id' => 'pat-step-2',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -2077,7 +2077,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'step-3',
+				'id' => 'pat-step-3',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',

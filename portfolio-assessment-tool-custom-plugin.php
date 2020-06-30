@@ -34,7 +34,7 @@ function bs_enqueue_files() {
 	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css' );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', '', '1.0.0', true );
+	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', '', filemtime(get_stylesheet_directory() . '/bs/bs-style.css'), true );
 
 }
 
@@ -97,7 +97,7 @@ add_action( 'init', 'pat_submission_post_type', 0 );
 // Call ACF fields registration
 require_once('pat-acf-fields.php');
 
-// Add PAT form page template
+// Add PAT form page template (https://www.wpexplorer.com/wordpress-page-templates-plugin/)
 function bs_add_page_template ($templates) {
   $templates['template-pat-form.php'] = 'Portfolio Assessment Tool form';
   return $templates;
@@ -105,25 +105,17 @@ function bs_add_page_template ($templates) {
 add_filter ('theme_page_templates', 'bs_add_page_template');
 function bs_register_project_templates( $atts ) {
 
-	// Create the key used for the themes cache
 	$cache_key = 'page_templates-' . md5( get_theme_root() . '/' . get_stylesheet() );
 
-	// Retrieve the cache list.
-	// If it doesn't exist, or it's empty prepare an array
 	$templates = wp_get_theme()->get_page_templates();
 	if ( empty( $templates ) ) {
 		$templates = array();
 	}
 
-	// New cache, therefore remove the old one
 	wp_cache_delete( $cache_key , 'themes');
 
-	// Now add our template to the list of templates by merging our templates
-	// with the existing templates array from the cache.
 	$templates['template-pat-form.php'] = 'Portfolio Assessment Tool form';
 
-	// Add the modified cache to allow WordPress to pick it up for listing
-	// available templates
 	wp_cache_add( $cache_key, $templates, 'themes', 1800 );
 
 	return $atts;
@@ -132,24 +124,18 @@ function bs_register_project_templates( $atts ) {
 add_filter( 'wp_insert_post_data', 'bs_register_project_templates' ) ;
 function bs_view_project_template( $template ) {
 
-	// Get global post
 	global $post;
 
-	// Return template if post is empty
 	if ( ! $post ) {
 		return $template;
 	}
 
 	$file = plugin_dir_path( __FILE__ ). get_post_meta( $post->ID, '_wp_page_template', true );
 
-	// Just to be safe, we check if the file exist first
 	if ( file_exists( $file ) ) {
 		return $file;
-	} else {
-		echo $file;
 	}
 
-	// Return template
 	return $template;
 
 }
