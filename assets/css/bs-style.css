@@ -28,3 +28,51 @@
   width: auto;
   z-index: 100000; /* Above WP toolbar. */
 }
+
+/* Multi Likert questions */
+.pat-multi-likert .acf-field-message > .acf-label {
+  visibility: hidden;
+}
+
+.pat-multi-likert .acf-field-radio {
+  display: flex;
+  align-content: baseline;
+  border-bottom: 1px solid lightgray !important;
+}
+
+.pat-multi-likert .acf-field-radio > .acf-label {
+  flex-basis: 40%;
+  font-size: 14px;
+  padding-right: 16px;
+}
+
+.pat-multi-likert .acf-field-radio > .acf-input {
+  flex-basis: 60%;
+}
+
+.pat-multi-likert .acf-field-radio > .acf-input > .acf-radio-list {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.pat-multi-likert .acf-field-radio > .acf-input > .acf-radio-list li {
+  flex: 1 1 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.pat-multi-likert .acf-field-radio > .acf-input > .acf-radio-list li label {
+  display: flex;
+  flex-direction: column;
+}
+
+.pat-multi-likert .acf-field-radio > .acf-input > .acf-radio-list li label input {
+  order: 2;
+  margin-right: 0;
+}
+
+.pat-multi-likert > .acf-input > .acf-fields > .acf-field:not(:first-child) .acf-radio-list li label {
+  color: transparent;
+  font-size: 0;
+}

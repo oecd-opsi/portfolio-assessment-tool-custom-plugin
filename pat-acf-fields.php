@@ -172,6 +172,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc601261f2c',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef5ddb4010b6',
 							'label' => 'Achieving overarching societal goals and solving big problems',
 							'name' => 'achieving_overarching_societal_goals_and_solving_big_problems',
@@ -412,7 +442,7 @@ acf_add_local_field_group(array(
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
-						'class' => 'pat-multi-linkert',
+						'class' => 'pat-multi-likert',
 						'id' => '',
 					),
 					'display_order' => '',
@@ -421,6 +451,36 @@ acf_add_local_field_group(array(
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
+						array(
+							'key' => 'field_5efc65190907f',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 						array(
 							'key' => 'field_5ef5ff708dce3',
 							'label' => 'Focussing on precise milestones, deadlines, and outputs',
@@ -558,6 +618,36 @@ acf_add_local_field_group(array(
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
+						array(
+							'key' => 'field_5efc655409080',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 						array(
 							'key' => 'field_5ef600978dce9',
 							'label' => 'The strategy is visible in different units\' goals, which rely on specific performance targets',
@@ -808,6 +898,36 @@ acf_add_local_field_group(array(
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
+						array(
+							'key' => 'field_5efc66ba188ef',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 						array(
 							'key' => 'field_5ef6179a8dcf3',
 							'label' => 'Negative feedback from stakeholders',
@@ -1062,6 +1182,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc66e1188f0',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef619819371a',
 							'label' => 'People can work in different ways, even if they go against existing standards',
 							'name' => 'people_can_work_in_different_ways,_even_if_they_go_against_existing_standards',
@@ -1312,6 +1462,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc6704188f1',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef61b3964711',
 							'label' => 'Missing deadlines or going over budget',
 							'name' => 'missing_deadlines_or_going_over_budget',
@@ -1476,6 +1656,36 @@ acf_add_local_field_group(array(
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
+						array(
+							'key' => 'field_5efc6723188f2',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 						array(
 							'key' => 'field_5ef9b51aae664',
 							'label' => 'waterfall (developing a full list of requirements up front and contracting all at once)',
@@ -1831,6 +2041,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc6745188f3',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef9b973ae678',
 							'label' => 'The organisations looks for technology options that could make existing practises more efficient',
 							'name' => 'the_organisations_looks_for_technology_options_that_could_make_existing_practises_more_efficient',
@@ -2132,6 +2372,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc6759188f4',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef9c0b5aab67',
 							'label' => 'By continuously analysing innovation projects and emerging needs',
 							'name' => 'by_continuously_analysing_innovation_projects_and_emerging_needs',
@@ -2265,6 +2535,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc67a2188f5',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef9c189ce8c6',
 							'label' => 'My	organisation analyses the impact of all innovation projects at the same time and as a whole',
 							'name' => 'my _organisation_analyses_the_impact_of_all_innovation_projects_at_the_same_time_and_as_a_whole',
@@ -2314,6 +2614,36 @@ acf_add_local_field_group(array(
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
+						array(
+							'key' => 'field_5efc67c1188f6',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 						array(
 							'key' => 'field_5ef9c1d3ce8ca',
 							'label' => 'There is a clear understanding of how different types of innovation* contribute to the organisation as a whole *radical, incremental, bottom-up, impact-oriented etc.',
@@ -2481,6 +2811,36 @@ acf_add_local_field_group(array(
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
 						array(
+							'key' => 'field_5efc67da188f7',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
+						array(
 							'key' => 'field_5ef9c29dce8d1',
 							'label' => 'Funding decisions take into account long-term considerations and investments',
 							'name' => 'funding_decisions_take_into_account_long-term_considerations_and_investments',
@@ -2617,6 +2977,36 @@ acf_add_local_field_group(array(
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
 					'sub_fields' => array(
+						array(
+							'key' => 'field_5efc67f3188f8',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 						array(
 							'key' => 'field_5ef9c324ce8db',
 							'label' => '… there are teams that use different working methods',
