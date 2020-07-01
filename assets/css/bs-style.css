@@ -76,3 +76,8 @@
   color: transparent;
   font-size: 0;
 }
+
+/* Ranking questions */
+.pat-sortable-field > .acf-input .acf-field-number > .acf-input {
+  display: none;
+}
