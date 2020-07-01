@@ -13,3 +13,16 @@ for (var k in steps){
    jQuery('#acf_pat_steps').append('<li><a href="#' + k + '">' + steps[k] + '</a></li>');
   }
 }
+
+// Make Ranking fields item sortable
+(function($){
+  $(document).ready( function() {
+    $( ".pat-sortable-field .acf-input .acf-fields" ).sortable({
+      stop: function() {
+        $(this).find( "input[type='number']" ).each( function(i) {
+          $(this).val( i + 1 );
+        });
+      }
+    });
+  });
+})(jQuery);
