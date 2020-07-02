@@ -9,6 +9,27 @@ get_header();
 
 global $post, $bp;
 
+// Check edit parameter in URL
+if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && !can_edit_acf_form( intval( $_GET['edit'] ) ) ) {
+	?>
+	<div class="col-sm-12">
+		<div class="alert alert-warning text-center">
+			<h3><?php echo __( 'Sorry, you cannot edit a questionnaire that was submitted by someone else or a questionnaire that has already been published. If you need to make changes to a published questionnaire, please contact the OPSI team at', 'opsi' ); ?> <a href="mailto:opsi@oecd.org">opsi@oecd.org</a></h3>
+		</div>
+		<?php // TODO: edit this message, probably no need to say that user can edit contacting the staff, but more useful to say that user can submit a new questionnaire ?>
+
+		<br />
+		<a href="<?php echo $bp->loggedin_user->domain . 'innovations/'; ?>" title="<?php echo __( 'Back', 'opsi' ); ?>" class="button btn btn-default flipicon">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>  <?php echo __( 'Back', 'opsi' ); ?>
+		</a>
+		<?php // TODO: send user to their PAT forms list ?>
+
+	</div>
+	<?php
+	get_footer();
+	return;
+}
+
 $has_sidebar = 0;
 $layout      = get_post_meta( $post->ID, 'layout', true );
 if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
@@ -27,6 +48,10 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 	<ul id="acf_pat_steps">
 	</ul>
 
+	<p><a class="button btn btn-info big saveform" title="Save" href="#">Save <i class="fa fa-floppy-o" aria-hidden="true"></i></a></p>
+
+	<p><a class="button btn btn-default big submitform" id="submitcasestudy" title="Submit" href="#">Submit <i class="fa fa-check-square-o" aria-hidden="true"></i></a></p>
+
 	<?php
 	// if ( is_active_sidebar( 'sidebar_covid_response_form' ) ) {
 	// 	dynamic_sidebar( 'sidebar_covid_response_form' );
@@ -40,7 +65,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 		$postid = get_the_ID(); ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div id="formtop"></div>
-			<div id="case_form" class="stepform">
+			<div id="pat-form" class="stepform">
 				<?php
 
 				$group = get_page_by_title( 'Portfolio Assessment Tool', OBJECT, 'acf-field-group' );
@@ -50,7 +75,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 					'field_groups'       => array( $group->ID ),
 					'new_post'           => array(
 						'post_type'    => 'pat_submission',
-						'post_status'  => 'publish',
+						'post_status'  => 'draft',
 						'post_author'  => get_current_user_id(),
 						'post_content' => true,
 						'post_title'   => true,
@@ -59,10 +84,20 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 					'post_id'            => 'new_post',
 					'form'               => true,
 					'uploader'           => 'basic',
-					'updated_message'    => '<span class="alert alert-success updatedalert" role="alert">' . __( "Innovation submission saved on", 'acf' ) . ' ' . date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) ) . '</span>',
+					'updated_message'    => '<span class="alert alert-success updatedalert" role="alert">' . __( "Portfolio Assessment Tool submission saved on", 'acf' ) . ' ' . date_i18n( get_option( 'date_format' ) . ' ' . get_option( 'time_format' ) ) . '</span>',
 					//'return' => '',
-					'html_before_fields' => '<input type="hidden" id="csf_action" name="csf_action" value="" style="display:none;"><input type="hidden" id="form_step_field" name="form_step" value="0" style="display:none;">',
+					'html_before_fields' => '<input type="hidden" id="csf_action" name="csf_action" value="" style="display:none;">',
 				);
+
+
+
+				if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 ) {
+
+					$form_params['post_id'] 		= $_GET['edit'];
+					$form_params['new_post'] 		= false;
+					$form_params['submit_value'] 	= __( 'Save your Portfolio Assessment Tool questionnaire', 'opsi' );
+
+				}
 
 				acf_form( $form_params );
 

@@ -77,7 +77,7 @@ function pat_submission_post_type() {
 		'label'                 => __( 'Portfolio Assessment Tool submission', 'opsi' ),
 		'description'           => __( 'Portfolio Assessment Tool submission', 'opsi' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title' ),
+		'supports'              => array( 'title', 'author' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -100,7 +100,8 @@ add_action( 'init', 'pat_submission_post_type', 0 );
 // Call ACF fields registration
 require_once('pat-acf-fields.php');
 
-// Add PAT form page template (https://www.wpexplorer.com/wordpress-page-templates-plugin/)
+// Add PAT form page template
+// ref: https://www.wpexplorer.com/wordpress-page-templates-plugin/
 function bs_add_page_template ($templates) {
   $templates['template-pat-form.php'] = 'Portfolio Assessment Tool form';
   return $templates;
@@ -143,3 +144,52 @@ function bs_view_project_template( $template ) {
 
 }
 add_filter( 'template_include', 'bs_view_project_template' );
+
+// manipulate the PAT submission AFTER it has been saved
+add_action('acf/save_post', 'opsi_acf_save_post_pat', 11);
+function opsi_acf_save_post_pat( $post_id ) {
+
+	if ( get_post_type( $post_id ) != 'pat_submission' ) {
+		return;
+	}
+
+	$content = array(
+		'ID' => $post_id,
+		'post_title' => 'Submission of ' . date("Y-m-d") ,
+		'post_content' => ''
+	);
+
+	if ( isset( $_POST['csf_action'] ) && $_POST['csf_action'] == 'submit' ) {
+		$content['post_status'] = 'publish';
+	}
+
+	wp_update_post($content);
+
+}
+
+// Redirect to the proper page after PAT form submission
+add_action('acf/submit_form', 'pat_redirect_acf_submit_form', 10, 2);
+function pat_redirect_acf_submit_form( $form, $post_id ) {
+
+	if ( 'portfolio-assessment-tool-form' !== $form['id'] ) {
+		return;
+	}
+
+	if( $_POST['csf_action'] == 'submit' ) {
+
+		// TODO: redirect to the new created post
+		// $thankyou_page = get_field( 'case_study_form_thankyou_page_submit', 'option' );
+		//
+		// wp_safe_redirect( get_the_permalink( $thankyou_page ) );
+		// die;
+	}
+
+	if( $_POST['csf_action'] == 'save' ) {
+
+		$pat_form_page = $_SERVER['REQUEST_URI'];
+
+		wp_safe_redirect( get_the_permalink( $pat_form_page ).'?edit='.$post_id.'&updated=true' );
+		die;
+	}
+
+}
