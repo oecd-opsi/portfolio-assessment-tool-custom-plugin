@@ -134,9 +134,10 @@ function bs_view_project_template( $template ) {
 		return $template;
 	}
 
-	$file = plugin_dir_path( __FILE__ ). get_post_meta( $post->ID, '_wp_page_template', true );
+	$page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+	$file = plugin_dir_path( __FILE__ ) . $page_template;
 
-	if ( file_exists( $file ) ) {
+	if ( file_exists( $file ) && $page_template ) {
 		return $file;
 	}
 
@@ -146,7 +147,6 @@ function bs_view_project_template( $template ) {
 add_filter( 'template_include', 'bs_view_project_template' );
 
 // manipulate the PAT submission AFTER it has been saved
-add_action('acf/save_post', 'opsi_acf_save_post_pat', 11);
 function opsi_acf_save_post_pat( $post_id ) {
 
 	if ( get_post_type( $post_id ) != 'pat_submission' ) {
@@ -166,9 +166,9 @@ function opsi_acf_save_post_pat( $post_id ) {
 	wp_update_post($content);
 
 }
+add_action('acf/save_post', 'opsi_acf_save_post_pat', 11);
 
 // Redirect to the proper page after PAT form submission
-add_action('acf/submit_form', 'pat_redirect_acf_submit_form', 10, 2);
 function pat_redirect_acf_submit_form( $form, $post_id ) {
 
 	if ( 'portfolio-assessment-tool-form' !== $form['id'] ) {
@@ -193,3 +193,21 @@ function pat_redirect_acf_submit_form( $form, $post_id ) {
 	}
 
 }
+add_action('acf/submit_form', 'pat_redirect_acf_submit_form', 10, 2);
+
+
+// Add a custom template for pat_submission single post
+function bs_pat_submission_single_template( $single ) {
+
+  global $post;
+
+  if ( $post->post_type === 'pat_submission' ) {
+    if ( file_exists( dirname( __FILE__ ) . '/single-pat_submission.php' ) ) {
+      $single = dirname( __FILE__ ) . '/single-pat_submission.php';
+    }
+  }
+
+  return $single;
+
+}
+add_filter( 'single_template', 'bs_pat_submission_single_template', 99 );
