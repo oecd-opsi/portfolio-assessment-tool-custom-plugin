@@ -180,15 +180,6 @@ function pat_redirect_acf_submit_form( $form, $post_id ) {
 		return;
 	}
 
-	if( $_POST['csf_action'] == 'submit' ) {
-
-		// TODO: redirect to the new created post
-		// $thankyou_page = get_field( 'case_study_form_thankyou_page_submit', 'option' );
-		//
-		// wp_safe_redirect( get_the_permalink( $thankyou_page ) );
-		// die;
-	}
-
 	if( $_POST['csf_action'] == 'save' ) {
 
 		$pat_form_page = $_SERVER['REQUEST_URI'];
@@ -216,3 +207,202 @@ function bs_pat_submission_single_template( $single ) {
 
 }
 add_filter( 'single_template', 'bs_pat_submission_single_template', 99 );
+
+// Add Portfolio Management Tool profile tab
+function profile_tab_pat() {
+  global $bp;
+
+	$user_id = bp_displayed_user_id();
+	$current_user_id = bp_loggedin_user_id();
+
+	$count_args_owner = array(
+		'post_type' => array ( 'pat_submission' ),
+		'post_status' => array( 'any', 'draft', 'publish' ),
+	);
+	$count_args_guest = array(
+		'post_type' => array ( 'pat_submission' ),
+		'post_status' => array( 'publish' ),
+	);
+
+	$all_posts = nitro_get_user_posts_count( $user_id, $count_args_owner );
+	$published_posts = nitro_get_user_posts_count( $user_id, $count_args_guest );
+
+	$count_results = 0;
+
+	if ( $user_id == $current_user_id ) {
+		$count_results = $all_posts;
+	} else {
+		$count_results = $published_posts;
+	}
+
+	$results_n = '';
+
+	if ( $count_results == 0 ) {
+		$results_n = ' <span class="no-count">'. $count_results .'</span>';
+	} else {
+		$results_n = ' <span class="count">'. $count_results .'</span>';
+	}
+
+  bp_core_new_nav_item( array(
+    'name' => __( 'Portfolio Management Tool', 'opsi' ).$results_n,
+    'slug' => 'pat',
+    'screen_function' => 'bs_pat_screen',
+    'position' => 80,
+    'parent_url'      => bp_loggedin_user_domain() . '/pat-results/',
+    'parent_slug'     => $bp->profile->slug,
+    'default_subnav_slug' => 'pat-results'
+  ) );
+}
+add_action( 'bp_setup_nav', 'profile_tab_pat' );
+
+function bs_pat_screen(){
+    global $bp;
+    add_action( 'bp_template_content', 'bp_my_pat_screen_content' );
+    bp_core_load_template( array ( apply_filters( 'bp_core_template_plugin', 'members/single/plugins' ) ) );
+}
+
+function bp_my_pat_screen_content() {
+  global $bp;
+
+	/**
+	 * Fires before the display of the member activity post form.
+	 *
+	 * @since 1.2.0
+	 */
+	do_action( 'bp_before_member_activity_post_form' ); ?>
+
+	<?php
+	if ( is_user_logged_in() && bp_is_my_profile() && ( !bp_current_action() || bp_is_current_action( 'just-me' ) ) ) {
+		bp_get_template_part( 'activity/post-form' );
+	}
+
+	/**
+	 * Fires after the display of the member activity post form.
+	 *
+	 * @since 1.2.0
+	 */
+	do_action( 'bp_after_member_activity_post_form' );
+
+  echo bp_get_author_pat_list();
+
+}
+
+function bp_get_author_pat_list( $user_id = 0 ) {
+
+	if ($user_id == 0) {
+    $user_id = bp_displayed_user_id();
+  }
+  if (!$user_id) {
+    return false;
+  }
+
+  $current_user_id = bp_loggedin_user_id();
+
+	return bp_pat_list();
+
+}
+
+function bp_pat_list() {
+
+	// WP_Query arguments
+	$args = array(
+		'post_type'		=> array( 'pat_submission' ),
+		'post_status'	=> array( 'any', 'draft', 'publish' ),
+		'author'		=> bp_loggedin_user_id(),
+		'posts_per_page'=> -1
+	);
+
+	// The Query
+	$query = new WP_Query( $args );
+
+	$output = '';
+
+	ob_start();
+
+	// The Loop
+	if ( $query->have_posts() ) {
+
+		?>
+		<div class="table-responsive">
+			<table class="table table-striped table-hover">
+				<thead>
+					<th><?php echo __( 'Title', 'opsi' ); ?></th>
+					<th><?php echo __( 'Status', 'opsi' ); ?></th>
+					<th class="text-center"><?php echo __( 'Actions', 'opsi' ); ?></th>
+				</thead>
+				<tbody>
+
+		<?php
+
+		while ( $query->have_posts() ) {
+			$query->the_post();
+
+			// get assigned users
+			$post_status_obj = get_post_status_object( get_post_status( get_the_ID() ) );
+			?>
+
+			<tr>
+				<td>
+					<?php
+						if ( get_post_status( get_the_ID() ) == 'publish' ) {
+							$post_url = get_permalink();
+						} else {
+							$post_url = site_url( '/portfolio-assessment-tool-form/?edit=' . get_the_ID() );
+						}
+					?>
+					<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>">
+						<?php the_title(); ?>
+					</a>
+				</td>
+				<td>
+					<?php
+						echo $post_status_obj->label;
+					?>
+				</td>
+				<td>
+					<?php
+						if ( get_post_status( get_the_ID() ) == 'publish' ) {
+							?>
+							<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</a>
+							<?php
+						}	else {
+							?>
+							<a href="<?php echo $post_url ?>" title="<?php echo __( 'edit', 'opsi' ); ?>">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							</a>
+							<?php
+						}
+					?>
+				</td>
+
+			</tr>
+
+			<?php
+
+		}
+
+		?>
+				</tbody>
+			</table>
+		</div>
+		<?php
+
+	} else {
+
+		?>
+		<div id="message" class="info">
+			<p><?php echo __( 'Sorry, there was no entries found.', 'opsi' ); ?></p>
+		</div>
+		<?php
+	}
+
+	// Restore original Post Data
+	wp_reset_postdata();
+
+	$out = ob_get_clean();
+
+	return $out;
+
+}
