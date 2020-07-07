@@ -74,7 +74,8 @@
                 $pmq_score += (float)$subvalue;
               }
             } else {
-              $pmq_score += $value;
+              $split_value = explode( '-', $value );
+              $pmq_score += $value[0];
             }
           }
 
