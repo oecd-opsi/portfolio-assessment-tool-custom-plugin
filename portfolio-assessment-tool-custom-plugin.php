@@ -165,6 +165,11 @@ function opsi_acf_save_post_pat( $post_id ) {
 
 	wp_update_post($content);
 
+	if ( isset( $_POST['csf_action'] ) && $_POST['csf_action'] == 'submit' ) {
+		wp_redirect( get_permalink($post_id), 301);
+		exit;
+	}
+
 }
 add_action('acf/save_post', 'opsi_acf_save_post_pat', 11);
 
