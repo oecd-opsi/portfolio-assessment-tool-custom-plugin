@@ -66,7 +66,6 @@
           echo "<p>Adaptive: " . ( $ada / $max * 100 ) . "%</p>";
 
           // Calculate Portfolio Management questions score
-          // echo '<pre>'.print_r($fields['portfolio_management_questions']['value'], true).'</pre>';
           $pmq_score = 16; // Automatic 16 points added to all scores to account for possible negative answers
           $pmw_max = 108;
           foreach ( $fields['portfolio_management_questions']['value'] as $key => $value ) {
@@ -79,7 +78,14 @@
             }
           }
 
-          echo "<p>Portfolio Management Score: " . ( $pmq_score / $pmw_max * 100 ) . "</p>";
+          $level = 'low';
+          if ( $pmq_score >= 36 && $pmq_score < 72 ) {
+            $level = 'medium';
+          } elseif ( $pmq_score >= 72 ) {
+            $level = 'high';
+          }
+
+          echo "<p>Portfolio Management Score: " . ( $pmq_score / $pmw_max * 100 ) . "% (Level " . $level . ")</p>";
            ?>
 
         </div><!-- end entry-content -->
