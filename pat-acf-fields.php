@@ -317,6 +317,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f0745132514d',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 				array(
@@ -597,6 +627,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f0745292514e',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 				array(
@@ -763,6 +823,36 @@ acf_add_local_field_group(array(
 							'layout' => 'horizontal',
 							'return_format' => 'value',
 							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5f0745362514f',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
 						),
 					),
 				),
@@ -1160,6 +1250,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f07454925150',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 				array(
@@ -1326,6 +1446,36 @@ acf_add_local_field_group(array(
 							'layout' => 'horizontal',
 							'return_format' => 'value',
 							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5f07455a25151',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
 						),
 					),
 				),
@@ -1607,6 +1757,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f07456f25152',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 				array(
@@ -1801,6 +1981,36 @@ acf_add_local_field_group(array(
 							'layout' => 'horizontal',
 							'return_format' => 'value',
 							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5f07458325153',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
 						),
 					),
 				),
@@ -2302,6 +2512,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f0745b425154',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 			),
@@ -2459,6 +2699,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f0745cb25155',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 				array(
@@ -2592,6 +2862,36 @@ acf_add_local_field_group(array(
 							'layout' => 'horizontal',
 							'return_format' => 'value',
 							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5f0745df25156',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
 						),
 					),
 				),
@@ -2789,6 +3089,36 @@ acf_add_local_field_group(array(
 							'return_format' => 'value',
 							'save_other_choice' => 0,
 						),
+						array(
+							'key' => 'field_5f0745eb25157',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
+						),
 					),
 				),
 				array(
@@ -2955,6 +3285,36 @@ acf_add_local_field_group(array(
 							'layout' => 'horizontal',
 							'return_format' => 'value',
 							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5f0745f925158',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
 						),
 					),
 				),
@@ -3325,6 +3685,36 @@ acf_add_local_field_group(array(
 							'layout' => 'horizontal',
 							'return_format' => 'value',
 							'save_other_choice' => 0,
+						),
+						array(
+							'key' => 'field_5f07460625159',
+							'label' => 'Scale',
+							'name' => '',
+							'type' => 'message',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'wrapper' => array(
+								'width' => '',
+								'class' => '',
+								'id' => '',
+							),
+							'display_order' => '',
+							'acfe_permissions' => '',
+							'message' => '<div class="acf-field-radio">
+<div class="acf-label"></div>
+<div class="acf-input">
+<ul class="acf-radio-list">
+<li>Strongly disagree</li>
+<li>Disagree</li>
+<li>Neutral</li>
+<li>Agree</li>
+<li>Strongly agree</li>
+</ul>
+</div>
+</div>',
+							'new_lines' => '',
+							'esc_html' => 0,
 						),
 					),
 				),

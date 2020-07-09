@@ -30,14 +30,20 @@ if ( ! defined( 'WPINC' ) ) {
 add_action( 'wp_enqueue_scripts', 'bs_enqueue_files' );
 function bs_enqueue_files() {
 
+	// Load Lato Black font
+	wp_enqueue_style( 'google-font',  'https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap' );
+
 	// Loads jQuery UI sortable
 	wp_enqueue_script( 'jquery-ui-sortable' );
+
+	// Load Sticky Sidebar
+	wp_enqueue_script( 'sticky-sidebar', plugin_dir_url( __FILE__ ) . 'assets/js/sticky-sidebar.min.js', array(), '1.0.0', true );
 
 	// loads a CSS file in the head.
 	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css' );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable'), filemtime(get_stylesheet_directory() . '/bs/bs-style.css'), true );
+	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'sticky-sidebar'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );
 
 }
 

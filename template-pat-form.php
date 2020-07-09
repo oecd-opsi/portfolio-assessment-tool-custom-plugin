@@ -38,19 +38,23 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 
 ?>
 
-<!-- <div class="col-md-12">
-	<div class="single_img_wrap covid-banner">
-		<img src="/wp-content/uploads/2020/04/OPSI-Covid19-Tracker-banner.jpg" class="attachment-blog size-blog wp-post-image" alt="OPSI COVID-19 Innovative Response Tracker">
+<div class="col-md-12">
+	<div class="pat-form-title-wrapper">
+		<h1>Portfolio Assessment Tool Form</h1>
 	</div>
-</div> -->
+	<!-- <div class="single_img_wrap covid-banner">
+		<img src="/wp-content/uploads/2020/04/OPSI-Covid19-Tracker-banner.jpg" class="attachment-blog size-blog wp-post-image" alt="OPSI COVID-19 Innovative Response Tracker">
+	</div> -->
+</div>
 
-<div class="col-sm-3 dont-col-sm-push--9">
+<div id="pat-form-sidebar" class="col-sm-3 dont-col-sm-push--9">
 	<ul id="acf_pat_steps">
 	</ul>
 
-	<p><a class="button btn btn-info big saveform" title="Save" href="#">Save <i class="fa fa-floppy-o" aria-hidden="true"></i></a></p>
-
-	<p><a class="button btn btn-default big submitform" id="submitcasestudy" title="Submit" href="#">Submit <i class="fa fa-check-square-o" aria-hidden="true"></i></a></p>
+	<div class="save-submit-wrapper">
+		<button class="button saveform" title="Save" href="#">Save</button>
+		<button class="button submitform" id="submitcasestudy" title="Submit" href="#">Submit</button>
+	</div>
 
 	<?php
 	// if ( is_active_sidebar( 'sidebar_covid_response_form' ) ) {
