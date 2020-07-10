@@ -278,10 +278,14 @@
   border-radius: 2px;
   padding: 12px 14px;
   margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  cursor: pointer;
 }
 
-#portfolio-assessment-tool-form .pat-sortable-field > .acf-input .acf-field-number .acf-label {
+#portfolio-assessment-tool-form .pat-sortable-field > .acf-input .acf-field-number .acf-label,
+#portfolio-assessment-tool-form .pat-sortable-field > .acf-input .acf-field-number .acf-label label {
   margin-bottom: 0;
+  cursor: pointer;
 }
 
 #portfolio-assessment-tool-form .pat-sortable-field > .acf-input .acf-field-number .acf-label .acf-required {
@@ -290,4 +294,107 @@
 
 #portfolio-assessment-tool-form .pat-sortable-field > .acf-input .acf-field-number > .acf-input {
   display: none;
+}
+
+/* Checkbox style */
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-label label {
+  font-size: 16px;
+  color: #fff;
+  background: #6681DA;
+  padding: 24px 12px;
+  border-radius: 3px;
+}
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-label label + .description {
+  color: #fff;
+  background: #6681DA;
+  padding: 0 12px 24px;
+  margin-top: -20px;
+  border-radius: 3px;
+}
+
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list {
+  columns: 1;
+  width: 100%;
+}
+
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list li label {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #707070;
+  border-radius: 2px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+#foo:checked::before,
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list li label input[type="checkbox"] {
+  position:absolute;
+  clip: rect(0,0,0,0);
+  clip: rect(0 0 0 0);
+}
+
+#foo:checked,
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list li label {
+  background: transparent url('../images/checkbox-unchecked.svg') no-repeat 14px center;
+  background-size: 24px 24px;
+  padding-left: 52px;
+}
+
+#portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list li label.selected {
+  background: transparent url('../images/checkbox-checked.svg') no-repeat 14px center;
+  background-size: 24px 24px;
+  padding-left: 52px;
+  border-color: #AB0DB6;
+}
+
+/* Radio button style */
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field-radio > .acf-label label {
+  font-size: 16px;
+  color: #fff;
+  background: #6681DA;
+  padding: 24px 12px;
+  border-radius: 3px;
+}
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field-radio > .acf-label label + .description {
+  color: #fff;
+  background: #6681DA;
+  padding: 0 12px 24px;
+  margin-top: -20px;
+  border-radius: 3px;
+}
+
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field-radio > .acf-input .acf-radio-list li label {
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  background: #fff;
+  border: 1px solid #707070;
+  border-radius: 2px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+#foo:checked::before,
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field-radio > .acf-input .acf-radio-list li label input[type="radio"] {
+  position:absolute;
+  clip: rect(0,0,0,0);
+  clip: rect(0 0 0 0);
+}
+
+#foo:checked,
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field-radio > .acf-input .acf-radio-list li label {
+  background: transparent url('../images/radio-unchecked.svg') no-repeat 14px center;
+  background-size: 24px 24px;
+  padding-left: 52px;
+}
+
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group > .acf-input > .acf-fields > .acf-field-radio > .acf-input .acf-radio-list li label.selected {
+  background: transparent url('../images/radio-checked.svg') no-repeat 14px center;
+  background-size: 24px 24px;
+  padding-left: 52px;
+  border-color: #AB0DB6;
 }
