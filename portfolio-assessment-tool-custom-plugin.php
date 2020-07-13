@@ -409,3 +409,17 @@ function bp_pat_list() {
 	return $out;
 
 }
+
+// Add PAT options page
+if( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_sub_page(array(
+    'page_title'     => 'PAT options',
+    'menu_title'    => 'PAT options',
+    'parent_slug'    => 'edit.php?post_type=pat_submission',
+  ));
+
+}
+
+// Call PAT options ACF fields registration
+require_once('pat-options-acf-fields.php');
