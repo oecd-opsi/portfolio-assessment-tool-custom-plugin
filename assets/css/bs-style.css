@@ -139,6 +139,11 @@
   width: auto;
 }
 
+#portfolio-assessment-tool-form .acf-field-taxonomy:not(.top_description) .acf-input .select2-selection {
+  border-color: #AB0DB6;
+  border-radius: 2px;
+}
+
 /* Section title */
 #portfolio-assessment-tool-form > .acf-fields > .acf-field > .acf-label label {
   font-size: 30px;
