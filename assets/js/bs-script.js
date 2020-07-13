@@ -114,7 +114,4 @@ if (jQuery("#pat-form").length > 0) {
 
     });
 
-    // Sticky sidebar for form page
-    var sidebar = new StickySidebar('#pat-form-sidebar', {topSpacing: 20});
-
 }

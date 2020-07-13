@@ -36,11 +36,8 @@ function bs_enqueue_files() {
 	// Loads jQuery UI sortable
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
-	// Load Sticky Sidebar
-	wp_enqueue_script( 'sticky-sidebar', plugin_dir_url( __FILE__ ) . 'assets/js/sticky-sidebar.min.js', array(), '1.0.0', true );
-
 	// loads a CSS file in the head.
-	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css' );
+	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(get_stylesheet_directory() . 'assets/css/bs-style.css') );
 
 	// loads JS files in the footer.
 	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'sticky-sidebar'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );

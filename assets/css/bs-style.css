@@ -108,6 +108,7 @@
 
 #portfolio-assessment-tool-form .acf-label .description {
   font-size: 14px;
+  overflow: visible;
 }
 
 #portfolio-assessment-tool-form .acf-input input {
@@ -125,6 +126,17 @@
 
 #portfolio-assessment-tool-form > .acf-fields > .acf-field-group {
   margin-bottom: 74px;
+}
+
+#portfolio-assessment-tool-form .acf-field-taxonomy:not(.top_description) .acf-label {
+  display: block;
+  text-align: left;
+  width: auto;
+}
+
+#portfolio-assessment-tool-form .acf-field-taxonomy:not(.top_description) .acf-input {
+  display: block;
+  width: auto;
 }
 
 /* Section title */
@@ -297,14 +309,14 @@
 }
 
 /* Checkbox style */
-#portfolio-assessment-tool-form .acf-field-checkbox > .acf-label label {
+#portfolio-assessment-tool-form div:not(id="pat-step-1") .acf-field-checkbox > .acf-label label {
   font-size: 16px;
   color: #fff;
   background: #6681DA;
   padding: 24px 12px;
   border-radius: 3px;
 }
-#portfolio-assessment-tool-form .acf-field-checkbox > .acf-label label + .description {
+#portfolio-assessment-tool-form div:not(id="pat-step-1") .acf-field-checkbox > .acf-label label + .description {
   color: #fff;
   background: #6681DA;
   padding: 0 12px 24px;
@@ -312,7 +324,7 @@
   border-radius: 3px;
 }
 
-#portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list {
+#portfolio-assessment-tool-form div:not(id="pat-step-1") .acf-field-checkbox > .acf-input .acf-checkbox-list {
   columns: 1;
   width: 100%;
 }
