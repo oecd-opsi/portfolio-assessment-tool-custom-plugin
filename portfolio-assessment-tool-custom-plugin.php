@@ -423,3 +423,17 @@ if( function_exists('acf_add_options_page') ) {
 
 // Call PAT options ACF fields registration
 require_once('pat-options-acf-fields.php');
+
+// Navigation page content for Module 1
+function bs_navigation_page_content_module_one ( $field ) {
+
+	$navigation_page_id = get_field( 'navigation_page_module_1', 'option' );
+
+	if ( !is_admin() && !empty( $navigation_page_id ) ) {
+		$field['label'] 	= '';
+		$field['message'] 	= apply_filters( 'the_content', get_post_field( 'post_content', $navigation_page_id ) );
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_5f0dc4946fd8f', 'bs_navigation_page_content_module_one' );
