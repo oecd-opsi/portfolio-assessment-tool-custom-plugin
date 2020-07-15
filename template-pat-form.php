@@ -108,10 +108,9 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 				?>
 			</div>
 		</article>
-		<?php // comments_template(); ?>
 	<?php endwhile; ?>
 
-	<?php echo get_options_acf_fields_by_group_key( 'group_597ebdb66a7e1', 'pat_form_example' ); ?>
+	<?php // echo get_options_acf_fields_by_group_key( 'group_597ebdb66a7e1', 'pat_form_example' ); ?>
 
 </div>
 

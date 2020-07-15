@@ -36,11 +36,11 @@ for (var k in steps){
 if (jQuery("#pat-form").length > 0) {
 
   // PAT form SUBMIT
-  jQuery( 'a.submitform' ).on( 'click', function(e) {
+  jQuery( '.submitform' ).on( 'click', function(e) {
 
     e.preventDefault();
-    jQuery( 'a.saveform' ).addClass( 'disabled' );
-    jQuery( 'a.submitform' ).addClass( 'disabled' );
+    jQuery( '.saveform' ).addClass( 'disabled' );
+    jQuery( '.submitform' ).addClass( 'disabled' );
     jQuery( '#csf_action' ).val( 'submit' );
     jQuery ( '.acf-form-submit input.acf-button' ).trigger( 'click' );
 
@@ -49,11 +49,12 @@ if (jQuery("#pat-form").length > 0) {
   });
 
   // PAT form SAVE as draft
-  jQuery( 'a.saveform' ).on( 'click', function(e) {
+  jQuery( '.saveform' ).on( 'click', function(e) {
 
     e.preventDefault();
-    jQuery( 'a.saveform' ).addClass( 'disabled' );
-    jQuery( 'a.submitform' ).addClass( 'disabled' );
+    console.log('save');
+    jQuery( '.saveform' ).addClass( 'disabled' );
+    jQuery( '.submitform' ).addClass( 'disabled' );
     jQuery('input').removeAttr( 'required' );
     jQuery('textarea').removeAttr( 'required' );
     jQuery( '#csf_action' ).val( 'save' );

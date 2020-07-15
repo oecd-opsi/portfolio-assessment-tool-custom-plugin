@@ -7,6 +7,25 @@ acf_add_local_field_group(array(
 	'title' => 'Portfolio Assessment Tool',
 	'fields' => array(
 		array(
+			'key' => 'field_5f0f2dc4e361d',
+			'label' => 'Submission date',
+			'name' => 'submission_date',
+			'type' => 'date_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => 'hidden',
+				'id' => '',
+			),
+			'display_order' => '',
+			'acfe_permissions' => '',
+			'display_format' => 'd/m/Y',
+			'return_format' => 'd/m/Y',
+			'first_day' => 1,
+		),
+		array(
 			'key' => 'field_5ef5dc662a113',
 			'label' => 'About your organisation',
 			'name' => 'general_questions',
@@ -3970,9 +3989,7 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'acfe_display_title' => '',
-	'acfe_autosync' => array(
-		0 => 'php',
-	),
+	'acfe_autosync' => '',
 	'acfe_permissions' => '',
 	'acfe_form' => 0,
 	'acfe_meta' => '',

@@ -436,3 +436,18 @@ function bs_navigation_page_content_module_one ( $field ) {
 	return $field;
 }
 add_filter( 'acf/load_field/key=field_5f0dc4946fd8f', 'bs_navigation_page_content_module_one' );
+
+// Autopopulate Submission date field on Portfolio Assessment Tool submission
+add_action( 'draft_to_publish', 'bs_pat_submission_date' );
+function bs_pat_submission_date( $post ) {
+
+	// check if post is a Case Study
+	if ( ! 'pat_submission' == $post->post_type ) {
+		return;
+	}
+
+	// get current date and populate Submission field
+	$now = date( 'd/m/Y' );
+	update_field( 'submission_date', $now, $post->ID );
+
+}
