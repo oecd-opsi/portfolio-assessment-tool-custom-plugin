@@ -40,7 +40,7 @@ function bs_enqueue_files() {
 	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(get_stylesheet_directory() . 'assets/css/bs-style.css') );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'sticky-sidebar'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );
+	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );
 
 }
 
@@ -430,7 +430,6 @@ function bs_navigation_page_content_module_one ( $field ) {
 	$navigation_page_id = get_field( 'navigation_page_module_1', 'option' );
 
 	if ( !is_admin() && !empty( $navigation_page_id ) ) {
-		$field['label'] 	= '';
 		$field['message'] 	= apply_filters( 'the_content', get_post_field( 'post_content', $navigation_page_id ) );
 	}
 

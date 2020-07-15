@@ -32,7 +32,7 @@ for (var k in steps){
   });
 })(jQuery);
 
-// Manage form submission and save
+// Handle form submission and save
 if (jQuery("#pat-form").length > 0) {
 
   // PAT form SUBMIT
@@ -115,3 +115,54 @@ if (jQuery("#pat-form").length > 0) {
     });
 
 }
+
+// Handle form pagination
+var steps;
+// Get all field groups; each group is a step
+steps = document.querySelectorAll( '[id^="pat-step-"]' );
+stepBtns = document.querySelectorAll( '[href^="#pat-step-"]' );
+// Show step function
+function showPatStep( newID ) {
+
+  // remove active class from each steps
+  steps.forEach( step => step.classList.remove('active-pat-step') );
+
+  // remove active class from each step buttons
+  stepBtns.forEach( stepBtn => stepBtn.classList.remove('active-pat-step-btn') );
+
+  // add active class to current step
+  let newStep = document.querySelector( '[id="pat-step-' + newID + '"]' );
+  newStep.classList.add( 'active-pat-step' );
+
+  // add active class to step button in side navigation
+  let newStepNav = document.querySelector( '[href="#pat-step-' + newID + '"]' );
+  newStepNav.classList.add( 'active-pat-step-btn' );
+
+}
+
+// Page to show on load
+(function($){
+  $(document).ready( function() {
+
+    // add a class to hide each steps
+    steps.forEach( step => step.classList.add('hide-pat-step') );
+
+    // get from URL the step to display or display step zero
+    currentStepN = window.location.hash.replace( /^\D+/g, '');
+    currentStepN ? showPatStep( currentStepN ) : showPatStep( 1 );
+
+  });
+})(jQuery);
+
+// listen to URL hash change
+window.addEventListener( 'hashchange', function(e){
+
+  // hide all steps
+  steps.forEach( step => step.classList.add('hide-pat-step') );
+
+  // display new step
+  let newStepN = window.location.hash.replace( /^\D+/g, '');
+  showPatStep( newStepN );
+  document.documentElement.scrollTop = 0;
+
+});

@@ -62,7 +62,8 @@
   padding: 16px 8px;
   margin-bottom: 10px;
 }
-#acf_pat_steps a:hover {
+#acf_pat_steps a:hover,
+#acf_pat_steps a.active-pat-step-btn {
   text-decoration: none;
   background: #E476EB;
 }
@@ -124,8 +125,9 @@
   margin-bottom: 54px;
 }
 
-#portfolio-assessment-tool-form > .acf-fields > .acf-field-group {
-  margin-bottom: 74px;
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-group,
+#portfolio-assessment-tool-form > .acf-fields > .acf-field-message {
+  margin-bottom: 0;
 }
 
 #portfolio-assessment-tool-form .acf-field-taxonomy:not(.top_description) .acf-label {
@@ -151,21 +153,6 @@
   color: #AB0DB6;
   margin-bottom: 28px;
   font-weight: normal !important;
-}
-
-/* Odd section style  */
-#portfolio-assessment-tool-form > .acf-fields > .acf-field-group:nth-child(odd) {
-  background: #F9F9F9;
-  box-shadow: -800px 0 0 0 #F9F9F9, 800px 0 0 0 #F9F9F9;
-  padding: 64px 0;
-}
-
-#portfolio-assessment-tool-form .acf-fields.-border {
-  background: transparent;
-}
-
-#portfolio-assessment-tool-form.stepform .acf-form-fields {
-  overflow: visible;
 }
 
 /* Multi Likert questions */
@@ -314,14 +301,14 @@
 }
 
 /* Checkbox style */
-#portfolio-assessment-tool-form div:not(id="pat-step-1") .acf-field-checkbox > .acf-label label {
+#portfolio-assessment-tool-form .acf-field:not([id="pat-step-1"]) .acf-field-checkbox > .acf-label label {
   font-size: 16px;
   color: #fff;
   background: #6681DA;
   padding: 24px 12px;
   border-radius: 3px;
 }
-#portfolio-assessment-tool-form div:not(id="pat-step-1") .acf-field-checkbox > .acf-label label + .description {
+#portfolio-assessment-tool-form .acf-field:not([id="pat-step-1"]) .acf-field-checkbox > .acf-label label + .description {
   color: #fff;
   background: #6681DA;
   padding: 0 12px 24px;
@@ -329,7 +316,7 @@
   border-radius: 3px;
 }
 
-#portfolio-assessment-tool-form div:not(id="pat-step-1") .acf-field-checkbox > .acf-input .acf-checkbox-list {
+#portfolio-assessment-tool-form .acf-field:not([id="pat-step-1"]) .acf-field-checkbox > .acf-input .acf-checkbox-list {
   columns: 1;
   width: 100%;
 }
@@ -414,4 +401,56 @@
   background-size: 24px 24px;
   padding-left: 52px;
   border-color: #AB0DB6;
+}
+
+/* Form pagination */
+.hide-pat-step {
+  transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+  transform: translateX(-100%);
+  opacity: 0;
+  height: 0;
+  top: 0;
+  backface-visibility: hidden;
+  overflow: hidden;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.active-pat-step {
+  transform: translateX(0);
+  opacity: 1;
+  height: auto;
+  padding: inherit;
+}
+
+.pat-step-nav-container > .acf-label {
+  display: none;
+}
+
+.pat-step-nav-container .pat-step-nav-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.pat-step-nav-container .pat-step-nav-wrapper button,
+.pat-step-nav-container .pat-step-nav-wrapper .button {
+  display: block;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #fff;
+  background: #0053B4;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px 8px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  font-weight: bold;
+  min-width: 125px;
+}
+.pat-step-nav-container .pat-step-nav-wrapper button:hover,
+.pat-step-nav-container .pat-step-nav-wrapper .button:hover {
+  background: #6681DA;
+  text-decoration: none;
 }

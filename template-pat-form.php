@@ -52,8 +52,8 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 	</ul>
 
 	<div class="save-submit-wrapper">
-		<button class="button saveform" title="Save" href="#">Save</button>
-		<button class="button submitform" id="submitcasestudy" title="Submit" href="#">Submit</button>
+		<button class="button saveform" title="Save">Save</button>
+		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
 	</div>
 
 	<?php
