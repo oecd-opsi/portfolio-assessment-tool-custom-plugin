@@ -454,3 +454,25 @@
   background: #6681DA;
   text-decoration: none;
 }
+
+/* Results page */
+.pat-results-top-nav {
+  display: none; /* for the moment */
+}
+
+.pat-results-side {
+  width: calc( 100% / 4 );
+  float: left;
+}
+
+.pat-results-main-content > section,
+.pat-results-fullwidth-section .pat-results-content {
+  width: calc( 100% / 4 * 3 );
+  float: right;
+}
+
+.pat-results-main-content > section.pat-results-fullwidth-section {
+  width: 100%;
+  float: none;
+  clear: both;
+}

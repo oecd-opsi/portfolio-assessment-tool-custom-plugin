@@ -128,7 +128,7 @@
         $portfolio_tendency_group_text = get_field( 'primarily_anticipatory_content', 'option' );
       }
   elseif
-     ($enh_percentage => 50 &&
+     ($enh_percentage >= 50 &&
       $mis_percentage < 50 &&
       $ant_percentage < 50 &&
       $ada_percentage < 50) {
@@ -270,40 +270,156 @@
 
   $level = '';
   if ( $pmq_score < 36  ) {
-    $level = 'loew';
+    $level = 'low';
   } elseif ( $pmq_score >= 72 ) {
     $level = 'high';
   } else {
     $level = 'medium';
   }
 
+  // Navigation menu
+  $nav_menu = '
+    <ul class="pat-results-nav-menu">
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#organisational-portfolio-balance">Organisational Portfolio Balance</a></li>
+      <li><a href="#portfolio-management-capability">Portfolio Management Capability</a></li>
+      <!--<li><a href="#project-based-mapping">Project based Mapping</a></li>-->
+      <!--<li><a href="#combined-results">Combined Results</a></li>-->
+      <li><a href="#download-and-share">Download and Share Results</a></li>
+      <li><a href="#interpretation">Interpretationn and Next Steps</a></li>
+      <li><a href="#">Share icon</a></li>
+      <li><a href="#">Start again</a></li>
+    </ul>
+  ';
+
 ?>
 	<div class="row">
-		<div class="col-md-9">
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>
+		<div class="col-sm-12">
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<?php if (get_field('hide_page_title') !== true) { ?>
-				<h1 class="entry-title <?php echo ( !empty( $badges ) ? 'pull-left' : ''); ?>"><?php the_title(); ?></h1>
-				<?php } ?>
-
-				<div class="entry-content">
-
-          <?php
+        <div class="entry-content">
 
 
-          // echo scores
-          echo "<p>Enhancement: " . $enh_percentage . "%</p>";
-          echo "<p>Mission: " . $mis_percentage . "%</p>";
-          echo "<p>Anticipator: " . $ant_percentage . "%</p>";
-          echo "<p>Adaptive: " . $ada_percentage . "%</p>";
+          <div class="pat-results-hero"><h1>Portfolio Exploration Tool Results</h1></div>
 
-          echo "<p>Portfolio Management Score: " . ( $pmq_score / $pmw_max * 100 ) . "% (Level " . $level . ")</p>";
-           ?>
+          <div class="pat-results-top-nav"><?php echo $nav_menu ?></div>
+
+          <main class="pat-results-main-content">
+
+            <aside class="pat-results-side"><?php echo $nav_menu ?></aside>
+
+            <section id="introduction">
+
+              <div class="pat-results-content">
+
+                <h2>Innovation portfolio balance of <?php echo $organisation ?></h2>
+                <p class="subtitle">Based on exploration by <?php echo $name ?> on <?php echo $submission_date ?></p>
+
+                <p class="disclaimer"><?php echo get_field( 'disclaimer', 'option' ) ?></p>
+
+                <h3>Your organisational portfolio tends to <?php echo $portfolio_tendency_group ?> innovation</h3>
+
+              </div>
+
+            </section>
+
+            <section id="organisational-portfolio-balance" class="pat-results-fullwidth-section">
+
+              <div class="pat-results-side">
+                <p><?php echo $portfolio_tendency_group ?> innovation</p>
+                <?php // TODO: diamonds with tendency highlighted, one for each facet ?>
+                <?php // TODO: diamond with all percentage, showing when tendency group text ?>
+              </div>
+
+              <div class="pat-results-content">
+
+                <h2>Innovation portfolio balance of <?php echo $organisation ?></h2>
+
+                <?php
+                echo '<p>Enhancement: ' . $enh_percentage . '%</p>';
+                echo '<p>Mission: ' . $mis_percentage . '%</p>';
+                echo '<p>Anticipatory: ' . $ant_percentage . '%</p>';
+                echo '<p>Adaptive: ' . $ada_percentage. '%</p>';
+                 ?>
+
+                <div class="enhancement-inno-section">
+                  <?php // TODO:diamond with percentage  ?>
+                  <?php the_field( 'enhancemnet_oriented_innovation_text', 'option' ); ?>
+                </div>
+
+                <div class="mission-inno-section">
+                  <?php // TODO:diamond with percentage  ?>
+                  <?php the_field( 'mission_oriented_innovation_text', 'option' ); ?>
+                </div>
+
+                <div class="adaptive-inno-section">
+                  <?php // TODO:diamond with percentage  ?>
+                  <?php the_field( 'adaptive_oriented_innovation_text', 'option' ); ?>
+                </div>
+
+                <div class="anticipatory-inno-section">
+                  <?php // TODO:diamond with percentage  ?>
+                  <?php the_field( 'anticipatory_oriented_innovation_text_', 'option' ); ?>
+                </div>
+
+                <div class="tendency-group">
+
+                  <p>This organisation’sportfolio tends to be strong in <?php echo $portfolio_tendency_group ?>-oriented innovation.</p>
+
+                  <?php echo $portfolio_tendency_group_text ?>
+
+                </div>
+
+              </div>
+
+            </section>
+
+            <section id="portfolio-management-capability" class="pat-results-fullwidth-section">
+
+              <div class="pat-results-side">
+                <p>Portfolio balance</p>
+                <?php // TODO: diamond with all percentage ?>
+                <p>Portfolio management Capability</p>
+                <?php // TODO: low/med/high graph ?>
+              </div>
+
+              <div class="pat-results-content">
+
+                <p>This organisation’s tends to have <?php echo $level ?> portfolio management capablity</p>
+
+                <?php // TODO: low/med/high graph ?>
+
+                <?php the_field( 'portfolio_management_capability_text', 'option' ); ?>
+
+              </div>
+
+            </section>
+
+            <section id="download-and-share">
+              <div class="pat-results-content">
+                <h2>Download and share results</h2>
+                <?php the_field( 'download_and_share_results_text', 'option' ) ?>
+                <button class="download-pdf">Download PDF</button>
+                <button class="download-csv">Download CSV</button>
+              </div>
+            </section>
+
+            <section id="#interpretation">
+              <div class="pat-results-content">
+                <h2>How you might use these results</h2>
+                <?php the_field( 'how_you_might_use_these_result_text', 'option' ) ?>
+                <h2>Save, share, and continue to next steps</h2>
+                <?php the_field( 'save_share_and_continue_to_next_steps_text', 'option' ) ?>
+                <h2>Contact OPSI for help with interpretation</h2>
+                <?php the_field( ' contact_OPSI_for_help_with_interpretation_text', 'option' ) ?>
+              </div>
+            </section>
+
+          </main>
 
         </div><!-- end entry-content -->
 
       </article>
-      <?php comments_template(); ?>
 
 		</div>
 
