@@ -125,19 +125,23 @@ stepBtns = document.querySelectorAll( '[href^="#pat-step-"]' );
 // Show step function
 function showPatStep( newID ) {
 
-  // remove active class from each steps
-  steps.forEach( step => step.classList.remove('active-pat-step') );
+  if(steps.length > 0 && stepBtns.length > 0) {
 
-  // remove active class from each step buttons
-  stepBtns.forEach( stepBtn => stepBtn.classList.remove('active-pat-step-btn') );
+    // remove active class from each steps
+    steps.forEach( step => step.classList.remove('active-pat-step') );
 
-  // add active class to current step
-  let newStep = document.querySelector( '[id="pat-step-' + newID + '"]' );
-  newStep.classList.add( 'active-pat-step' );
+    // remove active class from each step buttons
+    stepBtns.forEach( stepBtn => stepBtn.classList.remove('active-pat-step-btn') );
 
-  // add active class to step button in side navigation
-  let newStepNav = document.querySelector( '[href="#pat-step-' + newID + '"]' );
-  newStepNav.classList.add( 'active-pat-step-btn' );
+    // add active class to current step
+    let newStep = document.querySelector( '[id="pat-step-' + newID + '"]' );
+    newStep.classList.add( 'active-pat-step' );
+
+    // add active class to step button in side navigation
+    let newStepNav = document.querySelector( '[href="#pat-step-' + newID + '"]' );
+    newStepNav.classList.add( 'active-pat-step-btn' );
+
+  }
 
 }
 
@@ -167,3 +171,43 @@ window.addEventListener( 'hashchange', function(e){
   document.documentElement.scrollTop = 0;
 
 });
+
+// PAT results scripts
+(function($){
+  $(document).ready( function() {
+
+    // check if it PAT results page
+    if ( $('.pat-results').length > 0 ) {
+
+      // Fix top nav when Introduction sectione exited
+      var introInview = new Waypoint.Inview({
+        element: $('#introduction'),
+        enter: function(direction) {
+          if ( direction == 'up' ) {
+            $('.pat-results-top-nav').removeClass('show');
+          }
+        },
+        exited: function(direction) {
+          if ( direction == 'down' ) {
+            $('.pat-results-top-nav').addClass('show');
+          }
+        }
+      });
+      var pmcInview = new Waypoint.Inview({
+        element: $('#portfolio-management-capability'),
+        exited: function(direction) {
+          if ( direction == 'down' ) {
+            $('.pat-results-top-nav').removeClass('show');
+          }
+        },
+        enter: function(direction) {
+          if ( direction == 'up' ) {
+            $('.pat-results-top-nav').addClass('show');
+          }
+        },
+      });
+
+    }
+
+  });
+})(jQuery);

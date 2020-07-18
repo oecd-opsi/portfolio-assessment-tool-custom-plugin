@@ -295,7 +295,7 @@
 ?>
 	<div class="row">
 		<div class="col-sm-12">
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('pat-results'); ?>>
 
         <div class="entry-content">
 

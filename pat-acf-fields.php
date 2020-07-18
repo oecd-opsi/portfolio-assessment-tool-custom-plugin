@@ -3,7 +3,7 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_5f084469b45f2',
+	'key' => 'group_5f0e29adb066c',
 	'title' => 'Portfolio Assessment Tool',
 	'fields' => array(
 		array(
@@ -196,6 +196,25 @@ acf_add_local_field_group(array(
 			'esc_html' => 0,
 		),
 		array(
+			'key' => 'field_5f1319b50547d',
+			'label' => 'Getting started with your quick snapshot',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => 'pat-step-3',
+			),
+			'display_order' => '',
+			'acfe_permissions' => '',
+			'message' => '',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
+		array(
 			'key' => 'field_5ef5dd3b010b3',
 			'label' => 'Facet Orientation Questions 1',
 			'name' => 'facet_orientation_questions_1',
@@ -206,7 +225,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'pat-step-3',
+				'id' => 'pat-step-4',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -934,9 +953,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-2" class="button">Back</a>
+		<a href="#pat-step-3" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-4" class="button">Next</a>
+		<a href="#pat-step-5" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -954,7 +973,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'pat-step-4',
+				'id' => 'pat-step-5',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -1659,9 +1678,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-3" class="button">Back</a>
+		<a href="#pat-step-4" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-5" class="button">Next</a>
+		<a href="#pat-step-6" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -1679,7 +1698,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'pat-step-5',
+				'id' => 'pat-step-6',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -2247,9 +2266,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-4" class="button">Back</a>
+		<a href="#pat-step-5" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-6" class="button">Next</a>
+		<a href="#pat-step-7" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -2267,7 +2286,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'pat-step-6',
+				'id' => 'pat-step-7',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -2711,9 +2730,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-5" class="button">Back</a>
+		<a href="#pat-step-6" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-7" class="button">Next</a>
+		<a href="#pat-step-8" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -2731,7 +2750,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'pat-step-7',
+				'id' => 'pat-step-8',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -2975,9 +2994,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-6" class="button">Back</a>
+		<a href="#pat-step-7" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-8" class="button">Next</a>
+		<a href="#pat-step-9" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -2995,7 +3014,7 @@ acf_add_local_field_group(array(
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
-				'id' => 'pat-step-8',
+				'id' => 'pat-step-9',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -3961,7 +3980,7 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-7" class="button">Back</a>
+		<a href="#pat-step-8" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
 		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
 </div>',
@@ -3989,7 +4008,9 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 	'acfe_display_title' => '',
-	'acfe_autosync' => '',
+	'acfe_autosync' => array(
+		0 => 'php',
+	),
 	'acfe_permissions' => '',
 	'acfe_form' => 0,
 	'acfe_meta' => '',

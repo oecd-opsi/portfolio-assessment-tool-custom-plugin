@@ -36,11 +36,16 @@ function bs_enqueue_files() {
 	// Loads jQuery UI sortable
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
+	// Loads Waypoints
+	wp_enqueue_script( 'waypoint-js', plugin_dir_url( __FILE__ ) . 'assets/js/jquery.waypoints.min.js', array( 'jquery' ), '', true );
+	// Loads Waypoints
+	wp_enqueue_script( 'waypoint-inview', plugin_dir_url( __FILE__ ) . 'assets/js/inview.min.js', array( 'jquery', 'waypoint-js' ), '', true );
+
 	// loads a CSS file in the head.
 	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(get_stylesheet_directory() . 'assets/css/bs-style.css') );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );
+	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );
 
 }
 
@@ -436,6 +441,20 @@ function bs_navigation_page_content_module_one ( $field ) {
 	return $field;
 }
 add_filter( 'acf/load_field/key=field_5f0dc4946fd8f', 'bs_navigation_page_content_module_one' );
+
+// Start page for Module 1
+function bs_start_page_content_module_one ( $field ) {
+
+	$start_page_content = get_field( 'start_module_1_text', 'option' );
+
+	if ( !is_admin() && !empty( $start_page_content ) ) {
+		$field['message'] 	= $start_page_content;
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_5f1319b50547d', 'bs_start_page_content_module_one' );
+
 
 // Autopopulate Submission date field on Portfolio Assessment Tool submission
 add_action( 'draft_to_publish', 'bs_pat_submission_date' );
