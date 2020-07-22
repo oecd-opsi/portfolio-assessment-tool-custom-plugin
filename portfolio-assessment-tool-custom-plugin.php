@@ -55,9 +55,9 @@ function pat_submission_post_type() {
 	$labels = array(
 		'name'                  => _x( 'Portfolio Assessment Tool submissions', 'Post Type General Name', 'opsi' ),
 		'singular_name'         => _x( 'Portfolio Assessment Tool submission', 'Post Type Singular Name', 'opsi' ),
-		'menu_name'             => __( 'PAT submissions', 'opsi' ),
-		'name_admin_bar'        => __( 'PAT submissions', 'opsi' ),
-		'archives'              => __( 'PAT submissions', 'opsi' ),
+		'menu_name'             => __( 'PET submissions', 'opsi' ),
+		'name_admin_bar'        => __( 'PET submissions', 'opsi' ),
+		'archives'              => __( 'PET submissions', 'opsi' ),
 		'attributes'            => __( 'Item Attributes', 'opsi' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'opsi' ),
 		'all_items'             => __( 'All Items', 'opsi' ),
@@ -99,6 +99,7 @@ function pat_submission_post_type() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
+		'rewrite'								=> array( 'slug' => 'pet_submission'),
 	);
 	register_post_type( 'pat_submission', $args );
 
@@ -252,7 +253,7 @@ function profile_tab_pat() {
 	}
 
   bp_core_new_nav_item( array(
-    'name' => __( 'Portfolio Management Tool', 'opsi' ).$results_n,
+    'name' => __( 'Portfolio Explorations', 'opsi' ).$results_n,
     'slug' => 'pat',
     'screen_function' => 'bs_pat_screen',
     'position' => 80,

@@ -104,10 +104,10 @@
     }
   }
   // Calculate facets percentage
-  $enh_percentage = $enh / $max * 100;
-  $mis_percentage = $mis / $max * 100;
-  $ant_percentage = $ant / $max * 100;
-  $ada_percentage = $ada / $max * 100;
+  $enh_percentage = round( $enh / $max * 100 );
+  $mis_percentage = round( $mis / $max * 100 );
+  $ant_percentage = round( $ant / $max * 100 );
+  $ada_percentage = round( $ada / $max * 100 );
 
   //* Portfolio Tendency Group
   $portfolio_tendency_group = '';
