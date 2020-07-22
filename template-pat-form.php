@@ -39,23 +39,38 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 ?>
 
 <div class="col-md-12">
-	<div class="pat-form-title-wrapper">
+	<div class="pat-form-title-wrapper screen-reader-text">
 		<h1>Portfolio Assessment Tool Form</h1>
 	</div>
-	<!-- <div class="single_img_wrap covid-banner">
-		<img src="/wp-content/uploads/2020/04/OPSI-Covid19-Tracker-banner.jpg" class="attachment-blog size-blog wp-post-image" alt="OPSI COVID-19 Innovative Response Tracker">
-	</div> -->
+	<div class="single_img_wrap pat-form-banner">
+		<img src="<?php echo plugin_dir_url( __FILE__ ) ?>assets/images/pat-form-hero.jpg" class="attachment-blog size-blog wp-post-image" alt="Portfolio Exploration Tool">
+	</div>
 </div>
 
 <div id="pat-form-sidebar" class="col-sm-3 dont-col-sm-push--9">
 	<ul id="acf_pat_steps">
 	</ul>
 
+
+	<?php
+	// Post status
+	$post_status = get_post_status_object( get_post_status( $_GET['edit'] ) );
+	$status = $post_status->label;
+	// Last modified
+	$last_save = get_the_modified_date( get_option( 'date_format' ) . ', ' . get_option( 'time_format' ) . ' a', $_GET['edit'] );
+	 ?>
+
+	<div class="pat-status-widget">
+		<h2>Status</h2>
+		<div class="pat-status-meta pat-status-label"><?php echo $status ?></div>
+		<div class="pat-status-meta pat-status-last-save"><?php echo $last_save ?></div>
+	</div>
+
 	<div class="save-submit-wrapper">
 		<button class="button saveform" title="Save">Save</button>
 		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
 	</div>
-
+	
 	<?php
 	// if ( is_active_sidebar( 'sidebar_covid_response_form' ) ) {
 	// 	dynamic_sidebar( 'sidebar_covid_response_form' );

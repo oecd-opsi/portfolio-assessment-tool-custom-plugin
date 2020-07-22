@@ -429,13 +429,26 @@ if( function_exists('acf_add_options_page') ) {
 // Call PAT options ACF fields registration
 require_once('pat-options-acf-fields.php');
 
+// Landing page content
+function bs_landing_page_content ( $field ) {
+
+	$landing_page_content = get_field( 'landing_page_content', 'option' );
+
+	if ( !is_admin() && !empty( $landing_page_content ) ) {
+		$field['message'] 	= $landing_page_content;
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_5f18466d9460b', 'bs_landing_page_content' );
+
 // Navigation page content for Module 1
 function bs_navigation_page_content_module_one ( $field ) {
 
-	$navigation_page_id = get_field( 'navigation_page_module_1', 'option' );
+	$navigation_page_content = get_field( 'navigation_page_content', 'option' );
 
-	if ( !is_admin() && !empty( $navigation_page_id ) ) {
-		$field['message'] 	= apply_filters( 'the_content', get_post_field( 'post_content', $navigation_page_id ) );
+	if ( !is_admin() && !empty( $navigation_page_content ) ) {
+		$field['message'] 	= $navigation_page_content;
 	}
 
 	return $field;
@@ -469,4 +482,13 @@ function bs_pat_submission_date( $post ) {
 	$now = date( 'd/m/Y' );
 	update_field( 'submission_date', $now, $post->ID );
 
+}
+
+// force login for case study form
+add_action( 'template_redirect', 'bs_pat_form_template_redirect' );
+function bs_pat_form_template_redirect() {
+	if ( is_page( 'portfolio-exploration' ) && ! is_user_logged_in() ) {
+		wp_redirect( wp_login_url( get_permalink( get_page_by_path( 'portfolio-exploration' ) ) ) );
+		die;
+	}
 }

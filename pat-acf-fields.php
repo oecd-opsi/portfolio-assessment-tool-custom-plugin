@@ -26,6 +26,25 @@ acf_add_local_field_group(array(
 			'first_day' => 1,
 		),
 		array(
+			'key' => 'field_5f18466d9460b',
+			'label' => 'Landing page',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => 'pat-step',
+				'id' => 'pat-step-1',
+			),
+			'display_order' => '',
+			'acfe_permissions' => '',
+			'message' => '',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
+		array(
 			'key' => 'field_5ef5dc662a113',
 			'label' => 'About your organisation',
 			'name' => 'general_questions',
@@ -35,8 +54,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-1',
+				'class' => 'pat-step',
+				'id' => 'pat-step-2',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -121,7 +140,7 @@ acf_add_local_field_group(array(
 					'name' => 'in_which_sector_or_topic_does_this_group_of_people_focus_its_work',
 					'type' => 'checkbox',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -145,12 +164,12 @@ acf_add_local_field_group(array(
 						'science' => 'Science, research, and innovation',
 						'transport' => 'Transport and infrastructure',
 					),
-					'allow_custom' => 0,
+					'allow_custom' => 1,
+					'save_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
 					'return_format' => 'value',
-					'save_custom' => 0,
 				),
 				array(
 					'key' => 'field_5f0eda3a1ec54',
@@ -169,7 +188,7 @@ acf_add_local_field_group(array(
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
 	<button class="button saveform" title="Save">Save</button>
-	<a href="#pat-step-2" class="button">Next</a>
+	<a href="#pat-step-3" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -178,7 +197,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5f0dc4946fd8f',
-			'label' => 'Navigation page',
+			'label' => 'What type of exploration would you like to do today?',
 			'name' => '',
 			'type' => 'message',
 			'instructions' => '',
@@ -186,8 +205,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-2',
+				'class' => 'pat-step',
+				'id' => 'pat-step-3',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -205,8 +224,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-3',
+				'class' => 'pat-step',
+				'id' => 'pat-step-4',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -216,7 +235,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5ef5dd3b010b3',
-			'label' => 'Facet Orientation Questions 1',
+			'label' => 'Facet Orientation Questions - Purpose & Strategy',
 			'name' => 'facet_orientation_questions_1',
 			'type' => 'group',
 			'instructions' => '',
@@ -224,8 +243,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-4',
+				'class' => 'pat-step',
+				'id' => 'pat-step-5',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -239,7 +258,7 @@ acf_add_local_field_group(array(
 					'name' => 'my_organisation_tends_to_focus_on',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -436,7 +455,7 @@ acf_add_local_field_group(array(
 					'name' => 'what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote',
 					'type' => 'group',
 					'instructions' => 'Rank in order of prominence with 1 = Most important; 4 = Least important.',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -464,7 +483,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 4,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -487,7 +506,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 3,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -510,7 +529,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 2,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -533,7 +552,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 1,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -549,7 +568,7 @@ acf_add_local_field_group(array(
 					'name' => 'how_does_your_organisation_tend_to_manage_projects',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -746,7 +765,7 @@ acf_add_local_field_group(array(
 					'name' => 'in_my_organisation…',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -953,9 +972,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-3" class="button">Back</a>
+		<a href="#pat-step-4" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-5" class="button">Next</a>
+		<a href="#pat-step-6" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -964,7 +983,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5f0e299dcf875',
-			'label' => 'Facet Orientation Questions 2',
+			'label' => 'Facet Orientation Questions - Risk & Permission',
 			'name' => 'facet_orientation_questions_2',
 			'type' => 'group',
 			'instructions' => '',
@@ -972,8 +991,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-5',
+				'class' => 'pat-step',
+				'id' => 'pat-step-6',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -987,7 +1006,7 @@ acf_add_local_field_group(array(
 					'name' => 'what_is_most_difficult_to_get_done_in_your_organisation',
 					'type' => 'group',
 					'instructions' => 'Rank in order of prominence with 1 = Most difficult; 4 = Least difficult',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -999,9 +1018,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e299dcf891',
@@ -1018,7 +1034,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 4,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1041,7 +1057,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 3,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1064,7 +1080,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 2,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1087,7 +1103,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 1,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1103,7 +1119,7 @@ acf_add_local_field_group(array(
 					'name' => 'risks_my_organisation_tends_to_take_most_seriously_are…',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -1358,7 +1374,7 @@ acf_add_local_field_group(array(
 					'name' => 'what_can_people_in_your_organisation_do_without_asking_for_explicit_permission',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -1555,7 +1571,7 @@ acf_add_local_field_group(array(
 					'name' => 'which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation',
 					'type' => 'group',
 					'instructions' => 'Rank in order of prominence with 1 = Most difficult; 4 = Least difficult',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -1583,7 +1599,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 4,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1606,7 +1622,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 3,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1629,7 +1645,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 2,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1652,7 +1668,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 1,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -1678,9 +1694,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-4" class="button">Back</a>
+		<a href="#pat-step-5" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-6" class="button">Next</a>
+		<a href="#pat-step-7" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -1689,7 +1705,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5f0e2a35f9ad8',
-			'label' => 'Facet Orientation Questions 3',
+			'label' => 'Facet Orientation Questions - Incentives & Horizons',
 			'name' => 'facet_orientation_questions_3',
 			'type' => 'group',
 			'instructions' => '',
@@ -1697,8 +1713,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-6',
+				'class' => 'pat-step',
+				'id' => 'pat-step-7',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -1712,7 +1728,7 @@ acf_add_local_field_group(array(
 					'name' => 'what_gets_punished_in_your_organisation',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -1724,9 +1740,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2a36f9b04',
@@ -1912,7 +1925,7 @@ acf_add_local_field_group(array(
 					'name' => 'which_innovation_initiatives_tend_to_get_funded_in_your_organisation',
 					'type' => 'checkbox',
 					'instructions' => 'Select all that apply.',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -1928,11 +1941,11 @@ acf_add_local_field_group(array(
 						'enh-4' => 'Process optimisation and digitisation',
 					),
 					'allow_custom' => 0,
-					'save_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
 					'return_format' => 'value',
+					'save_custom' => 0,
 				),
 				array(
 					'key' => 'field_5f0e2a36f9b0b',
@@ -1940,7 +1953,7 @@ acf_add_local_field_group(array(
 					'name' => 'which_procurement_options_does_your_organisation_tend_to_use_most_often_to_achieve_its_strategic_objectives',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -1952,9 +1965,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2a36f9b0c',
@@ -2140,7 +2150,7 @@ acf_add_local_field_group(array(
 					'name' => 'which_time_horizons_does_your_organisation_tend_to_work_with',
 					'type' => 'group',
 					'instructions' => 'Rank in order of prominence with 1 = Most difficult; 4 = Least difficult',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -2152,9 +2162,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2a36f9b13',
@@ -2171,7 +2178,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 4,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -2194,7 +2201,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 3,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -2217,7 +2224,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 2,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -2240,7 +2247,7 @@ acf_add_local_field_group(array(
 							),
 							'display_order' => '',
 							'acfe_permissions' => '',
-							'default_value' => '',
+							'default_value' => 1,
 							'placeholder' => '',
 							'prepend' => '',
 							'append' => '',
@@ -2266,9 +2273,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-5" class="button">Back</a>
+		<a href="#pat-step-6" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-7" class="button">Next</a>
+		<a href="#pat-step-8" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -2277,7 +2284,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5f0e2a89b8f93',
-			'label' => 'Facet Orientation Questions 4',
+			'label' => 'Facet Orientation Questions - Tools & Methods',
 			'name' => 'facet_orientation_questions_4',
 			'type' => 'group',
 			'instructions' => '',
@@ -2285,8 +2292,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-7',
+				'class' => 'pat-step',
+				'id' => 'pat-step-8',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -2300,7 +2307,7 @@ acf_add_local_field_group(array(
 					'name' => 'what_data_does_your_organisation_tend_to_use',
 					'type' => 'checkbox',
 					'instructions' => 'Select all that apply.',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -2320,11 +2327,11 @@ acf_add_local_field_group(array(
 						'ant-2-bis' => 'Case study data, especially from extreme, emergent, or anomalous cases',
 					),
 					'allow_custom' => 0,
-					'save_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
 					'return_format' => 'value',
+					'save_custom' => 0,
 				),
 				array(
 					'key' => 'field_5f0e2a89b8fd3',
@@ -2332,7 +2339,7 @@ acf_add_local_field_group(array(
 					'name' => 'what_gets_evaluated_in_your_organisation',
 					'type' => 'checkbox',
 					'instructions' => 'Select all that apply.',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -2352,11 +2359,11 @@ acf_add_local_field_group(array(
 						'ant-2-bis' => 'Cost of not following options/being surprised or risks of doing nothing',
 					),
 					'allow_custom' => 0,
-					'save_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
 					'return_format' => 'value',
+					'save_custom' => 0,
 				),
 				array(
 					'key' => 'field_5f0e2a89b8fd4',
@@ -2364,11 +2371,11 @@ acf_add_local_field_group(array(
 					'name' => 'what_kind_of_tools_and_methods_does_your_organisation_tend_to_use_on_a_regular_basis',
 					'type' => 'checkbox',
 					'instructions' => 'Select all that apply.',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
-						'class' => '',
+						'class' => 'two-cols-checkbox',
 						'id' => '',
 					),
 					'display_order' => '',
@@ -2392,11 +2399,11 @@ acf_add_local_field_group(array(
 						'ant-1-quat' => 'Scenario modelling',
 					),
 					'allow_custom' => 0,
-					'save_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
 					'return_format' => 'value',
+					'save_custom' => 0,
 				),
 				array(
 					'key' => 'field_5f0e2a89b8fd5',
@@ -2404,7 +2411,7 @@ acf_add_local_field_group(array(
 					'name' => 'how_does_your_organisation_engage_with_technology',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -2416,9 +2423,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2a89b8fd6',
@@ -2730,9 +2734,9 @@ acf_add_local_field_group(array(
 					'display_order' => '',
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-6" class="button">Back</a>
+		<a href="#pat-step-7" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-8" class="button">Next</a>
+		<a href="#pat-step-9" class="button">Next</a>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -2741,7 +2745,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5ef9c00aaab62',
-			'label' => 'Portfolio management questions 1',
+			'label' => 'Portfolio management questions',
 			'name' => 'portfolio_management_questions_1',
 			'type' => 'group',
 			'instructions' => '',
@@ -2749,8 +2753,8 @@ acf_add_local_field_group(array(
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-8',
+				'class' => 'pat-step',
+				'id' => 'pat-step-9',
 			),
 			'display_order' => '',
 			'acfe_permissions' => '',
@@ -2979,56 +2983,12 @@ acf_add_local_field_group(array(
 					'save_other_choice' => 0,
 				),
 				array(
-					'key' => 'field_5f0ee144d5fc6',
-					'label' => 'Step nav',
-					'name' => '',
-					'type' => 'message',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '',
-						'class' => 'pat-step-nav-container',
-						'id' => '',
-					),
-					'display_order' => '',
-					'acfe_permissions' => '',
-					'message' => '<div class="pat-step-nav-wrapper">
-		<a href="#pat-step-7" class="button">Back</a>
-		<button class="button saveform" title="Save">Save</button>
-		<a href="#pat-step-9" class="button">Next</a>
-</div>',
-					'new_lines' => 'wpautop',
-					'esc_html' => 0,
-				),
-			),
-		),
-		array(
-			'key' => 'field_5f0e2dc0b3730',
-			'label' => 'Portfolio management questions 2',
-			'name' => 'portfolio_management_questions_2',
-			'type' => 'group',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => 'pat-step-9',
-			),
-			'display_order' => '',
-			'acfe_permissions' => '',
-			'layout' => 'block',
-			'acfe_seamless_style' => 0,
-			'acfe_group_modal' => 0,
-			'sub_fields' => array(
-				array(
 					'key' => 'field_5f0e2dc0b3739',
 					'label' => 'Question 21. My	organisation analyses the impact of all innovation projects at the same time and as a whole',
 					'name' => 'my _organisation_analyses_the_impact_of_all_innovation_projects_at_the_same_time_and_as_a_whole',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -3138,7 +3098,7 @@ acf_add_local_field_group(array(
 					'name' => 'in_my_organisation',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -3150,9 +3110,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2dc0b373e',
@@ -3367,7 +3324,7 @@ acf_add_local_field_group(array(
 					'name' => 'do_the_following_describe_how_projects_and_initiatives_are_funded_in_your_organisation',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -3379,9 +3336,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2dc0b3746',
@@ -3567,7 +3521,7 @@ acf_add_local_field_group(array(
 					'name' => 'in_my_organisation_2',
 					'type' => 'group',
 					'instructions' => '',
-					'required' => 0,
+					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
@@ -3579,9 +3533,6 @@ acf_add_local_field_group(array(
 					'layout' => 'block',
 					'acfe_seamless_style' => 0,
 					'acfe_group_modal' => 0,
-					'acfe_group_modal_close' => 0,
-					'acfe_group_modal_button' => '',
-					'acfe_group_modal_size' => 'large',
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5f0e2dc0b374d',
@@ -3965,7 +3916,7 @@ acf_add_local_field_group(array(
 					),
 				),
 				array(
-					'key' => 'field_5f0ee162d5fc7',
+					'key' => 'field_5f0ee144d5fc6',
 					'label' => 'Step nav',
 					'name' => '',
 					'type' => 'message',
@@ -3981,8 +3932,8 @@ acf_add_local_field_group(array(
 					'acfe_permissions' => '',
 					'message' => '<div class="pat-step-nav-wrapper">
 		<a href="#pat-step-8" class="button">Back</a>
-		<button class="button saveform" title="Save">Save</button>
-		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
+		<button class="button saveform">Save</button>
+		<button class="button submitform" id="submitcasestudy">Submit</button>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,

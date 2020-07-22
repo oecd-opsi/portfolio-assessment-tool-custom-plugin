@@ -10,7 +10,10 @@ stepsID.forEach( item => {
 // For each item in the steps array, add a link to the menu
 for (var k in steps){
   if (typeof steps[k] !== 'function') {
-   jQuery('#acf_pat_steps').append('<li><a href="#' + k + '">' + steps[k] + '</a></li>');
+    var patStepN = k.split('-').slice(-1);
+    var splitLabel = steps[k].split(' - ');
+    var label = ( splitLabel.length > 1 ) ? splitLabel[1] : steps[k];
+    jQuery('#acf_pat_steps').append('<li class="pat-step-nav-' + patStepN + '" data-step="' + patStepN + '"><a href="#' + k + '">' + label + '</a><span class="step-error-signal">!</span></li>');
   }
 }
 
@@ -35,6 +38,12 @@ for (var k in steps){
 // Handle form submission and save
 if (jQuery("#pat-form").length > 0) {
 
+  if ( jQuery( '.updatedalert' ).length > 0 ) {
+		setTimeout(function () {
+			jQuery( '.updatedalert' ).fadeOut();
+		}, 5000);
+	}
+
   // PAT form SUBMIT
   jQuery( '.submitform' ).on( 'click', function(e) {
 
@@ -52,7 +61,6 @@ if (jQuery("#pat-form").length > 0) {
   jQuery( '.saveform' ).on( 'click', function(e) {
 
     e.preventDefault();
-    console.log('save');
     jQuery( '.saveform' ).addClass( 'disabled' );
     jQuery( '.submitform' ).addClass( 'disabled' );
     jQuery('input').removeAttr( 'required' );
@@ -67,53 +75,42 @@ if (jQuery("#pat-form").length > 0) {
 
   acf.add_filter('validation_complete', function( json, $form ){
 
-    // if errors?
-    // if( json.errors ) {
+    setTimeout(function () {
+      if( jQuery( '.acf-notice.acf-error-message' ).length > 0 ) {
 
-      setTimeout(function () {
-        if( jQuery( '.acf-notice.acf-error-message' ).length > 0 ) {
+        jQuery( '.pat-step' ).each( function(index) {
 
+          jQuery( '#acf_pat_steps .pat-step-nav-'+index ).removeClass( 'noerror' );
+          jQuery( '#acf_pat_steps .pat-step-nav-'+index ).removeClass( 'haserror' );
 
-          if (jQuery( '.stepform .formbuttons .acf-spinner' ).length > 0) {
-            jQuery( '.stepform .formbuttons .acf-spinner' ).removeClass( 'is-active' );
+          if ( jQuery( '#pat-step-'+index ).find( '.acf-error' ).length > 0 ) {
+            jQuery( '#acf_pat_steps .pat-step-nav-'+index ).addClass( 'haserror' );
+          } else {
+            jQuery( '#acf_pat_steps .pat-step-nav-'+index ).addClass( 'noerror' );
           }
 
+        });
 
-          jQuery( '.stepgroup' ).each( function(index) {
-
-            console.log(jQuery( '.stepgroup.step-'+index ).find( '.acf-error' ).text());
-
-            jQuery( '.form-step.step_'+index ).removeClass( 'noerror' );
-            jQuery( '.form-step.step_'+index ).removeClass( 'haserror' );
-
-            if ( jQuery( '.stepgroup.step-'+index ).find( '.acf-error' ).length > 0 ) {
-              jQuery( '.form-step.step_'+index ).addClass( 'haserror' );
-            } else {
-              jQuery( '.form-step.step_'+index ).addClass( 'noerror' );
-            }
-
-          });
-
-          // get first step to have error
-          if ( jQuery( '.form-step.haserror' ).length > 0 ) {
-            var thefirstgroup = jQuery( '.form-step.haserror' ).first().attr( 'data-step' );
-            jQuery( '.form-step.step_'+thefirstgroup ).trigger( 'click' );
-            window.location.hash = '#step-'+thefirstgroup;
-          }
-
+        // get first step to have error
+        if ( jQuery( '#acf_pat_steps .haserror' ).length > 0 ) {
+          var thefirstgroup = jQuery( '#acf_pat_steps .haserror' ).first().attr( 'data-step' );
+          jQuery( '#acf_pat_steps .step_'+thefirstgroup ).trigger( 'click' );
+          window.location.hash = '#pat-step-'+thefirstgroup;
         }
 
-      }, 500);
+      }
+
+    }, 500);
 
 
-      jQuery( 'a.saveform' ).removeClass( 'disabled' );
-      jQuery( 'a.submitform' ).removeClass( 'disabled' );
+    jQuery( 'a.saveform' ).removeClass( 'disabled' );
+    jQuery( 'a.submitform' ).removeClass( 'disabled' );
 
 
-      // return
-      return json;
+    // return
+    return json;
 
-    });
+  });
 
 }
 
