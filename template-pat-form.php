@@ -70,7 +70,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 		<button class="button saveform" title="Save">Save</button>
 		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
 	</div>
-	
+
 	<?php
 	// if ( is_active_sidebar( 'sidebar_covid_response_form' ) ) {
 	// 	dynamic_sidebar( 'sidebar_covid_response_form' );
@@ -99,7 +99,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 						'post_content' => true,
 						'post_title'   => true,
 					),
-					'submit_value'       => __( 'Create a new Portfolio Assessment Tool submission', 'opsi' ),
+					'submit_value'       => __( 'Create a new Portfolio Exploration submission', 'opsi' ),
 					'post_id'            => 'new_post',
 					'form'               => true,
 					'uploader'           => 'basic',
@@ -114,7 +114,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 
 					$form_params['post_id'] 		= $_GET['edit'];
 					$form_params['new_post'] 		= false;
-					$form_params['submit_value'] 	= __( 'Save your Portfolio Assessment Tool questionnaire', 'opsi' );
+					$form_params['submit_value'] 	= __( 'Save your Portfolio Exploration questionnaire', 'opsi' );
 
 				}
 

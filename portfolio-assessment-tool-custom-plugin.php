@@ -164,7 +164,7 @@ function opsi_acf_save_post_pat( $post_id ) {
 
 	$content = array(
 		'ID' => $post_id,
-		'post_title' => 'Submission of ' . date("Y-m-d") ,
+		'post_title' => 'Portfolio Snapshot on ' . date("Y-m-d") ,
 		'post_content' => ''
 	);
 
@@ -356,7 +356,7 @@ function bp_pat_list() {
 						if ( get_post_status( get_the_ID() ) == 'publish' ) {
 							$post_url = get_permalink();
 						} else {
-							$post_url = site_url( '/portfolio-assessment-tool-form/?edit=' . get_the_ID() );
+							$post_url = site_url( '/portfolio-exploration/?edit=' . get_the_ID() );
 						}
 					?>
 					<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>">
@@ -365,7 +365,11 @@ function bp_pat_list() {
 				</td>
 				<td>
 					<?php
-						echo $post_status_obj->label;
+					if ( $post_status_obj->label == 'Published' ) {
+						echo 'Complete';
+					} else {
+						echo $post_status_obj->label;						
+					}
 					?>
 				</td>
 				<td>
