@@ -188,6 +188,11 @@ window.addEventListener( 'hashchange', function(e){
           if ( direction == 'down' ) {
             $('.pat-results-top-nav').addClass('show');
           }
+        },
+        exit: function(direction) {
+          // if ( direction == 'down' ) {
+            $('.pat-results-side .pat-results-nav-menu').toggleClass('fixed');
+          // }
         }
       });
       var pmcInview = new Waypoint.Inview({

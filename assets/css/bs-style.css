@@ -596,6 +596,14 @@ div[id^="pat-step-"].active-pat-step {
 .pat-results-nav-menu {
   list-style: none;
   padding: 0;
+  transition: top .4s ease-in-out;
+  top: 0;
+}
+
+.pat-results-nav-menu.fixed {
+  max-width: 242px;
+  position: fixed;
+  top: 38px;
 }
 
 .pat-results-nav-menu li a {
@@ -734,6 +742,7 @@ div[id^="pat-step-"].active-pat-step {
   background: #04384D;
   box-shadow: -600px 0 0 0 #04384D, 600px 0 0 0 #04384D;
   color: #fff;
+  position: relative;
 }
 
 .pat-results-fullwidth-section .pat-results-row:first-child .pat-results-content {
