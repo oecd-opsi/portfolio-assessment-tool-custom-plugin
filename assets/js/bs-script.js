@@ -13,6 +13,7 @@ for (var k in steps){
     var patStepN = k.split('-').slice(-1);
     var splitLabel = steps[k].split(' - ');
     var label = ( splitLabel.length > 1 ) ? splitLabel[1] : steps[k];
+    label = label.replace( 'About your organisation', 'Get started' );
     jQuery('#acf_pat_steps').append('<li class="pat-step-nav-' + patStepN + '" data-step="' + patStepN + '"><a href="#' + k + '">' + label + '</a><span class="step-error-signal">!</span></li>');
   }
 }
@@ -52,6 +53,7 @@ if (jQuery("#pat-form").length > 0) {
     jQuery( '.submitform' ).addClass( 'disabled' );
     jQuery( '#csf_action' ).val( 'submit' );
     jQuery ( '.acf-form-submit input.acf-button' ).trigger( 'click' );
+    jQuery( '.acf-spinner').addClass('is-active');
 
     return false;
 
@@ -67,6 +69,7 @@ if (jQuery("#pat-form").length > 0) {
     jQuery('textarea').removeAttr( 'required' );
     jQuery( '#csf_action' ).val( 'save' );
     jQuery ( '.acf-form-submit input.acf-button' ).trigger( 'click' );
+    jQuery( '.acf-spinner').addClass('is-active');
 
     return false;
 
@@ -78,8 +81,9 @@ if (jQuery("#pat-form").length > 0) {
     setTimeout(function () {
       if( jQuery( '.acf-notice.acf-error-message' ).length > 0 ) {
 
-        jQuery( '.pat-step' ).each( function(index) {
+        jQuery( '.pat-step' ).each( function(i) {
 
+          var index = i + 1;
           jQuery( '#acf_pat_steps .pat-step-nav-'+index ).removeClass( 'noerror' );
           jQuery( '#acf_pat_steps .pat-step-nav-'+index ).removeClass( 'haserror' );
 
@@ -156,16 +160,21 @@ function showPatStep( newID ) {
   });
 })(jQuery);
 
+
 // listen to URL hash change
 window.addEventListener( 'hashchange', function(e){
 
-  // hide all steps
-  steps.forEach( step => step.classList.add('hide-pat-step') );
+  if ( document.querySelector('.pat-form-main') ) {
 
-  // display new step
-  let newStepN = window.location.hash.replace( /^\D+/g, '');
-  showPatStep( newStepN );
-  document.documentElement.scrollTop = 0;
+    // hide all steps
+    steps.forEach( step => step.classList.add('hide-pat-step') );
+
+    // display new step
+    let newStepN = window.location.hash.replace( /^\D+/g, '');
+    showPatStep( newStepN );
+    document.documentElement.scrollTop = 0;
+
+  }
 
 });
 

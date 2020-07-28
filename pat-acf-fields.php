@@ -3,7 +3,7 @@
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
-	'key' => 'group_5f0e29adb066c',
+	'key' => 'group_5f084469b45f2',
 	'title' => 'Portfolio Assessment Tool',
 	'fields' => array(
 		array(
@@ -27,7 +27,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5f18466d9460b',
-			'label' => 'Landing page',
+			'label' => 'Home',
 			'name' => '',
 			'type' => 'message',
 			'instructions' => '',
@@ -130,7 +130,7 @@ acf_add_local_field_group(array(
 					'placeholder' => '',
 					'prepend' => '',
 					'append' => '',
-					'min' => '',
+					'min' => 1,
 					'max' => '',
 					'step' => '',
 				),
@@ -189,6 +189,7 @@ acf_add_local_field_group(array(
 					'message' => '<div class="pat-step-nav-wrapper">
 	<button class="button saveform" title="Save">Save</button>
 	<a href="#pat-step-3" class="button">Next</a>
+<span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -327,7 +328,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -356,7 +357,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -385,7 +386,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -414,7 +415,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -454,7 +455,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 2. What does the leadership of my organisation tend to prefer or promote?',
 					'name' => 'what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence with 1 = Most important; 4 = Least important.',
+					'instructions' => 'By dragging and dropping, rank in order of prominence.',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -613,7 +614,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5ef5ff708dce3',
-							'label' => 'Focussing on precise milestones, deadlines, and outputs',
+							'label' => 'Focusing on precise milestones, deadlines, and outputs',
 							'name' => 'enh_focussing_on_precise_milestones_deadlines_and_outputs',
 							'type' => 'radio',
 							'instructions' => '',
@@ -637,7 +638,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -666,7 +667,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -695,7 +696,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -724,7 +725,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -834,7 +835,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -863,7 +864,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -892,7 +893,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -921,7 +922,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -975,6 +976,7 @@ acf_add_local_field_group(array(
 		<a href="#pat-step-4" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
 		<a href="#pat-step-6" class="button">Next</a>
+<span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -1005,7 +1007,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 5. What is most difficult to get done in your organisation?',
 					'name' => 'what_is_most_difficult_to_get_done_in_your_organisation',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence with 1 = Most difficult; 4 = Least difficult',
+					'instructions' => 'By dragging and dropping, rank in order of prominence.',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -1186,10 +1188,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e299dcf898',
@@ -1215,10 +1217,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e299dcf899',
@@ -1244,10 +1246,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e299dcf89a',
@@ -1273,10 +1275,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e299dcf89b',
@@ -1302,10 +1304,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e299dcf89c',
@@ -1331,10 +1333,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0ee258409d0',
@@ -1443,7 +1445,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -1472,7 +1474,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -1501,7 +1503,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -1530,7 +1532,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -1570,7 +1572,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 8. Which negative news, articles or external reports would get the most attention inside the organisation?',
 					'name' => 'which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence with 1 = Most difficult; 4 = Least difficult',
+					'instructions' => 'By dragging and dropping, rank in order of prominence.',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -1586,7 +1588,7 @@ acf_add_local_field_group(array(
 					'sub_fields' => array(
 						array(
 							'key' => 'field_5ef61a2093726',
-							'label' => 'The organisation or its leader fails to deliver on a stated outcom',
+							'label' => 'The organisation or its leader fails to deliver on a stated outcome',
 							'name' => 'mis_the_organisation_or_its_leader_fails_to_deliver_on_a_stated outcom',
 							'type' => 'number',
 							'instructions' => '',
@@ -1609,7 +1611,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5ef61a619372a',
-							'label' => 'Embarrassing news about money waste',
+							'label' => 'Embarrassing news about money wasted',
 							'name' => 'enh_embarrassing_news_about_money_waste',
 							'type' => 'number',
 							'instructions' => '',
@@ -1697,6 +1699,7 @@ acf_add_local_field_group(array(
 		<a href="#pat-step-5" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
 		<a href="#pat-step-7" class="button">Next</a>
+<span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -1705,7 +1708,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5f0e2a35f9ad8',
-			'label' => 'Facet Orientation Questions - Incentives & Horizons',
+			'label' => 'Facet Orientation Questions - Inclinations & Horizons',
 			'name' => 'facet_orientation_questions_3',
 			'type' => 'group',
 			'instructions' => '',
@@ -1795,10 +1798,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b06',
@@ -1824,10 +1827,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b07',
@@ -1853,10 +1856,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b08',
@@ -1882,10 +1885,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b09',
@@ -1939,12 +1942,13 @@ acf_add_local_field_group(array(
 						'ada-4' => 'Testing spaces for new ideas',
 						'ant-4' => 'Exploratory experimentation and research',
 						'enh-4' => 'Process optimisation and digitisation',
+						'mis-0' => 'None of these',
 					),
 					'allow_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_custom' => 0,
 				),
 				array(
@@ -2020,10 +2024,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b0e',
@@ -2049,10 +2053,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b0f',
@@ -2078,10 +2082,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b10',
@@ -2107,10 +2111,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a36f9b11',
@@ -2149,7 +2153,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 12. Which time horizons does your organisation tend to work with?',
 					'name' => 'which_time_horizons_does_your_organisation_tend_to_work_with',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence with 1 = Most difficult; 4 = Least difficult',
+					'instructions' => 'By dragging and dropping, rank in order of prominence.',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -2276,6 +2280,7 @@ acf_add_local_field_group(array(
 		<a href="#pat-step-6" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
 		<a href="#pat-step-8" class="button">Next</a>
+<span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -2325,12 +2330,13 @@ acf_add_local_field_group(array(
 						'enh-2-bis' => 'Behavioural data such as user experience analysis, data from behavioural insights',
 						'ant-2' => 'Signals and pattern data, such as outlier data, trend extrapolation, narrative/scenario data',
 						'ant-2-bis' => 'Case study data, especially from extreme, emergent, or anomalous cases',
+						'mis-0' => 'None of these',
 					),
 					'allow_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_custom' => 0,
 				),
 				array(
@@ -2357,12 +2363,13 @@ acf_add_local_field_group(array(
 						'ada-2-bis' => 'Real-time development of projects, responsiveness to new insights, and fit to need',
 						'ant-2' => 'Near-misses, assessments of new technological potential, future effects of current crises',
 						'ant-2-bis' => 'Cost of not following options/being surprised or risks of doing nothing',
+						'mis-0' => 'None of these',
 					),
 					'allow_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_custom' => 0,
 				),
 				array(
@@ -2397,12 +2404,13 @@ acf_add_local_field_group(array(
 						'ant-1-bis' => 'Strategic foresight, futures thinking',
 						'ant-1-ter' => 'Sandboxes',
 						'ant-1-quat' => 'Scenario modelling',
+						'mis-0' => 'None of these',
 					),
 					'allow_custom' => 0,
 					'default_value' => false,
 					'layout' => 'vertical',
 					'toggle' => 0,
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_custom' => 0,
 				),
 				array(
@@ -2456,7 +2464,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5f0e2a89b8fd7',
-							'label' => 'The organisations looks for technology options that could make existing practises more efficient',
+							'label' => 'The organisation looks for technology options that could make existing practises more efficient',
 							'name' => 'enh_the_organisations_looks_for_technology_options_that_could_make_existing_practises_more_efficient',
 							'type' => 'radio',
 							'instructions' => '',
@@ -2478,10 +2486,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a89b8fd8',
@@ -2507,10 +2515,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a89b8fd9',
@@ -2519,7 +2527,7 @@ acf_add_local_field_group(array(
 							'type' => 'radio',
 							'instructions' => '',
 							'required' => 1,
-							'conditional_logic' => 0,
+							'conditional_logic' => false,
 							'wrapper' => array(
 								'width' => '',
 								'class' => '',
@@ -2536,10 +2544,10 @@ acf_add_local_field_group(array(
 							),
 							'allow_null' => 1,
 							'other_choice' => 0,
-							'save_other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
+							'save_other_choice' => 0,
 						),
 						array(
 							'key' => 'field_5f0e2a89b8fda',
@@ -2737,6 +2745,7 @@ acf_add_local_field_group(array(
 		<a href="#pat-step-7" class="button">Back</a>
 		<button class="button saveform" title="Save">Save</button>
 		<a href="#pat-step-9" class="button">Next</a>
+<span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -3934,6 +3943,7 @@ acf_add_local_field_group(array(
 		<a href="#pat-step-8" class="button">Back</a>
 		<button class="button saveform">Save</button>
 		<button class="button submitform" id="submitcasestudy">Submit</button>
+<span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
 					'esc_html' => 0,
@@ -3946,7 +3956,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'pat_submission',
+				'value' => 'post',
 			),
 		),
 	),
@@ -3960,7 +3970,7 @@ acf_add_local_field_group(array(
 	'description' => '',
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
-		0 => 'php',
+		0 => 'json',
 	),
 	'acfe_permissions' => '',
 	'acfe_form' => 0,

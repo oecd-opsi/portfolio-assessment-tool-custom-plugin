@@ -571,3 +571,17 @@ function ColorHSLToRGB($h, $s, $l){
   $b = ($b < 15)? '0' . dechex($b) : dechex($b);
 	return "#$r$g$b";
 }
+
+// Array to csv function (ref: https://stackoverflow.com/questions/16251625/how-to-create-and-download-a-csv-file-from-php-script)
+function bs_array_to_csv_download($array, $filename = "results.csv", $delimiter=";") {
+  header('Content-Type: application/csv');
+  header('Content-Disposition: attachment; filename="'.$filename.'";');
+
+  // open the "output" stream
+  // see http://www.php.net/manual/en/wrappers.php.php#refsect2-wrappers.php-unknown-unknown-unknown-descriptioq
+  $f = fopen('php://output', 'w');
+
+  foreach ($array as $line) {
+    fputcsv($f, $line, $delimiter);
+  }
+}

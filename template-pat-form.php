@@ -69,6 +69,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 	<div class="save-submit-wrapper">
 		<button class="button saveform" title="Save">Save</button>
 		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
+		<span class="acf-spinner"></span>
 	</div>
 
 	<?php
@@ -78,7 +79,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 	?>
 </div>
 
-<div class="col-sm-9 dont-col-sm-pull--3">
+<div class="col-sm-9 dont-col-sm-pull--3 pat-form-main">
 
 	<?php while ( have_posts() ) : the_post();
 		$postid = get_the_ID(); ?>

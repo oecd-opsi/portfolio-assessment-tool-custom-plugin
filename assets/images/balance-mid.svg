@@ -1,24 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="740.863" height="69" viewBox="0 0 740.863 69">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="740.864" height="107.979" viewBox="0 0 740.864 107.979">
   <defs>
     <linearGradient id="linear-gradient" x1="0.658" y1="1" x2="0.67" y2="1" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#4c1659"/>
       <stop offset="0.493" stop-color="#9330ab"/>
       <stop offset="1" stop-color="#dc4aff"/>
     </linearGradient>
-    <filter id="Tracciato_132" x="0" y="0" width="740.863" height="69" filterUnits="userSpaceOnUse">
+    <filter id="Tracciato_132" x="0" y="19.489" width="740.864" height="69" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
+    <filter id="Tracciato_133" x="335.489" y="0" width="69" height="41.979" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracciato_133-2" x="335.489" y="66" width="69" height="41.979" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
   </defs>
-  <g id="Raggruppa_79" data-name="Raggruppa 79" transform="translate(-4999.021 -5375)">
-    <g transform="matrix(1, 0, 0, 1, 4999.02, 5375)" filter="url(#Tracciato_132)">
-      <path id="Tracciato_132-2" data-name="Tracciato 132" d="M0,0H678l20.885,25.873L678,51H0L-23.979,25.873Z" transform="translate(32.98 6)" fill="url(#linear-gradient)"/>
+  <g id="Raggruppa_83" data-name="Raggruppa 83" transform="translate(-5726 -5358.511)">
+    <g id="Raggruppa_79" data-name="Raggruppa 79" transform="translate(726.979 3)">
+      <g transform="matrix(1, 0, 0, 1, 4999.02, 5355.51)" filter="url(#Tracciato_132)">
+        <path id="Tracciato_132-2" data-name="Tracciato 132" d="M0,0H678l20.885,25.873L678,51H0L-23.979,25.873Z" transform="translate(32.98 25.49)" fill="url(#linear-gradient)"/>
+      </g>
+      <text id="LOW" transform="translate(5057.5 5416)" fill="#fff" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">LOW</tspan></text>
+      <text id="MEDIUM" transform="translate(5294.875 5418)" fill="#fff" font-size="32" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">MEDIUM</tspan></text>
+      <text id="HIGH" transform="translate(5619.574 5414)" fill="#fff" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">HIGH</tspan></text>
     </g>
-    <text id="LOW" transform="translate(5057.5 5416)" fill="#fff" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">LOW</tspan></text>
-    <text id="MEDIUM" transform="translate(5357.5 5418)" fill="#fff" font-size="32" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="-62.625" y="0">MEDIUM</tspan></text>
-    <text id="HIGH" transform="translate(5650.5 5414)" fill="#fff" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="-30.926" y="0">HIGH</tspan></text>
+    <g id="Raggruppa_79-2" data-name="Raggruppa 79" transform="translate(284 296)">
+      <g transform="matrix(1, 0, 0, 1, 5442, 5062.51)" filter="url(#Tracciato_133)">
+        <path id="Tracciato_133-3" data-name="Tracciato 133" d="M0,0V51L-23.979,25.873Z" transform="translate(344.49 6) rotate(-90)" fill="#fff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 5442, 5062.51)" filter="url(#Tracciato_133-2)">
+        <path id="Tracciato_133-4" data-name="Tracciato 133" d="M0,0V51L-23.979,25.873Z" transform="translate(395.49 95.98) rotate(90)" fill="#fff"/>
+      </g>
+    </g>
   </g>
 </svg>
