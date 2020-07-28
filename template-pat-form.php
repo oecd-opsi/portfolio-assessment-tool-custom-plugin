@@ -31,10 +31,6 @@ if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && !can_edit_acf_form
 }
 
 $has_sidebar = 0;
-$layout      = get_post_meta( $post->ID, 'layout', true );
-if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
-	$has_sidebar = 3;
-}
 
 ?>
 
@@ -92,7 +88,7 @@ if ( $layout != 'fullpage' && is_active_sidebar( 'sidebar' ) ) {
 
 				$form_params = array(
 					'id'                 => 'portfolio-assessment-tool-form',
-					'field_groups'       => array( $group->ID ),
+					'field_groups'       => array( 'group_5f084469b45f2' ),
 					'new_post'           => array(
 						'post_type'    => 'pat_submission',
 						'post_status'  => 'draft',
