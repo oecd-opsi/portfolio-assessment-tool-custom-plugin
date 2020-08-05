@@ -197,12 +197,20 @@ window.addEventListener( 'hashchange', function(e){
           if ( direction == 'down' ) {
             $('.pat-results-top-nav').addClass('show');
           }
-        },
-        exit: function(direction) {
-          // if ( direction == 'down' ) {
-            $('.pat-results-side .pat-results-nav-menu').toggleClass('fixed');
-          // }
         }
+      });
+      var heroInview = new Waypoint.Inview({
+        element: $('.pat-results-hero'),
+        exited: function(direction) {
+          if ( direction == 'down' ) {
+            $('.pat-results-side .pat-results-nav-menu').addClass('fixed');
+          }
+        },
+        enter: function(direction) {
+          if ( direction == 'up' ) {
+            $('.pat-results-side .pat-results-nav-menu').removeClass('fixed');
+          }
+        },
       });
       var pmcInview = new Waypoint.Inview({
         element: $('#portfolio-management-capability'),
@@ -216,6 +224,60 @@ window.addEventListener( 'hashchange', function(e){
             $('.pat-results-top-nav').addClass('show');
           }
         },
+      });
+      var enhRowInview = new Waypoint.Inview({
+        element: $('#enh-row'),
+        enter: function(direction) {
+          console.log($(this.element));
+          $('#enh-row .pat-results-side').addClass('show');
+          $('#enh-row .pat-results-content').addClass('show');
+        },
+        offset: 30,
+      });
+      var misRowInview = new Waypoint.Inview({
+        element: $('#mis-row'),
+        enter: function(direction) {
+          console.log($(this.element));
+          $('#mis-row .pat-results-side').addClass('show');
+          $('#mis-row .pat-results-content').addClass('show');
+        },
+        offset: 150,
+      });
+      var adaRowInview = new Waypoint.Inview({
+        element: $('#ada-row'),
+        enter: function(direction) {
+          console.log($(this.element));
+          $('#ada-row .pat-results-side').addClass('show');
+          $('#ada-row .pat-results-content').addClass('show');
+        },
+        offset: 150,
+      });
+      var antRowInview = new Waypoint.Inview({
+        element: $('#ant-row'),
+        enter: function(direction) {
+          console.log($(this.element));
+          $('#ant-row .pat-results-side').addClass('show');
+          $('#ant-row .pat-results-content').addClass('show');
+        },
+        offset: 150,
+      });
+      var tendencyRowInview = new Waypoint.Inview({
+        element: $('#tendency-row'),
+        enter: function(direction) {
+          console.log($(this.element));
+          $('#tendency-row .pat-results-side').addClass('show');
+          $('#tendency-row .pat-results-content').addClass('show');
+        },
+        offset: 150,
+      });
+      var pmgRowInview = new Waypoint.Inview({
+        element: $('#pmg-row'),
+        enter: function(direction) {
+          console.log($(this.element));
+          $('#pmg-row .pat-results-side').addClass('show');
+          $('#pmg-row .pat-results-content').addClass('show');
+        },
+        offset: 150,
       });
 
     }

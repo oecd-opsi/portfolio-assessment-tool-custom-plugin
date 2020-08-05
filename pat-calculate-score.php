@@ -39,98 +39,130 @@ function pat_score( $id ) {
   // If the question is of type checkbox, the value contain the facet reference and the value.
   // The type of the field can be deduced from the value: if the splitted value length is greater than zero, the field is a checkbox.
   foreach ( $fields['facet_orientation_questions_1']['value'] as $answers ) {
-    foreach ( $answers as $key => $value ) {
-      if ( is_array($value) ) {
-        // checkbox or radio
-        $splitted_value = explode( '-', $value['value'] );
-        if ( count($splitted_value) > 1 ) {
-          // here we have a checkbox
-          $facets_ref = $splitted_value[0];
-          $value = $splitted_value[1];
-          $$facets_ref += (float)$value['value'];
+    if( !empty($answers) ) {
+      foreach ( $answers as $key => $value ) {
+        if ( is_array($value) ) {
+          // checkbox or radio
+          $splitted_value = explode( '-', $value['value'] );
+          if ( count($splitted_value) > 1 ) {
+            // here we have a checkbox
+            $facets_ref = $splitted_value[0];
+            $value = $splitted_value[1];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          } else {
+            // here we have a radio input
+            $facets_ref = explode( '_', $key )[0];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          }
+
         } else {
+          // here we have an number input (ranking field)
           // here we have a radio input
           $facets_ref = explode( '_', $key )[0];
-          $$facets_ref += (float)$value['value'];
+          if( !empty($facets_ref) ) {
+            $$facets_ref += (float)$value;
+          }
         }
-
-      } else {
-        // here we have an number input (ranking field)
-        // here we have a radio input
-        $facets_ref = explode( '_', $key )[0];
-        $$facets_ref += (float)$value;
       }
     }
   }
   foreach ( $fields['facet_orientation_questions_2']['value'] as $answers ) {
-    foreach ( $answers as $key => $value ) {
-      if ( is_array($value) ) {
-        // checkbox or radio
-        $splitted_value = explode( '-', $value['value'] );
-        if ( count($splitted_value) > 1 ) {
-          // here we have a checkbox
-          $facets_ref = $splitted_value[0];
-          $value = $splitted_value[1];
-          $$facets_ref += (float)$value['value'];
+    if( !empty($answers)) {
+      foreach ( $answers as $key => $value ) {
+        if ( is_array($value) ) {
+          // checkbox or radio
+          $splitted_value = explode( '-', $value['value'] );
+          if ( count($splitted_value) > 1 ) {
+            // here we have a checkbox
+            $facets_ref = $splitted_value[0];
+            $value = $splitted_value[1];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          } else {
+            // here we have a radio input
+            $facets_ref = explode( '_', $key )[0];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          }
+
         } else {
+          // here we have an number input (ranking field)
           // here we have a radio input
           $facets_ref = explode( '_', $key )[0];
-          $$facets_ref += (float)$value['value'];
+          if( !empty($facets_ref) ) {
+            $$facets_ref += (float)$value;
+          }
         }
-
-      } else {
-        // here we have an number input (ranking field)
-        // here we have a radio input
-        $facets_ref = explode( '_', $key )[0];
-        $$facets_ref += (float)$value;
       }
     }
   }
   foreach ( $fields['facet_orientation_questions_3']['value'] as $answers ) {
-    foreach ( $answers as $key => $value ) {
-      if ( is_array($value) ) {
-        // checkbox or radio
-        $splitted_value = explode( '-', $value['value'] );
-        if ( count($splitted_value) > 1 ) {
-          // here we have a checkbox
-          $facets_ref = $splitted_value[0];
-          $value = $splitted_value[1];
-          $$facets_ref += (float)$value['value'];
+    if( !empty($answers)) {
+      foreach ( $answers as $key => $value ) {
+        if ( is_array($value) ) {
+          // checkbox or radio
+          $splitted_value = explode( '-', $value['value'] );
+          if ( count($splitted_value) > 1 ) {
+            // here we have a checkbox
+            $facets_ref = $splitted_value[0];
+            $value = $splitted_value[1];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          } else {
+            // here we have a radio input
+            $facets_ref = explode( '_', $key )[0];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          }
+
         } else {
+          // here we have an number input (ranking field)
           // here we have a radio input
           $facets_ref = explode( '_', $key )[0];
-          $$facets_ref += (float)$value['value'];
+          if( !empty($facets_ref) ) {
+            $$facets_ref += (float)$value;
+          }
         }
-
-      } else {
-        // here we have an number input (ranking field)
-        // here we have a radio input
-        $facets_ref = explode( '_', $key )[0];
-        $$facets_ref += (float)$value;
       }
     }
   }
   foreach ( $fields['facet_orientation_questions_4']['value'] as $answers ) {
-    foreach ( $answers as $key => $value ) {
-      if ( is_array($value) ) {
-        // checkbox or radio
-        $splitted_value = explode( '-', $value['value'] );
-        if ( count($splitted_value) > 1 ) {
-          // here we have a checkbox
-          $facets_ref = $splitted_value[0];
-          $value = $splitted_value[1];
-          $$facets_ref += (float)$value['value'];
+    if( !empty($answers)) {
+      foreach ( $answers as $key => $value ) {
+        if ( is_array($value) ) {
+          // checkbox or radio
+          $splitted_value = explode( '-', $value['value'] );
+          if ( count($splitted_value) > 1 ) {
+            // here we have a checkbox
+            $facets_ref = $splitted_value[0];
+            $value = $splitted_value[1];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          } else {
+            // here we have a radio input
+            $facets_ref = explode( '_', $key )[0];
+            if( isset($value['value']) && !empty($facets_ref) ) {
+              $$facets_ref += (float)$value['value'];
+            }
+          }
+
         } else {
+          // here we have an number input (ranking field)
           // here we have a radio input
           $facets_ref = explode( '_', $key )[0];
-          $$facets_ref += (float)$value['value'];
+          if( !empty($facets_ref) ) {
+            $$facets_ref += (float)$value;
+          }
         }
-
-      } else {
-        // here we have an number input (ranking field)
-        // here we have a radio input
-        $facets_ref = explode( '_', $key )[0];
-        $$facets_ref += (float)$value;
       }
     }
   }

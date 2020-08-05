@@ -41,12 +41,22 @@
       <!--<li><a href="#combined-results">Combined Results</a></li>-->
       <li><a href="#download-and-share">Download and Share Results</a></li>
       <li><a href="#interpretation">Interpretation and Next Steps</a></li>
-      <li class="nav-share-item"><a href="#"><span>Share Results</span></a></li>
+      <li class="nav-share-item">
+      <!-- AddToAny BEGIN -->
+      <a class="a2a_dd" href="https://www.addtoany.com/share">Share Results</a>
+      <script>
+      var a2a_config = a2a_config || {};
+      a2a_config.onclick = 1;
+      </script>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+      <!-- AddToAny END -->
+      </li>
       <li class="nav-start-again-item"><a href="#">Start again</a></li>
     </ul>
   ';
 
 ?>
+
 	<div class="row">
 		<div class="col-sm-12">
 			<article id="post-<?php the_ID(); ?>" <?php post_class('pat-results'); ?>>
@@ -95,15 +105,15 @@
               <section id="organisational-portfolio-balance" class="pat-results-fullwidth-section">
 
                 <div class="pat-results-row">
-                  <div class="pat-results-side"></div>
-                  <div class="pat-results-content">
+                  <div class="pat-results-side show"></div>
+                  <div class="pat-results-content show">
 
                     <h2 class="section-title">Innovation portfolio balance of <strong><?php echo $organisation ?></strong></h2>
 
                   </div>
                 </div>
 
-                <div class="pat-results-row enh-row">
+                <div id="enh-row" class="pat-results-row">
                   <div class="pat-results-side">
                     <p class="fw-section-side-title">Enhancement-oriented innovation</p>
                     <div class="side-small-diamond-img">
@@ -125,7 +135,7 @@
                   </div>
                 </div>
 
-                <div class="pat-results-row mis-row">
+                <div id="mis-row" class="pat-results-row">
 
                   <div class="pat-results-side">
                     <p class="fw-section-side-title">Mission-oriented innovation</p>
@@ -145,7 +155,7 @@
 
                 </div>
 
-                <div class="pat-results-row ada-row">
+                <div id="ada-row" class="pat-results-row">
 
                   <div class="pat-results-side">
                     <p class="fw-section-side-title">Adaptive-oriented innovation</p>
@@ -166,7 +176,7 @@
 
                 </div>
 
-                <div class="pat-results-row ant-row">
+                <div id="ant-row" class="pat-results-row">
 
                   <div class="pat-results-side">
                     <p class="fw-section-side-title">Anticipatory-oriented innovation</p>
@@ -187,12 +197,12 @@
 
                 </div>
 
-                <div class="pat-results-row tendency-row">
+                <div id="tendency-row" class="pat-results-row">
 
                   <div class="pat-results-side">
                     <p class="fw-section-side-title">Portfolio balance</p>
                     <div class="side-small-diamond-img">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280.16" height="175.45" viewBox="0 0 280.16 175.45"> <defs> <style>.small-diam-1-a{fill: #e6e8f0;}.small-diam-1-b{fill: <?php echo $scores['enh_color'] ?>;}.small-diam-1-c{fill: <?php echo $scores['mis_color'] ?>;}.small-diam-1-d{fill: <?php echo $scores['ada_color'] ?>;}.small-diam-1-e{fill: <?php echo $scores['ant_color'] ?>;}.small-diam-1-f{fill: #fff; font-size: 14px; font-family: Roboto-Medium, Roboto, 'lato', sans-serif; font-weight: 500;}.small-diam-1-g{filter: url(#small-diam-1-g);}.small-diam-1-h{filter: url(#small-diam-1-e);}.small-diam-1-i{filter: url(#small-diam-1-c);}.small-diam-1-j{filter: url(#small-diam-1-a);}</style> <filter id="small-diam-1-a" x="23.125" y="53.648" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="b"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="b"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-c" x="83.727" y="13.556" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="d"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="d"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-e" x="83.727" y="93.284" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="f"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="f"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-g" x="144.785" y="53.648" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="h"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="h"/> <feComposite in="SourceGraphic"/> </filter> </defs> <g transform="translate(-168 -2827.272)"> <path class="small-diam-1-a" d="M2580.007,3419.947l139.943-87,140.218,87L2719.95,3508.4Z" transform="translate(-2412.007 -505.673)"/> <g class="small-diam-1-j" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-b" d="M648.3,1393.587l-52.531,32.132-52.531-32.132L595.773,1361Z" transform="translate(-515.62 -1305.85)"/> </g> <g transform="translate(256.227 2842.328)"> <g class="small-diam-1-i" transform="matrix(1, 0, 0, 1, -88.23, -15.06)"> <path class="small-diam-1-c" d="M770.3,1316.587l-52.531,32.132-52.531-32.132L717.773,1284Z" transform="translate(-577.01 -1268.94)"/> </g> </g> <g class="small-diam-1-h" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-d" d="M770.3,1469.587l-52.531,32.131-52.531-32.131L717.773,1437Z" transform="translate(-577.01 -1342.22)"/> </g> <g class="small-diam-1-g" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-e" d="M893.3,1393.587l-52.531,32.132-52.531-32.132L840.773,1361Z" transform="translate(-638.96 -1305.85)"/> </g><text class="small-diam-1-f" transform="translate(307.832 2878.805)"> <tspan x="-13.098" y="0"><?php echo $mis_percentage ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(309.832 2958.975)"> <tspan x="-13.098" y="0"><?php echo $ada_percentage ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(371.582 2919.667)"> <tspan x="-13.098" y="0"><?php echo $ant_percentage ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(248.082 2917.604)"> <tspan x="-13.098" y="0"><?php echo $scores['enh_percentage'] ?>%</tspan> </text> </g></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="280.16" height="175.45" viewBox="0 0 280.16 175.45"> <defs> <style>.small-diam-1-a{fill: #e6e8f0;}.small-diam-1-b{fill: <?php echo $scores['enh_color'] ?>;}.small-diam-1-c{fill: <?php echo $scores['mis_color'] ?>;}.small-diam-1-d{fill: <?php echo $scores['ada_color'] ?>;}.small-diam-1-e{fill: <?php echo $scores['ant_color'] ?>;}.small-diam-1-f{fill: #fff; font-size: 14px; font-family: Roboto-Medium, Roboto, 'lato', sans-serif; font-weight: 500;}.small-diam-1-g{filter: url(#small-diam-1-g);}.small-diam-1-h{filter: url(#small-diam-1-e);}.small-diam-1-i{filter: url(#small-diam-1-c);}.small-diam-1-j{filter: url(#small-diam-1-a);}</style> <filter id="small-diam-1-a" x="23.125" y="53.648" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="b"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="b"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-c" x="83.727" y="13.556" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="d"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="d"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-e" x="83.727" y="93.284" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="f"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="f"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-g" x="144.785" y="53.648" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="h"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="h"/> <feComposite in="SourceGraphic"/> </filter> </defs> <g transform="translate(-168 -2827.272)"> <path class="small-diam-1-a" d="M2580.007,3419.947l139.943-87,140.218,87L2719.95,3508.4Z" transform="translate(-2412.007 -505.673)"/> <g class="small-diam-1-j" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-b" d="M648.3,1393.587l-52.531,32.132-52.531-32.132L595.773,1361Z" transform="translate(-515.62 -1305.85)"/> </g> <g transform="translate(256.227 2842.328)"> <g class="small-diam-1-i" transform="matrix(1, 0, 0, 1, -88.23, -15.06)"> <path class="small-diam-1-c" d="M770.3,1316.587l-52.531,32.132-52.531-32.132L717.773,1284Z" transform="translate(-577.01 -1268.94)"/> </g> </g> <g class="small-diam-1-h" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-d" d="M770.3,1469.587l-52.531,32.131-52.531-32.131L717.773,1437Z" transform="translate(-577.01 -1342.22)"/> </g> <g class="small-diam-1-g" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-e" d="M893.3,1393.587l-52.531,32.132-52.531-32.132L840.773,1361Z" transform="translate(-638.96 -1305.85)"/> </g><text class="small-diam-1-f" transform="translate(307.832 2878.805)"> <tspan x="-13.098" y="0"><?php echo $scores['mis_percentage'] ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(309.832 2958.975)"> <tspan x="-13.098" y="0"><?php echo $scores['ada_percentage'] ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(371.582 2919.667)"> <tspan x="-13.098" y="0"><?php echo $scores['ant_percentage'] ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(248.082 2917.604)"> <tspan x="-13.098" y="0"><?php echo $scores['enh_percentage'] ?>%</tspan> </text> </g></svg>
                     </div>
                   </div>
 
@@ -214,7 +224,7 @@
 
               <section id="portfolio-management-capability" class="pat-results-fullwidth-section">
 
-                <div class="pat-results-row">
+                <div id="pmg-row" class="pat-results-row">
 
                   <div class="pat-results-side">
                     <p class="fw-section-side-title">Portfolio management Capability</p>
@@ -272,7 +282,11 @@
                 <div class="pat-results-content">
                   <h2>Download and share results</h2>
                   <?php the_field( 'download_and_share_results_text', 'option' ) ?>
-                  <button class="download-pdf">Download PDF</button>
+                  <?php if(function_exists('mpdf_pdfbutton')) {
+                    mpdf_pdfbutton( false, 'Download PDF' );
+                  }
+                  ?>
+                   -
                   <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php" class="download-csv">Download CSV</a>
                 </div>
               </section>
@@ -283,10 +297,6 @@
                   <?php the_field( 'how_you_might_use_these_result_text', 'option' ) ?>
                   <h2>Save, share, and continue to next steps</h2>
                   <?php the_field( 'save_share_and_continue_to_next_steps_text', 'option' ) ?>
-                  <?php if(function_exists('mpdf_pdfbutton')) {
-                    mpdf_pdfbutton();
-                  } else {echo 'nopdfbtn';}
-                  ?>
                   <h2>Contact OPSI for help with interpretation</h2>
                   <?php the_field( ' contact_OPSI_for_help_with_interpretation_text', 'option' ) ?>
                 </div>

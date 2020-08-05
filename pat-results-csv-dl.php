@@ -141,6 +141,11 @@ $args = array(
 	'posts_per_page'         => '-1',
 );
 
+if ( isset($_GET['id']) && !empty($_GET['id']) ) {
+	$post_id = $_GET['id'];
+	$args['p'] = $post_id;
+}
+
 
 // The Query
 $query = new WP_Query( $args );
