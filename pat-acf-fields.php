@@ -2795,7 +2795,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 					'default_value' => '',
 					'layout' => 'vertical',
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_other_choice' => 0,
 				),
 				array(
@@ -2873,7 +2873,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -2902,7 +2902,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -2961,7 +2961,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 					'default_value' => '',
 					'layout' => 'vertical',
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_other_choice' => 0,
 				),
 				array(
@@ -2988,7 +2988,7 @@ acf_add_local_field_group(array(
 					'other_choice' => 0,
 					'default_value' => '',
 					'layout' => 'vertical',
-					'return_format' => 'value',
+					'return_format' => 'array',
 					'save_other_choice' => 0,
 				),
 				array(
@@ -3066,7 +3066,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3176,7 +3176,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3205,7 +3205,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3234,7 +3234,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3263,7 +3263,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3292,7 +3292,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3402,7 +3402,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3431,7 +3431,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3460,7 +3460,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3489,7 +3489,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3599,7 +3599,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3628,7 +3628,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3657,7 +3657,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3686,7 +3686,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3715,7 +3715,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3744,7 +3744,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3773,7 +3773,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3802,7 +3802,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3831,7 +3831,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3860,7 +3860,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3889,7 +3889,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'horizontal',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -3942,7 +3942,7 @@ acf_add_local_field_group(array(
 					'message' => '<div class="pat-step-nav-wrapper">
 		<a href="#pat-step-8" class="button">Back</a>
 		<button class="button saveform">Save</button>
-		<button class="button submitform" id="submitcasestudy">Submit</button>
+		<button class="button submitform" id="submitcasestudy">See results</button>
 <span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',
@@ -3956,7 +3956,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'pat_submission',
+				'value' => 'post',
 			),
 		),
 	),

@@ -42,10 +42,10 @@ function bs_enqueue_files() {
 	wp_enqueue_script( 'waypoint-inview', plugin_dir_url( __FILE__ ) . 'assets/js/inview.min.js', array( 'jquery', 'waypoint-js' ), '', true );
 
 	// loads a CSS file in the head.
-	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(get_stylesheet_directory() . 'assets/css/bs-style.css') );
+	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css') );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(get_stylesheet_directory() . 'assets/js/bs-script.js'), true );
+	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js'), true );
 
 }
 
@@ -572,16 +572,5 @@ function ColorHSLToRGB($h, $s, $l){
 	return "#$r$g$b";
 }
 
-// Array to csv function (ref: https://stackoverflow.com/questions/16251625/how-to-create-and-download-a-csv-file-from-php-script)
-function bs_array_to_csv_download($array, $filename = "results.csv", $delimiter=";") {
-  header('Content-Type: application/csv');
-  header('Content-Disposition: attachment; filename="'.$filename.'";');
-
-  // open the "output" stream
-  // see http://www.php.net/manual/en/wrappers.php.php#refsect2-wrappers.php-unknown-unknown-unknown-descriptioq
-  $f = fopen('php://output', 'w');
-
-  foreach ($array as $line) {
-    fputcsv($f, $line, $delimiter);
-  }
-}
+// Call Calculate score helper functions
+require_once('pat-calculate-score.php');

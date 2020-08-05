@@ -13,6 +13,8 @@
 	global $pdf_html_header;
 	global $pdf_html_footer;
 
+	global $pdf_orientation;
+
 	//Set a pdf template. if both are set the pdfdoc is used. (You didn't need a pdf template)
 	$pdf_template_pdfpage 		= ''; //The filename off the pdf file (you need this for a page template)
 	$pdf_template_pdfpage_page 	= 1;  //The page off this page (you need this for a page template)
@@ -22,83 +24,85 @@
 	$pdf_html_header 			= false; //If this is ture you can write instead of the array a html string on the var $pdf_header
 	$pdf_html_footer 			= false; //If this is ture you can write instead of the array a html string on the var $pdf_footer
 
+	$pdf_orientation = 'L';
+
 	//Set the Footer and the Header
-	$pdf_header = array (
-  		'odd' =>
-  			array (
-    			'R' =>
-   					array (
-						'content' => '{PAGENO}',
-						'font-size' => 8,
-						'font-style' => 'B',
-						'font-family' => 'DejaVuSansCondensed',
-    				),
-    				'line' => 1,
-  				),
-  		'even' =>
-  			array (
-    			'R' =>
-    				array (
-						'content' => '{PAGENO}',
-						'font-size' => 8,
-						'font-style' => 'B',
-						'font-family' => 'DejaVuSansCondensed',
-    				),
-    				'line' => 1,
-  			),
-	);
-	$pdf_footer = array (
-	  	'odd' =>
-	 	 	array (
-	    		'R' =>
-	    			array (
-						'content' => '{DATE d.m.Y}',
-					    'font-size' => 8,
-					    'font-style' => 'BI',
-					    'font-family' => 'DejaVuSansCondensed',
-	    			),
-	    		'C' =>
-	    			array (
-	      				'content' => '- {PAGENO} / {nb} -',
-	      				'font-size' => 8,
-	      				'font-style' => '',
-	      				'font-family' => '',
-	    			),
-	    		'L' =>
-	    			array (
-	      				'content' => get_bloginfo('name'),
-	      				'font-size' => 8,
-	      				'font-style' => 'BI',
-	      				'font-family' => 'DejaVuSansCondensed',
-	    			),
-	    		'line' => 1,
-	  		),
-	  	'even' =>
-			array (
-	    		'R' =>
-	    			array (
-						'content' => '{DATE d.m.Y}',
-					    'font-size' => 8,
-					    'font-style' => 'BI',
-					    'font-family' => 'DejaVuSansCondensed',
-	    			),
-	    		'C' =>
-	    			array (
-	      				'content' => '- {PAGENO} / {nb} -',
-	      				'font-size' => 8,
-	      				'font-style' => '',
-	      				'font-family' => '',
-	    			),
-	    		'L' =>
-	    			array (
-	      				'content' => get_bloginfo('name'),
-	      				'font-size' => 8,
-	      				'font-style' => 'BI',
-	      				'font-family' => 'DejaVuSansCondensed',
-	    			),
-	    		'line' => 1,
-	  		),
-	);
+	// $pdf_header = array (
+  // 		'odd' =>
+  // 			array (
+  //   			'R' =>
+  //  					array (
+	// 					'content' => '{PAGENO}',
+	// 					'font-size' => 8,
+	// 					'font-style' => 'B',
+	// 					'font-family' => 'DejaVuSansCondensed',
+  //   				),
+  //   				'line' => 1,
+  // 				),
+  // 		'even' =>
+  // 			array (
+  //   			'R' =>
+  //   				array (
+	// 					'content' => '{PAGENO}',
+	// 					'font-size' => 8,
+	// 					'font-style' => 'B',
+	// 					'font-family' => 'DejaVuSansCondensed',
+  //   				),
+  //   				'line' => 1,
+  // 			),
+	// );
+	// $pdf_footer = array (
+	//   	'odd' =>
+	//  	 	array (
+	//     		'R' =>
+	//     			array (
+	// 					'content' => '{DATE d.m.Y}',
+	// 				    'font-size' => 8,
+	// 				    'font-style' => 'BI',
+	// 				    'font-family' => 'DejaVuSansCondensed',
+	//     			),
+	//     		'C' =>
+	//     			array (
+	//       				'content' => '- {PAGENO} / {nb} -',
+	//       				'font-size' => 8,
+	//       				'font-style' => '',
+	//       				'font-family' => '',
+	//     			),
+	//     		'L' =>
+	//     			array (
+	//       				'content' => get_bloginfo('name'),
+	//       				'font-size' => 8,
+	//       				'font-style' => 'BI',
+	//       				'font-family' => 'DejaVuSansCondensed',
+	//     			),
+	//     		'line' => 1,
+	//   		),
+	//   	'even' =>
+	// 		array (
+	//     		'R' =>
+	//     			array (
+	// 					'content' => '{DATE d.m.Y}',
+	// 				    'font-size' => 8,
+	// 				    'font-style' => 'BI',
+	// 				    'font-family' => 'DejaVuSansCondensed',
+	//     			),
+	//     		'C' =>
+	//     			array (
+	//       				'content' => '- {PAGENO} / {nb} -',
+	//       				'font-size' => 8,
+	//       				'font-style' => '',
+	//       				'font-family' => '',
+	//     			),
+	//     		'L' =>
+	//     			array (
+	//       				'content' => get_bloginfo('name'),
+	//       				'font-size' => 8,
+	//       				'font-style' => 'BI',
+	//       				'font-family' => 'DejaVuSansCondensed',
+	//     			),
+	//     		'line' => 1,
+	//   		),
+	// );
 
 
 	$pdf_output = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
