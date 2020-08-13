@@ -337,7 +337,7 @@ function bp_pat_list() {
 				<thead>
 					<th><?php echo __( 'Title', 'opsi' ); ?></th>
 					<th><?php echo __( 'Status', 'opsi' ); ?></th>
-					<th class="text-center"><?php echo __( 'Actions', 'opsi' ); ?></th>
+					<th class="text-center" colspan="3"><?php echo __( 'Actions', 'opsi' ); ?></th>
 				</thead>
 				<tbody>
 
@@ -388,6 +388,22 @@ function bp_pat_list() {
 							<?php
 						}
 					?>
+				</td>
+				<td>
+					<?php
+						if ( get_post_status( get_the_ID() ) == 'publish' ) { ?>
+						<a href="/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php?pat_author=<?php echo get_the_author_meta( 'ID' ) ?>&pat_result_id=<?php echo get_the_ID() ?>" title="<?php echo __( 'csv', 'opsi' ); ?>">
+							<i class="fa fa-table" aria-hidden="true"></i>
+						</a>
+					<?php } ?>
+				</td>
+				<td>
+					<?php
+						if ( get_post_status( get_the_ID() ) == 'publish' ) { ?>
+						<a href="<?php echo $post_url ?>?output=pdf" title="<?php echo __( 'pdf', 'opsi' ); ?>" target="_blank">
+							<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+						</a>
+					<?php } ?>
 				</td>
 
 			</tr>

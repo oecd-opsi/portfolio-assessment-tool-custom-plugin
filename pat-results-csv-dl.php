@@ -132,17 +132,22 @@ $csv_array = array(
 	)
 );
 
+$author_id = get_current_user_id();
+if ( isset($_GET['pat_author']) && !empty($_GET['pat_author']) ) {
+	$author_id = $_GET['pat_author'];
+}
+
 // WP_Query arguments
 $args = array(
 	'post_type'              => array( 'pat_submission' ),
 	'post_status'            => array( 'publish' ),
-	'author'                 => get_current_user_id(),
+	'author'                 => $author_id,
 	'nopaging'               => true,
 	'posts_per_page'         => '-1',
 );
 
-if ( isset($_GET['id']) && !empty($_GET['id']) ) {
-	$post_id = $_GET['id'];
+if ( isset($_GET['pat_result_id']) && !empty($_GET['pat_result_id']) ) {
+	$post_id = $_GET['pat_result_id'];
 	$args['p'] = $post_id;
 }
 

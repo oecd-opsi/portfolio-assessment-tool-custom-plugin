@@ -290,7 +290,7 @@
                   }
                   ?>
                    -
-                  <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php" class="download-csv">Download CSV</a>
+                  <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>" class="download-csv">Download CSV</a>
                 </div>
               </section>
 
