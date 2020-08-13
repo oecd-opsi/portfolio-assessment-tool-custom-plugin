@@ -103,8 +103,65 @@ function pat_submission_post_type() {
 	);
 	register_post_type( 'pat_submission', $args );
 
+	register_post_status( 'draft_module2', array(
+		'label'                     => _x( 'Draft of Module 2', 'opsi' ),
+		'public'                    => true,
+		'exclude_from_search'       => false,
+		'show_in_admin_all_list'    => true,
+		'show_in_admin_status_list' => true,
+		'label_count'               => _n_noop( 'Draft of Module 2 <span class="count">(%s)</span>', 'Draft of Module 2 <span class="count">(%s)</span>' ),
+	) );
+
+	register_post_status( 'publish_module2', array(
+		'label'                     => _x( 'Published with Module 2', 'opsi' ),
+		'public'                    => true,
+		'exclude_from_search'       => false,
+		'show_in_admin_all_list'    => true,
+		'show_in_admin_status_list' => true,
+		'label_count'               => _n_noop( 'Published with Module 2 <span class="count">(%s)</span>', 'Published with Module 2 <span class="count">(%s)</span>' ),
+	) );
+
 }
 add_action( 'init', 'pat_submission_post_type', 0 );
+
+add_action( 'admin_footer-post-new.php', 'opsi_pat_append_post_status_list' );
+add_action( 'admin_footer-post.php', 'opsi_pat_append_post_status_list' );
+function opsi_pat_append_post_status_list() {
+	global $post;
+	$complete = '';
+	$label    = '';
+	if ( $post->post_type == 'pat_submission' ) {
+
+		$complete = '';
+		if ( $post->post_status == 'draft_module2' ) {
+			$complete = ' selected=\'selected\'';
+			$label    = '<span id="post-status-display"> ' . __( 'Draft of Module 2', 'opsi' ) . '</span>';
+		}
+		echo '
+		  <script>
+		  jQuery(document).ready(function($){
+			   $("select#post_status").append("<option value=\'draft_module2\' ' . $complete . '>' . __( 'Draft of Module 2', 'opsi' ) . '</option>");
+			   $(".misc-pub-section label").append("' . $label . '");
+		  });
+		  </script>
+		  ';
+
+		$complete = '';
+		if ( $post->post_status == 'publish_module2' ) {
+			$complete = ' selected=\'selected\'';
+			$label    = '<span id="post-status-display"> ' . __( 'Published with Module 2', 'opsi' ) . '</span>';
+		}
+		echo '
+		  <script>
+		  jQuery(document).ready(function($){
+			   $("select#post_status").append("<option value=\'publish_module2\' ' . $complete . '>' . __( 'Published with Module 2', 'opsi' ) . '</option>");
+			   $(".misc-pub-section label").append("' . $label . '");
+		  });
+		  </script>
+		  ';
+
+	}
+}
 
 // Call ACF fields registration
 require_once('pat-acf-fields.php');
@@ -168,8 +225,18 @@ function opsi_acf_save_post_pat( $post_id ) {
 		'post_content' => ''
 	);
 
+	$post_status = get_post_status_object( get_post_status( $post_id ) );
+	$status_slug = $post_status->name;
+	if( $status_slug == 'draft_module2' ) {
+		$content['post_status'] = 'draft_module2';
+	}
+
 	if ( isset( $_POST['csf_action'] ) && $_POST['csf_action'] == 'submit' ) {
-		$content['post_status'] = 'publish';
+		if( $status_slug == 'draft_module2' ) {
+			$content['post_status'] = 'publish_module2';
+		} else {
+			$content['post_status'] = 'publish';			
+		}
 	}
 
 	wp_update_post($content);
@@ -489,6 +556,19 @@ function bs_start_page_content_module_one ( $field ) {
 }
 add_filter( 'acf/load_field/key=field_5f1319b50547d', 'bs_start_page_content_module_one' );
 
+// Start page for Module 2
+function bs_start_page_content_module_two ( $field ) {
+
+	$start_page_content = get_field( 'start_module_2_text', 'option' );
+
+	if ( !is_admin() && !empty( $start_page_content ) ) {
+		$field['message'] 	= $start_page_content;
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/key=field_5f34dab33fac9', 'bs_start_page_content_module_two' );
+
 
 // Autopopulate Submission date field on Portfolio Assessment Tool submission
 add_action( 'draft_to_publish', 'bs_pat_submission_date' );
@@ -590,3 +670,41 @@ function ColorHSLToRGB($h, $s, $l){
 
 // Call Calculate score helper functions
 require_once('pat-calculate-score.php');
+
+// Helper function to know if the user can edit the PAT form
+function can_edit_pat_form(
+	$post_id = 0,
+	$user_id = 0,
+	$allowed_statuses = array(
+												'draft',
+												'publish',
+												'draft_module2'
+											)
+	) {
+
+	if ( intval( $user_id ) == 0 && get_current_user_id() > 0 ) {
+		$user_id = get_current_user_id();
+	}
+
+	if ( intval( $post_id ) == 0 ) {
+		global $post;
+
+		if ( ! empty( $post ) ) {
+			$post_id = $post->ID;
+		}
+	}
+
+
+	if ( intval( $post_id ) > 0 && intval( $user_id ) > 0 ) {
+
+		$post_author = get_post_field( 'post_author', $post_id );
+		$post_status = get_post_field( 'post_status', $post_id );
+
+		if ( intval( $post_author ) == $user_id && ( in_array( $post_status, $allowed_statuses ) || $allowed_statuses[0] == 'any' ) ) {
+			return true;
+		}
+
+	}
+
+	return false;
+}

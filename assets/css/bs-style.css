@@ -924,3 +924,10 @@ div[id^="pat-step-"].active-pat-step {
   text-align: center;
   margin-bottom: 24px;
 }
+
+.acf-field-5f34dc52a2fab .acf-row-handle {
+  display: none;
+}
+.acf-field-5f34dc52a2fab .acf-row > .acf-fields {
+  border-right-width: 1px;
+}

@@ -9,8 +9,34 @@ get_header();
 
 global $post, $bp;
 
+// Hide Module field based on status
+$post_status = get_post_status_object( get_post_status( $_GET['edit'] ) );
+$status_slug = $post_status->name;
+if( $status_slug == 'draft_module2' ) {
+	// Hide module 1
+	function bs_pat_form_hide_module_1($field) {
+	  return;
+	}
+	add_filter('acf/prepare_field/key=field_5f18466d9460b', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5ef5dc662a113', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5f0dc4946fd8f', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5f1319b50547d', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5ef5dd3b010b3', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5f0e299dcf875', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5f0e2a35f9ad8', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5f0e2a89b8f93', 'bs_pat_form_hide_module_1', 20);
+	add_filter('acf/prepare_field/key=field_5ef9c00aaab62', 'bs_pat_form_hide_module_1', 20);
+} else {
+	// Hide module 2
+	function bs_pat_form_hide_module_2($field) {
+	  return;
+	}
+	add_filter('acf/prepare_field/key=field_5f34dab33fac9', 'bs_pat_form_hide_module_2', 20);
+	add_filter('acf/prepare_field/key=field_5f2ba081cdbe3', 'bs_pat_form_hide_module_2', 20);
+}
+
 // Check edit parameter in URL
-if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && !can_edit_acf_form( intval( $_GET['edit'] ) ) ) {
+if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && !can_edit_pat_form( intval( $_GET['edit'] ) ) ) {
 	?>
 	<div class="col-sm-12">
 		<div class="alert alert-warning text-center">
@@ -19,15 +45,23 @@ if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && !can_edit_acf_form
 		<?php // TODO: edit this message, probably no need to say that user can edit contacting the staff, but more useful to say that user can submit a new questionnaire ?>
 
 		<br />
-		<a href="<?php echo $bp->loggedin_user->domain . 'innovations/'; ?>" title="<?php echo __( 'Back', 'opsi' ); ?>" class="button btn btn-default flipicon">
+		<a href="<?php echo $bp->loggedin_user->domain . 'pat/'; ?>" title="<?php echo __( 'Back', 'opsi' ); ?>" class="button btn btn-default flipicon">
           <i class="fa fa-chevron-left" aria-hidden="true"></i>  <?php echo __( 'Back', 'opsi' ); ?>
 		</a>
-		<?php // TODO: send user to their PAT forms list ?>
 
 	</div>
 	<?php
 	get_footer();
 	return;
+}
+
+// If user is trying to edit a draft of module 2, redirect to #pat-step-10
+if( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && $status_slug == 'draft_module2' ) {
+	?>
+	<script type="text/javascript">
+		location.href = "#pat-step-10";
+	</script>
+	<?php
 }
 
 $has_sidebar = 0;
@@ -50,7 +84,6 @@ $has_sidebar = 0;
 
 	<?php
 	// Post status
-	$post_status = get_post_status_object( get_post_status( $_GET['edit'] ) );
 	$status = $post_status->label;
 	// Last modified
 	$last_save = get_the_modified_date( get_option( 'date_format' ) . ', ' . get_option( 'time_format' ) . ' a', $_GET['edit'] );
