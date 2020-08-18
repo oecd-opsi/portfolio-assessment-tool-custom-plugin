@@ -248,7 +248,6 @@ window.addEventListener( 'hashchange', function(e){
       var adaRowInview = new Waypoint({
         element: $('#ada-row'),
         handler: function(direction) {
-          console.log($(this.element));
           $('.facet-row .pat-results-side').removeClass('show');
           $('.facet-row .pat-results-content').removeClass('show');
           $('#ada-row .pat-results-side').addClass('show');
@@ -296,24 +295,24 @@ window.addEventListener( 'hashchange', function(e){
         offset: '50%',
       });
 
-      var pmgRowInview = new Waypoint.Inview({
-        element: $('#pmg-row'),
-        exit: function(direction) {
-          if(direction == 'down') {
-            $('#pmg-row .pat-results-side').addClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
-          }
-        },
-        enter: function(direction) {
-          if( direction == 'up' ) {
-            $('#pmg-row .pat-results-side').addClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
-          }
-        },
-        offset: {
-          bottom: -300,
-        }
-      });
+      // var pmgRowInview = new Waypoint.Inview({
+      //   element: $('#pmg-row'),
+      //   exit: function(direction) {
+      //     if(direction == 'down') {
+      //       $('#pmg-row .pat-results-side').addClass('fixed');
+      //       $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+      //     }
+      //   },
+      //   enter: function(direction) {
+      //     if( direction == 'up' ) {
+      //       $('#pmg-row .pat-results-side').addClass('fixed');
+      //       $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+      //     }
+      //   },
+      //   offset: {
+      //     bottom: -300,
+      //   }
+      // });
 
       var pdfbuttonInview = new Waypoint.Inview({
         element: $('.pdfbutton'),
@@ -325,10 +324,27 @@ window.addEventListener( 'hashchange', function(e){
         },
         exited: function(direction) {
           if(direction == 'up') {
-            $('#pmg-row .pat-results-side').addClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+            // $('#pmg-row .pat-results-side').addClass('fixed');
+            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
           }
         },
+      });
+
+      // Module 2 graph tooltip
+      $('#module-2').append('<span id="m2-graph-tooltip"></span>');
+      $('g[data-name="main-group"] circle').on('mouseenter', function(e){
+        var mouseX = e.clientX;
+        var mouseY = e.clientY;
+        var text = $(this).data('project-title');
+        var span = $('#m2-graph-tooltip');
+        var spanH = span.outerHeight();
+        span.text(text);
+        span.addClass('active');
+        span.css('left', mouseX);
+        span.css('top', mouseY - spanH);
+      });
+      $('g[data-name="main-group"] circle').on('mouseleave', function(e){
+        $('#m2-graph-tooltip').removeClass('active');
       });
 
     }

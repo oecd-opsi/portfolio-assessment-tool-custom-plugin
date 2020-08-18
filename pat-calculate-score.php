@@ -352,6 +352,92 @@ function pat_score( $id ) {
   $scores['pmq_score'] = $pmq_score;
   $scores['level'] = $level;
 
+	// Module 2 calculation
+	// if status is not publish_module2, skip this calculation
+	$post_status = get_post_status_object( get_post_status( $id ) );
+	$status_slug = $post_status->name;
+	if( $status_slug == 'publish_module2' ) {
+
+		// Zone list:
+		// 1. Enhancement-oriented projects
+		// 2. Mission-oriented projects
+		// 3. Anticipatory-oriented projects
+		// 4. Adaptive-oriented projects
+		// 5. Sustaining change
+    // 6. Transformative change
+		// 7. Disruptive change
+ 		// 8. Optimising change
+    // 9. Mixed or unclear
+		$mod2_chart_array = array(
+			'1-enh' => array(),
+			'2-mis' => array(),
+			'3-ant' => array(),
+			'4-ada' => array(),
+			'5-sus' => array(),
+	    '6-tra' => array(),
+			'7-dis' => array(),
+			'8-opt' => array(),
+	    '9-mix' => array(),
+		);
+
+		// Get the list of inserted projects, calculate their position and put each of them in the array
+		$project_lists = $fields['projects']['value']['projects_list'];
+		foreach ($project_lists as $project) {
+			$title = $project['project_title'];
+			$q1 = $project['this_project_was_primarily_created_to:'];
+			$q2 = $project['the_project_has_been_mainly_pushed_forward_by:'];
+			$priority = $project['what_level_of_priority_would_you_say_this_project_has_in_your_organisation'];
+			$circle = 4;
+			if( $priority == 'h' ) {
+				$circle = 6;
+			} elseif ( $priority == 'm') {
+				$circle = 5;
+			}
+			$output = array(
+				'title' => $title,
+				'priority' => $priority,
+				'circle'	=> $circle
+			);
+			if( $q1 == '0' ) {
+				$mod2_chart_array['9-mix'][] = $output;
+			} elseif ( $q1 == '1' ) {
+				if( $q2 == 'a' ) { $mod2_chart_array['5-sus'][] = $output; }
+				if( $q2 == 'b' ) { $mod2_chart_array['1-enh'][] = $output; }
+				if( $q2 == 'c' ) { $mod2_chart_array['8-opt'][] = $output; }
+				if( $q2 == 'd' ) { $mod2_chart_array['9-mix'][] = $output; }
+			} elseif ( $q1 == '2' ) {
+				if( $q2 == 'a' ) { $mod2_chart_array['2-mis'][] = $output; }
+				if( $q2 == 'b' ) { $mod2_chart_array['5-sus'][] = $output; }
+				if( $q2 == 'c' ) { $mod2_chart_array['9-mix'][] = $output; }
+				if( $q2 == 'd' ) { $mod2_chart_array['6-tra'][] = $output; }
+			} elseif ( $q1 == '3' ) {
+				if( $q2 == 'a' ) { $mod2_chart_array['6-tra'][] = $output; }
+				if( $q2 == 'b' ) { $mod2_chart_array['9-mix'][] = $output; }
+				if( $q2 == 'c' ) { $mod2_chart_array['7-dis'][] = $output; }
+				if( $q2 == 'd' ) { $mod2_chart_array['3-ant'][] = $output; }
+			} elseif ( $q1 == '4' ) {
+				if( $q2 == 'a' ) { $mod2_chart_array['9-mix'][] = $output; }
+				if( $q2 == 'b' ) { $mod2_chart_array['8-opt'][] = $output; }
+				if( $q2 == 'c' ) { $mod2_chart_array['4-ada'][] = $output; }
+				if( $q2 == 'd' ) { $mod2_chart_array['7-dis'][] = $output; }
+			}
+		}
+
+		// Sort project list by priority
+		foreach ( $mod2_chart_array as $key => $array) {
+			$order = array( 'h', 'm', 'l' );
+			usort( $mod2_chart_array[$key], function($a,$b) use ($order){
+				$pos_a = array_search( $a['priority'], $order);
+				$pos_b = array_search( $b['priority'], $order);
+				return ($pos_a < $pos_b) ? -1 : 1;
+			});
+
+		}
+
+		$scores['m2'] = $mod2_chart_array;
+
+	}
+
   return $scores;
 
 }

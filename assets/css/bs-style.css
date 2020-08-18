@@ -931,3 +931,63 @@ div[id^="pat-step-"].active-pat-step {
 .acf-field-5f34dc52a2fab .acf-row > .acf-fields {
   border-right-width: 1px;
 }
+
+/* Module 2 results section */
+#module-2 {
+  padding: 120px 0
+}
+
+#module-2 .module-2-graph-container {
+  text-align: center;
+}
+
+#m2-graph-tooltip {
+  display: none;
+  background: #fff;
+  color: #013647;
+  font-size: 10px;
+  padding: 4px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+#m2-graph-tooltip.active {
+  display: inline-block;
+  position: fixed;
+  transform-origin: left bottom;
+}
+
+.projects-list ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.projects-list li {
+  display: flex;
+  align-items: center;
+}
+
+.projects-list li::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background: #fff;
+  margin-right: 6px;
+}
+.projects-list li.priority-m::before {
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+}
+.projects-list li.priority-l::before {
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+}
+
+.pat-results-fullwidth-section h3.projects-list-title {
+  font-size: 26px;
+  color: #9EC5E0;
+  margin-bottom: 24px;
+}
