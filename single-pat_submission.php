@@ -78,7 +78,7 @@
 
             <main class="pat-results-main-content">
 
-              <aside class="pat-results-side"><?php echo $nav_menu ?></aside>
+              <aside class="pat-results-side first-side-nav"><?php echo $nav_menu ?></aside>
 
               <section id="introduction">
 
@@ -3702,7 +3702,8 @@
               </section>
               <?php endif; ?>
 
-              <section id="download-and-share">
+              <section id="download-and-share" class="pat-results-fullwidth-section">
+                <aside class="pat-results-side second-side-nav"><?php echo $nav_menu ?></aside>
                 <div class="pat-results-content">
                   <h2>Download and share results</h2>
                   <?php the_field( 'download_and_share_results_text', 'option' ) ?>
@@ -3715,7 +3716,7 @@
                 </div>
               </section>
 
-              <section id="interpretation">
+              <section id="interpretation" class="pat-results-fullwidth-section">
                 <div class="pat-results-content">
                   <h2>How you might use these results</h2>
                   <?php the_field( 'how_you_might_use_these_result_text', 'option' ) ?>

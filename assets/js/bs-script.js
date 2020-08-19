@@ -203,24 +203,24 @@ window.addEventListener( 'hashchange', function(e){
         element: $('.pat-results-hero'),
         exited: function(direction) {
           if ( direction == 'down' ) {
-            $('.pat-results-side .pat-results-nav-menu').addClass('fixed');
+            $('.first-side-nav .pat-results-nav-menu').addClass('fixed');
           }
         },
         enter: function(direction) {
           if ( direction == 'up' ) {
-            $('.pat-results-side .pat-results-nav-menu').removeClass('fixed');
+            $('.first-side-nav .pat-results-nav-menu').removeClass('fixed');
           }
         },
       });
       var pmcInview = new Waypoint.Inview({
         element: $('#portfolio-management-capability'),
         exited: function(direction) {
-          if ( direction == 'down' ) {
+          if ( !$('#module-2').length && direction == 'down' ) {
             $('.pat-results-top-nav').removeClass('show');
           }
         },
         enter: function(direction) {
-          if ( direction == 'up' ) {
+          if ( !$('#module-2').length && direction == 'up' ) {
             $('.pat-results-top-nav').addClass('show');
           }
         },
@@ -294,38 +294,50 @@ window.addEventListener( 'hashchange', function(e){
         },
         offset: '50%',
       });
-
-      // var pmgRowInview = new Waypoint.Inview({
-      //   element: $('#pmg-row'),
-      //   exit: function(direction) {
-      //     if(direction == 'down') {
-      //       $('#pmg-row .pat-results-side').addClass('fixed');
-      //       $('#pmg-row .pat-results-content .section-title').addClass('fixed');
-      //     }
-      //   },
-      //   enter: function(direction) {
-      //     if( direction == 'up' ) {
-      //       $('#pmg-row .pat-results-side').addClass('fixed');
-      //       $('#pmg-row .pat-results-content .section-title').addClass('fixed');
-      //     }
-      //   },
-      //   offset: {
-      //     bottom: -300,
-      //   }
-      // });
-
-      var pdfbuttonInview = new Waypoint.Inview({
-        element: $('.pdfbutton'),
-        enter: function(direction) {
+      var pmgRowInview = new Waypoint.Inview({
+        element: $('#pmg-row'),
+        exit: function(direction) {
           if(direction == 'down') {
-            $('#pmg-row .pat-results-side').removeClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').removeClass('fixed');
+            $('#pmg-row .pat-results-side').addClass('fixed');
+            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+          }
+        },
+        enter: function(direction) {
+          if( direction == 'up' ) {
+            $('#pmg-row .pat-results-side').addClass('fixed');
+            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+            $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
           }
         },
         exited: function(direction) {
-          if(direction == 'up') {
-            // $('#pmg-row .pat-results-side').addClass('fixed');
-            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+          if(direction == 'down') {
+            $('#pmg-row .pat-results-side').addClass('fixed');
+            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+          }
+        },
+        offset: {
+          bottom: -300,
+        }
+      });
+      var downloadInview = new Waypoint.Inview({
+        element: $('#download-and-share'),
+        exit: function(direction) {
+          if ( direction == 'down' ) {
+            $('.second-side-nav .pat-results-nav-menu').addClass('fixed');
+          }
+        },
+      });
+      var module2Inview = new Waypoint.Inview({
+        element: $('#module-2'),
+        exited: function(direction) {
+          if ( direction == 'down' ) {
+            $('.pat-results-top-nav').removeClass('show');
+          }
+        },
+        enter: function(direction) {
+          if ( direction == 'up' ) {
+            $('.pat-results-top-nav').addClass('show');
+            $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
           }
         },
       });
