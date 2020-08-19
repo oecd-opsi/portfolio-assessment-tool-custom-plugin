@@ -991,3 +991,11 @@ div[id^="pat-step-"].active-pat-step {
   color: #9EC5E0;
   margin-bottom: 24px;
 }
+
+.module-2-lists-container {
+  margin-bottom: 120px;
+}
+
+.modules-graphs-comparison .col-sm-6 {
+  text-align: center;
+}

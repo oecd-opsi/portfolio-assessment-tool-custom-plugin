@@ -12,7 +12,7 @@ global $post, $bp;
 // Hide Module field based on status
 $post_status = get_post_status_object( get_post_status( $_GET['edit'] ) );
 $status_slug = $post_status->name;
-if( $status_slug == 'draft_module2' ) {
+if( $status_slug == 'publish' || $status_slug == 'draft_module2' ) {
 	// Hide module 1
 	function bs_pat_form_hide_module_1($field) {
 	  return;

@@ -103,6 +103,10 @@ function pat_submission_post_type() {
 	);
 	register_post_type( 'pat_submission', $args );
 
+	// Register custom status for PAT_submission cpt
+	// Draft and Publish are used for module 1
+	// Following custom status are created to manage module 2 stati 
+
 	register_post_status( 'draft_module2', array(
 		'label'                     => _x( 'Draft of Module 2', 'opsi' ),
 		'public'                    => true,
@@ -227,7 +231,7 @@ function opsi_acf_save_post_pat( $post_id ) {
 
 	$post_status = get_post_status_object( get_post_status( $post_id ) );
 	$status_slug = $post_status->name;
-	if( $status_slug == 'draft_module2' ) {
+	if( $status_slug == 'draft_module2' || $status_slug == 'publish' ) {
 		$content['post_status'] = 'draft_module2';
 	}
 
@@ -235,7 +239,7 @@ function opsi_acf_save_post_pat( $post_id ) {
 		if( $status_slug == 'draft_module2' ) {
 			$content['post_status'] = 'publish_module2';
 		} else {
-			$content['post_status'] = 'publish';			
+			$content['post_status'] = 'publish';
 		}
 	}
 
@@ -404,7 +408,7 @@ function bp_pat_list() {
 				<thead>
 					<th><?php echo __( 'Title', 'opsi' ); ?></th>
 					<th><?php echo __( 'Status', 'opsi' ); ?></th>
-					<th class="text-center" colspan="3"><?php echo __( 'Actions', 'opsi' ); ?></th>
+					<th class="text-center" colspan="4"><?php echo __( 'Actions', 'opsi' ); ?></th>
 				</thead>
 				<tbody>
 
@@ -415,25 +419,31 @@ function bp_pat_list() {
 
 			// get assigned users
 			$post_status_obj = get_post_status_object( get_post_status( get_the_ID() ) );
+
+			$edit_url = site_url( '/portfolio-exploration/?edit=' . get_the_ID() );
+			$post_url = get_permalink();
 			?>
 
 			<tr>
 				<td>
 					<?php
-						if ( get_post_status( get_the_ID() ) == 'publish' ) {
-							$post_url = get_permalink();
+						if ( get_post_status( get_the_ID() ) == 'draft' ) {
+							?>
+							<a href="<?php echo $edit_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>"><?php the_title(); ?></a>
+							<?php
 						} else {
-							$post_url = site_url( '/portfolio-exploration/?edit=' . get_the_ID() );
+							?>
+							<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>"><?php the_title(); ?></a>
+							<?php
 						}
 					?>
-					<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>">
-						<?php the_title(); ?>
-					</a>
 				</td>
 				<td>
 					<?php
 					if ( $post_status_obj->label == 'Published' ) {
-						echo 'Complete';
+						echo 'Module 1 Complete';
+					} elseif ( $post_status_obj->label == 'Draft' ) {
+						echo 'Module 1 Draft';
 					} else {
 						echo $post_status_obj->label;
 					}
@@ -441,16 +451,16 @@ function bp_pat_list() {
 				</td>
 				<td>
 					<?php
-						if ( get_post_status( get_the_ID() ) == 'publish' ) {
+						if ( $post_status_obj->label == 'draft' ) {
 							?>
-							<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>">
-								<i class="fa fa-search" aria-hidden="true"></i>
+							<a href="<?php echo $edit_url ?>" title="<?php echo __( 'edit', 'opsi' ); ?>">
+								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 							</a>
 							<?php
 						}	else {
 							?>
-							<a href="<?php echo $post_url ?>" title="<?php echo __( 'edit', 'opsi' ); ?>">
-								<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+							<a href="<?php echo $post_url ?>" title="<?php echo __( 'view', 'opsi' ); ?>">
+								<i class="fa fa-search" aria-hidden="true"></i>
 							</a>
 							<?php
 						}
@@ -458,7 +468,7 @@ function bp_pat_list() {
 				</td>
 				<td>
 					<?php
-						if ( get_post_status( get_the_ID() ) == 'publish' ) { ?>
+						if ( get_post_status( get_the_ID() ) != 'draft' ) { ?>
 						<a href="/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php?pat_author=<?php echo get_the_author_meta( 'ID' ) ?>&pat_result_id=<?php echo get_the_ID() ?>" title="<?php echo __( 'csv', 'opsi' ); ?>">
 							<i class="fa fa-table" aria-hidden="true"></i>
 						</a>
@@ -466,9 +476,17 @@ function bp_pat_list() {
 				</td>
 				<td>
 					<?php
-						if ( get_post_status( get_the_ID() ) == 'publish' ) { ?>
+					if ( get_post_status( get_the_ID() ) != 'draft' ) { ?>
 						<a href="<?php echo $post_url ?>?output=pdf" title="<?php echo __( 'pdf', 'opsi' ); ?>" target="_blank">
 							<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+						</a>
+					<?php } ?>
+				</td>
+				<td>
+					<?php
+					if ( $post_status_obj->name == 'publish' || $post_status_obj->name == 'draft_module2' ) { ?>
+						<a href="<?php echo $edit_url ?>#pat-step-10" title="<?php echo __( 'Continue to Module 2', 'opsi' ); ?>">
+							<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
 						</a>
 					<?php } ?>
 				</td>
