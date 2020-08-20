@@ -760,3 +760,15 @@ function start_again_func() {
 
 	die();
 }
+
+// Delete images file from tempo directory after generating a PDF
+function pat_pdf_remove_temp_file( $mpdf, $pdf_filename ) {
+	$upload_dir = wp_upload_dir();
+	$files = glob($upload_dir['basedir'].'/pat-temp/*');
+	foreach($files as $file){
+	  if(is_file($file)) {
+			unlink($file);
+		}
+	}
+}
+add_action( 'mpdf_output', 'pat_pdf_remove_temp_file', 10, 2 );
