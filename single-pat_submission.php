@@ -31,14 +31,22 @@
   //* Scores
   $scores = pat_score( $postid );
 
+  // Check if module 2 is completed
+  $post_status = get_post_status_object( get_post_status( $postid ) );
+  $status_slug = $post_status->name;
+
   // Navigation menu
   $nav_menu = '
     <ul class="pat-results-nav-menu">
       <li><a href="#introduction">Introduction</a></li>
       <li><a href="#organisational-portfolio-balance">Organisational Portfolio Balance</a></li>
-      <li><a href="#portfolio-management-capability">Portfolio Management Capability</a></li>
-      <!--<li><a href="#project-based-mapping">Project based Mapping</a></li>-->
-      <!--<li><a href="#combined-results">Combined Results</a></li>-->
+      <li><a href="#portfolio-management-capability">Portfolio Management Capability</a></li>';
+  if( $status_slug == 'publish_module2' ) {
+    $nav_menu .= '
+    <li><a href="#module-2">Project based Mapping</a></li>
+    <li><a href="#combined-results">Combined Results</a></li>';
+  }
+  $nav_menu .= '
       <li><a href="#download-and-share">Download and Share Results</a></li>
       <li><a href="#interpretation">Interpretation and Next Steps</a></li>
       <li class="nav-share-item">
@@ -282,8 +290,6 @@
               </section>
 
               <?php
-              $post_status = get_post_status_object( get_post_status( $postid ) );
-            	$status_slug = $post_status->name;
             	if( $status_slug == 'publish_module2' ) :
                ?>
               <section id="module-2" class="pat-results-fullwidth-section">
@@ -2016,7 +2022,7 @@
                   }
                   ?>
                 </div>
-                <div class="modules-graphs-comparison row">
+                <div id="combined-results" class="modules-graphs-comparison row">
                   <div class="col-sm-6">
                     <h3>Organisational Capacities</h3>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="590" height="368.75" viewBox="0 0 280.16 175.45"> <defs> <style>.small-diam-1-a{fill: #e6e8f0;}.small-diam-1-b{fill: <?php echo $scores['enh_color'] ?>;}.small-diam-1-c{fill: <?php echo $scores['mis_color'] ?>;}.small-diam-1-d{fill: <?php echo $scores['ada_color'] ?>;}.small-diam-1-e{fill: <?php echo $scores['ant_color'] ?>;}.small-diam-1-f{fill: #fff; font-size: 14px; font-family: Roboto-Medium, Roboto, 'lato', sans-serif; font-weight: 500;}.small-diam-1-g{filter: url(#small-diam-1-g);}.small-diam-1-h{filter: url(#small-diam-1-e);}.small-diam-1-i{filter: url(#small-diam-1-c);}.small-diam-1-j{filter: url(#small-diam-1-a);}</style> <filter id="small-diam-1-a" x="23.125" y="53.648" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="b"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="b"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-c" x="83.727" y="13.556" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="d"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="d"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-e" x="83.727" y="93.284" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="f"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="f"/> <feComposite in="SourceGraphic"/> </filter> <filter id="small-diam-1-g" x="144.785" y="53.648" width="114.062" height="73.719" filterUnits="userSpaceOnUse"> <feOffset dy="3" input="SourceAlpha"/> <feGaussianBlur stdDeviation="1.5" result="h"/> <feFlood flood-opacity="0.349"/> <feComposite operator="in" in2="h"/> <feComposite in="SourceGraphic"/> </filter> </defs> <g transform="translate(-168 -2827.272)"> <path class="small-diam-1-a" d="M2580.007,3419.947l139.943-87,140.218,87L2719.95,3508.4Z" transform="translate(-2412.007 -505.673)"/> <g class="small-diam-1-j" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-b" d="M648.3,1393.587l-52.531,32.132-52.531-32.132L595.773,1361Z" transform="translate(-515.62 -1305.85)"/> </g> <g transform="translate(256.227 2842.328)"> <g class="small-diam-1-i" transform="matrix(1, 0, 0, 1, -88.23, -15.06)"> <path class="small-diam-1-c" d="M770.3,1316.587l-52.531,32.132-52.531-32.132L717.773,1284Z" transform="translate(-577.01 -1268.94)"/> </g> </g> <g class="small-diam-1-h" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-d" d="M770.3,1469.587l-52.531,32.131-52.531-32.131L717.773,1437Z" transform="translate(-577.01 -1342.22)"/> </g> <g class="small-diam-1-g" transform="matrix(1, 0, 0, 1, 168, 2827.27)"> <path class="small-diam-1-e" d="M893.3,1393.587l-52.531,32.132-52.531-32.132L840.773,1361Z" transform="translate(-638.96 -1305.85)"/> </g><text class="small-diam-1-f" transform="translate(307.832 2878.805)"> <tspan x="-13.098" y="0"><?php echo $scores['mis_percentage'] ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(309.832 2958.975)"> <tspan x="-13.098" y="0"><?php echo $scores['ada_percentage'] ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(371.582 2919.667)"> <tspan x="-13.098" y="0"><?php echo $scores['ant_percentage'] ?>%</tspan> </text><text class="small-diam-1-f" transform="translate(248.082 2917.604)"> <tspan x="-13.098" y="0"><?php echo $scores['enh_percentage'] ?>%</tspan> </text> </g></svg>
