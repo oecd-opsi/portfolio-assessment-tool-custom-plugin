@@ -294,7 +294,7 @@ function bs_pat_submission_single_template( $single ) {
 }
 add_filter( 'single_template', 'bs_pat_submission_single_template', 99 );
 
-// Add Portfolio Management Tool profile tab
+// Add Portfolio Exploration profile tab
 function profile_tab_pat() {
   global $bp;
 

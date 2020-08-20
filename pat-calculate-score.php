@@ -38,134 +38,41 @@ function pat_score( $id ) {
   // the value is numeric and the facet reference is in the first part of the key.
   // If the question is of type checkbox, the value contain the facet reference and the value.
   // The type of the field can be deduced from the value: if the splitted value length is greater than zero, the field is a checkbox.
-  foreach ( $fields['facet_orientation_questions_1']['value'] as $answers ) {
-    if( !empty($answers) ) {
-      foreach ( $answers as $key => $value ) {
-        if ( is_array($value) ) {
-          // checkbox or radio
-          $splitted_value = explode( '-', $value['value'] );
-          if ( count($splitted_value) > 1 ) {
-            // here we have a checkbox
-            $facets_ref = $splitted_value[0];
-            $value = $splitted_value[1];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          } else {
-            // here we have a radio input
-            $facets_ref = explode( '_', $key )[0];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          }
+	$foq_fields = array( 'facet_orientation_questions_1', 'facet_orientation_questions_2', 'facet_orientation_questions_3', 'facet_orientation_questions_4' );
+	foreach ($foq_fields as $key) {
+		foreach ( $fields[$key]['value'] as $answers ) {
+			if( !empty($answers) ) {
+				foreach ( $answers as $key => $value ) {
+					if ( is_array($value) ) {
+						// checkbox or radio
+						$splitted_value = explode( '-', $value['value'] );
+						if ( count($splitted_value) > 1 ) {
+							// here we have a checkbox
+							$facets_ref = $splitted_value[0];
+							$value = $splitted_value[1];
+							if( isset($value['value']) && !empty($facets_ref) ) {
+								$$facets_ref += (float)$value['value'];
+							}
+						} else {
+							// here we have a radio input
+							$facets_ref = explode( '_', $key )[0];
+							if( isset($value['value']) && !empty($facets_ref) ) {
+								$$facets_ref += (float)$value['value'];
+							}
+						}
 
-        } else {
-          // here we have an number input (ranking field)
-          // here we have a radio input
-          $facets_ref = explode( '_', $key )[0];
-          if( !empty($facets_ref) ) {
-            $$facets_ref += (float)$value;
-          }
-        }
-      }
-    }
-  }
-  foreach ( $fields['facet_orientation_questions_2']['value'] as $answers ) {
-    if( !empty($answers)) {
-      foreach ( $answers as $key => $value ) {
-        if ( is_array($value) ) {
-          // checkbox or radio
-          $splitted_value = explode( '-', $value['value'] );
-          if ( count($splitted_value) > 1 ) {
-            // here we have a checkbox
-            $facets_ref = $splitted_value[0];
-            $value = $splitted_value[1];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          } else {
-            // here we have a radio input
-            $facets_ref = explode( '_', $key )[0];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          }
-
-        } else {
-          // here we have an number input (ranking field)
-          // here we have a radio input
-          $facets_ref = explode( '_', $key )[0];
-          if( !empty($facets_ref) ) {
-            $$facets_ref += (float)$value;
-          }
-        }
-      }
-    }
-  }
-  foreach ( $fields['facet_orientation_questions_3']['value'] as $answers ) {
-    if( !empty($answers)) {
-      foreach ( $answers as $key => $value ) {
-        if ( is_array($value) ) {
-          // checkbox or radio
-          $splitted_value = explode( '-', $value['value'] );
-          if ( count($splitted_value) > 1 ) {
-            // here we have a checkbox
-            $facets_ref = $splitted_value[0];
-            $value = $splitted_value[1];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          } else {
-            // here we have a radio input
-            $facets_ref = explode( '_', $key )[0];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          }
-
-        } else {
-          // here we have an number input (ranking field)
-          // here we have a radio input
-          $facets_ref = explode( '_', $key )[0];
-          if( !empty($facets_ref) ) {
-            $$facets_ref += (float)$value;
-          }
-        }
-      }
-    }
-  }
-  foreach ( $fields['facet_orientation_questions_4']['value'] as $answers ) {
-    if( !empty($answers)) {
-      foreach ( $answers as $key => $value ) {
-        if ( is_array($value) ) {
-          // checkbox or radio
-          $splitted_value = explode( '-', $value['value'] );
-          if ( count($splitted_value) > 1 ) {
-            // here we have a checkbox
-            $facets_ref = $splitted_value[0];
-            $value = $splitted_value[1];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          } else {
-            // here we have a radio input
-            $facets_ref = explode( '_', $key )[0];
-            if( isset($value['value']) && !empty($facets_ref) ) {
-              $$facets_ref += (float)$value['value'];
-            }
-          }
-
-        } else {
-          // here we have an number input (ranking field)
-          // here we have a radio input
-          $facets_ref = explode( '_', $key )[0];
-          if( !empty($facets_ref) ) {
-            $$facets_ref += (float)$value;
-          }
-        }
-      }
-    }
-  }
+					} else {
+						// here we have an number input (ranking field)
+						// here we have a radio input
+						$facets_ref = explode( '_', $key )[0];
+						if( !empty($facets_ref) ) {
+							$$facets_ref += (float)$value;
+						}
+					}
+				}
+			}
+		}
+	}
   // Calculate facets percentage
   $enh_percentage = round( $enh / $max * 100 );
   $mis_percentage = round( $mis / $max * 100 );
