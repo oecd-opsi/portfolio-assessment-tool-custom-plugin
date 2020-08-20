@@ -59,7 +59,7 @@
       <script async src="https://static.addtoany.com/menu/page.js"></script>
       <!-- AddToAny END -->
       </li>
-      <li class="nav-start-again-item"><a href="#">Start again</a></li>
+      <li class="nav-start-again-item"><a href="#" data-post_id="'.$postid.'">Start again</a></li>
     </ul>
   ';
 

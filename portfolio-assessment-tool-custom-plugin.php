@@ -47,6 +47,12 @@ function bs_enqueue_files() {
 	// loads JS files in the footer.
 	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-script.js'), true );
 
+	if( is_singular('pat_submission') ) {
+		// loads JS files in the footer.
+		wp_enqueue_script( 'bs-ajax', plugin_dir_url( __FILE__ ) . 'assets/js/bs-results-ajax.js', array( 'jquery', 'bs-script' ), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-results-ajax.js'), true );
+		wp_localize_script('bs-ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+	}
+
 }
 
 // Register Portfolio Assessment Tool submission CPT
@@ -105,7 +111,7 @@ function pat_submission_post_type() {
 
 	// Register custom status for PAT_submission cpt
 	// Draft and Publish are used for module 1
-	// Following custom status are created to manage module 2 stati 
+	// Following custom status are created to manage module 2 stati
 
 	register_post_status( 'draft_module2', array(
 		'label'                     => _x( 'Draft of Module 2', 'opsi' ),
@@ -725,4 +731,32 @@ function can_edit_pat_form(
 	}
 
 	return false;
+}
+
+// Ajax call to handle the Start again button functonality
+add_action("wp_ajax_start_again", "start_again_func");
+add_action("wp_ajax_nopriv_start_again", "start_again_func");
+function start_again_func() {
+
+	$post_id = $_REQUEST["post_id"];
+
+	if( function_exists('duplicate_post_create_duplicate') ) {
+		$post_obj = get_post($post_id);
+		$new_post_id = duplicate_post_create_duplicate( $post_obj, 'draft' );
+		if( $new_post_id > 0 ) {
+			$result['type'] = "success";
+      $result['new_id'] = $new_post_id;
+		} else {
+			$result['type'] = "error";
+      $result['new_id'] = 'Something went wrong with duplication';
+		}
+	} else {
+		$result['type'] = "error";
+		$result['new_id'] = 'Something went wrong with duplication. Is Duplicate posts installed?';
+	}
+
+	$result = json_encode($result);
+	echo $result;
+
+	die();
 }
