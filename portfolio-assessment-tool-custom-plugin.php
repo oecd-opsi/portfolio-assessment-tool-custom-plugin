@@ -772,3 +772,10 @@ function pat_pdf_remove_temp_file( $mpdf, $pdf_filename ) {
 	}
 }
 add_action( 'mpdf_output', 'pat_pdf_remove_temp_file', 10, 2 );
+
+// Set PDF format for results export
+function bs_set_pdf_format_mpdf() {
+	global $pdf_format;
+	$pdf_format = 'A4-L';
+}
+add_action( 'init', 'bs_set_pdf_format_mpdf' );
