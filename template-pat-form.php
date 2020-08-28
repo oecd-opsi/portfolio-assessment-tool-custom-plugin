@@ -12,10 +12,11 @@ global $post, $bp;
 // Hide Module field based on status
 $post_status = get_post_status_object( get_post_status( $_GET['edit'] ) );
 $status_slug = $post_status->name;
-if( $status_slug == 'publish' || $status_slug == 'draft_module2' ) {
+if( isset($_GET['edit']) && ( $status_slug === 'publish' || $status_slug === 'draft_module2' ) ) {
 	// Hide module 1
 	function bs_pat_form_hide_module_1($field) {
-	  return;
+		$field['wrapper']['class'] .= ' hidden';
+		return $field;
 	}
 	add_filter('acf/prepare_field/key=field_5f18466d9460b', 'bs_pat_form_hide_module_1', 20);
 	add_filter('acf/prepare_field/key=field_5ef5dc662a113', 'bs_pat_form_hide_module_1', 20);
@@ -29,7 +30,7 @@ if( $status_slug == 'publish' || $status_slug == 'draft_module2' ) {
 } else {
 	// Hide module 2
 	function bs_pat_form_hide_module_2($field) {
-	  return;
+		return;
 	}
 	add_filter('acf/prepare_field/key=field_5f34dab33fac9', 'bs_pat_form_hide_module_2', 20);
 	add_filter('acf/prepare_field/key=field_5f2ba081cdbe3', 'bs_pat_form_hide_module_2', 20);
@@ -89,11 +90,11 @@ $has_sidebar = 0;
 	$last_save = get_the_modified_date( get_option( 'date_format' ) . ', ' . get_option( 'time_format' ) . ' a', $_GET['edit'] );
 	 ?>
 
-	<div class="pat-status-widget">
+	<!-- <div class="pat-status-widget">
 		<h2>Status</h2>
 		<div class="pat-status-meta pat-status-label"><?php echo $status ?></div>
 		<div class="pat-status-meta pat-status-last-save"><?php echo $last_save ?></div>
-	</div>
+	</div> -->
 
 	<div class="save-submit-wrapper">
 		<button class="button saveform" title="Save">Save</button>

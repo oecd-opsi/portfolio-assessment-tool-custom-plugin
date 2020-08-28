@@ -1,6 +1,6 @@
 // Get form steps to create side menu
 // Get all IDs
-var stepsID = document.querySelectorAll('[id*="pat-step"]');
+var stepsID = document.querySelectorAll('[id*="pat-step"]:not(.hidden)');
 // For each step, get the title and add them to an array ID => title
 var steps = [];
 stepsID.forEach( item => {
@@ -121,7 +121,7 @@ if (jQuery("#pat-form").length > 0) {
 // Handle form pagination
 var steps;
 // Get all field groups; each group is a step
-steps = document.querySelectorAll( '[id^="pat-step-"]' );
+steps = document.querySelectorAll( '[id^="pat-step-"]:not(.hidden)' );
 stepBtns = document.querySelectorAll( '[href^="#pat-step-"]' );
 // Show step function
 function showPatStep( newID ) {
@@ -136,11 +136,15 @@ function showPatStep( newID ) {
 
     // add active class to current step
     let newStep = document.querySelector( '[id="pat-step-' + newID + '"]' );
-    newStep.classList.add( 'active-pat-step' );
+    if( newStep ) {
+      newStep.classList.add( 'active-pat-step' );
+    }
 
     // add active class to step button in side navigation
     let newStepNav = document.querySelector( '[href="#pat-step-' + newID + '"]' );
-    newStepNav.classList.add( 'active-pat-step-btn' );
+    if( newStepNav ) {
+      newStepNav.classList.add( 'active-pat-step-btn' );
+    }
 
   }
 
@@ -155,7 +159,16 @@ function showPatStep( newID ) {
 
     // get from URL the step to display or display step zero
     currentStepN = window.location.hash.replace( /^\D+/g, '');
-    currentStepN ? showPatStep( currentStepN ) : showPatStep( 1 );
+    console.log(currentStepN);
+    // choose which step zero to show, based on submission status (step 1 or 10)
+    if( !currentStepN ) {
+      if( document.querySelector( '[id="pat-step-1"]:not(.hidden)' ) ) {
+        currentStepN = 1;
+      } else {
+        currentStepN = 10;
+      }
+    }
+    showPatStep( currentStepN );
 
   });
 })(jQuery);
@@ -177,6 +190,13 @@ window.addEventListener( 'hashchange', function(e){
   }
 
 });
+
+// Scroll down a little bit when adding a new project to the form
+(function($){
+  $('#pat-form a[data-event="add-row"]').on( 'click', function(e){
+    $('html, body').animate({ scrollTop:  $(this).offset().top - 100 }, 'slow');
+  });
+})(jQuery);
 
 // PAT results scripts
 (function($){
