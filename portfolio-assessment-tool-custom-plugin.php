@@ -413,6 +413,7 @@ function bp_pat_list() {
 			<table class="table table-striped table-hover">
 				<thead>
 					<th><?php echo __( 'Title', 'opsi' ); ?></th>
+					<th><?php echo __( 'Organisation', 'opsi' ); ?></th>
 					<th><?php echo __( 'Status', 'opsi' ); ?></th>
 					<th class="text-center" colspan="4"><?php echo __( 'Actions', 'opsi' ); ?></th>
 				</thead>
@@ -428,6 +429,7 @@ function bp_pat_list() {
 
 			$edit_url = site_url( '/portfolio-exploration/?edit=' . get_the_ID() );
 			$post_url = get_permalink();
+			$organisation_name = get_field('general_questions')['organisation'];
 			?>
 
 			<tr>
@@ -444,6 +446,7 @@ function bp_pat_list() {
 						}
 					?>
 				</td>
+				<td><?php echo $organisation_name ?></td>
 				<td>
 					<?php
 					if ( $post_status_obj->label == 'Published' ) {
@@ -779,3 +782,13 @@ function bs_set_pdf_format_mpdf() {
 	$pdf_format = 'A4-L';
 }
 add_action( 'init', 'bs_set_pdf_format_mpdf' );
+
+// Add menu item for CSV export (all items)
+function add_csv_export_menu_item() {
+	global $submenu;
+  // $page_title, $menu_title, $capability, $menu_slug, $callback_function
+  // add_posts_page(__('CSV Export'), __('CSV Export'), 'manage_options', 'https://staging.oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
+	$submenu['edit.php?post_type=pat_submission'][] = array( 'CSV Export', 'manage_options', 'https://staging.oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
+}
+add_action('admin_menu', 'add_csv_export_menu_item');
+// add_submenu_page( 'edit.php?post_type=pat_submission', __('CSV Export'), __('CSV Export'), 'manage_options', 'pat_csv_export', )

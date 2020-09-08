@@ -643,7 +643,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5ef6001b8dce4',
-							'label' => 'Focussing on showing results toward a broad, societal outcome',
+							'label' => 'Focusing on showing results toward a broad, societal outcome',
 							'name' => 'mis_focussing_on_showing_results_toward_a_broad_societal_outcome',
 							'type' => 'radio',
 							'instructions' => '',
@@ -672,7 +672,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5ef600348dce5',
-							'label' => 'Focussing on iterative and flexible project phases',
+							'label' => 'Focusing on iterative and flexible project phases',
 							'name' => 'ada_focussing_on_iterative_and_flexible_project_phases',
 							'type' => 'radio',
 							'instructions' => '',
@@ -701,7 +701,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5ef600468dce6',
-							'label' => 'Focussing on alternatives and assumption-testing of new possibilities',
+							'label' => 'Focusing on alternatives and assumption-testing of new possibilities',
 							'name' => 'ant_focussing_on_alternatives_and_assumption-testing_of_new_possibilities',
 							'type' => 'radio',
 							'instructions' => '',

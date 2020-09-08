@@ -159,7 +159,6 @@ function showPatStep( newID ) {
 
     // get from URL the step to display or display step zero
     currentStepN = window.location.hash.replace( /^\D+/g, '');
-    console.log(currentStepN);
     // choose which step zero to show, based on submission status (step 1 or 10)
     if( !currentStepN ) {
       if( document.querySelector( '[id="pat-step-1"]:not(.hidden)' ) ) {
@@ -327,12 +326,14 @@ window.addEventListener( 'hashchange', function(e){
             $('#pmg-row .pat-results-side').addClass('fixed');
             $('#pmg-row .pat-results-content .section-title').addClass('fixed');
             $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
+            $('#module-2 .pat-results-side').removeClass('fixed');
           }
         },
         exited: function(direction) {
           if(direction == 'down') {
             $('#pmg-row .pat-results-side').addClass('fixed');
             $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+            $('#module-2 .pat-results-side').addClass('fixed');
           }
         },
         offset: {
@@ -346,6 +347,16 @@ window.addEventListener( 'hashchange', function(e){
             $('.second-side-nav .pat-results-nav-menu').addClass('fixed');
           }
         },
+      });
+      var pmgRow = new Waypoint({
+        element: $('#module-2'),
+        handler: function(direction) {
+          $('.facet-row .pat-results-side').removeClass('show');
+          $('.facet-row .pat-results-content').removeClass('show');
+          $('#module-2 .pat-results-side').addClass('show');
+          $('#module-2 .pat-results-content').addClass('show');
+        },
+        offset: '50%',
       });
       var module2Inview = new Waypoint.Inview({
         element: $('#module-2'),
@@ -380,6 +391,60 @@ window.addEventListener( 'hashchange', function(e){
       });
 
     }
+
+  });
+
+  // Menu item progress bar
+  $(document).ready( function() {
+
+    // Get all id from menu item
+    menuItem = document.querySelectorAll('.first-side-nav li');
+    idArray = [];
+    menuItem.forEach((item, i) => {
+      itemHref = item.querySelector('a').getAttribute('href');
+      const regex = /\B#[^\s]+/g;
+      if( regex.test(itemHref) ) {
+        idArray.push(itemHref);
+      }
+    });
+
+    // Calculate progression and update progress bar function
+    function move( id ) {
+      if (i == 0) {
+        i = 1;
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+            i = 0;
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
+      }
+    }
+
+    // For each section, calculate progression and update progress bar
+    window.addEventListener( 'scroll', function(e){
+      idArray.forEach((item, i) => {
+        let section = $(item);
+        let menuItem = $('[href='+item+']');
+
+        // let height = section.outerHeight();
+        // let scrollHeight = section[0].offsetTop - height;
+        // let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        // let percent = Math.floor(scrollTop / scrollHeight * 100);
+
+        let percent = Math.floor( 100 * ($(document).scrollTop() - section.offset().top ) / section.height() );
+
+        menuItem.each((i, item) => {
+          item.setAttribute( 'style', '--scrollPerc:' + percent + '%' );
+        });
+      });
+    });
 
   });
 

@@ -85,10 +85,10 @@ function pat_score( $id ) {
   $scores['ada_percentage'] = $ada_percentage;
 
   // Transform percentage into color
-  $enh_color = ColorHSLToRGB( 288, 75, $enh_percentage );
-  $mis_color = ColorHSLToRGB( 288, 75, $mis_percentage );
-  $ant_color = ColorHSLToRGB( 288, 75, $ant_percentage );
-  $ada_color = ColorHSLToRGB( 288, 75, $ada_percentage );
+  $enh_color = ColorHSLToRGB( 288, 75, (100 - $enh_percentage) );
+  $mis_color = ColorHSLToRGB( 288, 75, (100 - $mis_percentage) );
+  $ant_color = ColorHSLToRGB( 288, 75, (100 - $ant_percentage) );
+  $ada_color = ColorHSLToRGB( 288, 75, (100 - $ada_percentage) );
 
   $scores['enh_color'] = $enh_color;
   $scores['mis_color'] = $mis_color;

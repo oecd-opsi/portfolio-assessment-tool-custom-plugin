@@ -98,7 +98,7 @@ $has_sidebar = 0;
 
 	<div class="save-submit-wrapper">
 		<button class="button saveform" title="Save">Save</button>
-		<button class="button submitform" id="submitcasestudy" title="Submit">Submit</button>
+		<button class="button submitform" id="submitcasestudy" title="Submit">See results</button>
 		<span class="acf-spinner"></span>
 	</div>
 
