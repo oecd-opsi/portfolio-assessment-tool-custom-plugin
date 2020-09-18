@@ -22,7 +22,7 @@ acf_add_local_field_group(array(
 			'display_order' => '',
 			'acfe_permissions' => '',
 			'display_format' => 'd/m/Y',
-			'return_format' => 'd/m/Y',
+			'return_format' => 'j F Y',
 			'first_day' => 1,
 		),
 		array(
@@ -643,7 +643,7 @@ acf_add_local_field_group(array(
 						),
 						array(
 							'key' => 'field_5ef6001b8dce4',
-							'label' => 'Focusing on showing results toward a broad, societal outcome',
+							'label' => 'Focusing on showing results toward a broad outcome',
 							'name' => 'mis_focussing_on_showing_results_toward_a_broad_societal_outcome',
 							'type' => 'radio',
 							'instructions' => '',
@@ -2754,7 +2754,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5ef9c00aaab62',
-			'label' => 'Portfolio management questions',
+			'label' => 'Portfolio Management Questions',
 			'name' => 'portfolio_management_questions_1',
 			'type' => 'group',
 			'instructions' => '',

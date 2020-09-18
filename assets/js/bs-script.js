@@ -36,6 +36,36 @@ for (var k in steps){
   });
 })(jQuery);
 
+// Handle None of these option in checkbox questions
+(function($){
+  $(document).ready( function() {
+    var patCheckboxes = document.querySelectorAll('#portfolio-assessment-tool-form .acf-field-checkbox');
+    patCheckboxes.forEach((patCheckbox, i) => {
+      var cbOptions = patCheckbox.querySelectorAll('input[type="checkbox"]');
+      cbOptions.forEach((option, i) => {
+        option.addEventListener( 'click', function(){
+          var label = this.parentNode;
+          if( label.textContent == ' None of these' && label.querySelector('input[type="checkbox"]').checked == true ) {
+            cbOptions.forEach((item, i) => {
+              item.parentNode.classList.remove('selected');
+              item.checked = false;
+            });
+            this.parentNode.classList.add('selected');
+            this.checked = true;
+          } else {
+            cbOptions.forEach((item, i) => {
+              if( item.parentNode.textContent == ' None of these' ) {
+                item.parentNode.classList.remove('selected');
+                item.checked = false;
+              }
+            });
+          }
+        });
+      });
+    });
+  });
+})(jQuery);
+
 // Handle form submission and save
 if (jQuery("#pat-form").length > 0) {
 
@@ -159,6 +189,7 @@ function showPatStep( newID ) {
 
     // get from URL the step to display or display step zero
     currentStepN = window.location.hash.replace( /^\D+/g, '');
+    console.log(currentStepN);
     // choose which step zero to show, based on submission status (step 1 or 10)
     if( !currentStepN ) {
       if( document.querySelector( '[id="pat-step-1"]:not(.hidden)' ) ) {
@@ -171,7 +202,6 @@ function showPatStep( newID ) {
 
   });
 })(jQuery);
-
 
 // listen to URL hash change
 window.addEventListener( 'hashchange', function(e){
@@ -299,7 +329,7 @@ window.addEventListener( 'hashchange', function(e){
         enter: function(direction) {
           if( direction == 'up' ) {
             $('#pmg-row .pat-results-side').removeClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').removeClass('fixed');
+            // $('#pmg-row .pat-results-content .section-title').removeClass('fixed');
           }
         },
       });
@@ -318,13 +348,13 @@ window.addEventListener( 'hashchange', function(e){
         exit: function(direction) {
           if(direction == 'down') {
             $('#pmg-row .pat-results-side').addClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
           }
         },
         enter: function(direction) {
           if( direction == 'up' ) {
             $('#pmg-row .pat-results-side').addClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
             $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
             $('#module-2 .pat-results-side').removeClass('fixed');
           }
@@ -332,7 +362,7 @@ window.addEventListener( 'hashchange', function(e){
         exited: function(direction) {
           if(direction == 'down') {
             $('#pmg-row .pat-results-side').addClass('fixed');
-            $('#pmg-row .pat-results-content .section-title').addClass('fixed');
+            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
             $('#module-2 .pat-results-side').addClass('fixed');
           }
         },
@@ -358,8 +388,18 @@ window.addEventListener( 'hashchange', function(e){
         },
         offset: '50%',
       });
+      var mod2combRow = new Waypoint({
+        element: $('#module-2-combined'),
+        handler: function(direction) {
+          $('#module-2 .pat-results-side').removeClass('show');
+          $('#module-2 .pat-results-content').removeClass('show');
+          $('#module-2-combined .pat-results-side').addClass('show');
+          $('#module-2-combined .pat-results-content').addClass('show');
+        },
+        offset: '50%',
+      });
       var module2Inview = new Waypoint.Inview({
-        element: $('#module-2'),
+        element: $('#module-2-combined'),
         exited: function(direction) {
           if ( direction == 'down' ) {
             $('.pat-results-top-nav').removeClass('show');
@@ -432,11 +472,6 @@ window.addEventListener( 'hashchange', function(e){
       idArray.forEach((item, i) => {
         let section = $(item);
         let menuItem = $('[href='+item+']');
-
-        // let height = section.outerHeight();
-        // let scrollHeight = section[0].offsetTop - height;
-        // let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        // let percent = Math.floor(scrollTop / scrollHeight * 100);
 
         let percent = Math.floor( 100 * ($(document).scrollTop() - section.offset().top ) / section.height() );
 

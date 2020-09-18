@@ -990,12 +990,12 @@ div[id^="pat-step-"].active-pat-step {
   margin-bottom: 24px;
 }
 
-.acf-field-5f34dc52a2fab .acf-row-handle {
+/* .acf-field-5f34dc52a2fab .acf-row-handle {
   display: none;
-}
-.acf-field-5f34dc52a2fab .acf-row > .acf-fields {
+} */
+/* .acf-field-5f34dc52a2fab .acf-row > .acf-fields {
   border-right-width: 1px;
-}
+} */
 
 /* Module 2 results section */
 #module-2 {
@@ -1084,6 +1084,14 @@ div[id^="pat-step-"].active-pat-step {
   margin-top: 0;
 }
 
+#module-2-combined {
+  top: -1px;
+}
+
+.module-2-combined-text {
+  margin-bottom: 6em;
+}
+
 #portfolio-assessment-tool-form .acf-repeater .acf-field {
   margin-bottom: 0;
 }
@@ -1091,4 +1099,24 @@ div[id^="pat-step-"].active-pat-step {
 body.single-pat_submission .footarea {
   position: relative;
   z-index: 99999;
+}
+
+.goto-m2-btn {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #fff;
+  background: #0053B4;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 16px 8px;
+  margin: 30px auto;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+}
+.goto-m2-btn:hover {
+  color: #fff;
+  text-decoration: none;
+  background: #6681DA;
 }

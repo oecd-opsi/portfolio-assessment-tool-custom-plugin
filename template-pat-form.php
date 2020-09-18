@@ -58,11 +58,9 @@ if ( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && !can_edit_pat_form
 
 // If user is trying to edit a draft of module 2, redirect to #pat-step-10
 if( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 && $status_slug == 'draft_module2' ) {
-	?>
-	<script type="text/javascript">
-		location.href = "#pat-step-10";
-	</script>
-	<?php
+	wp_add_inline_script(
+		'bs-pat-script',
+		'document.querySelector("#pat-step-10 .pat-step-nav-wrapper a").textContent = "Continue Entering projects"' );
 }
 
 $has_sidebar = 0;

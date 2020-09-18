@@ -42,14 +42,14 @@ function bs_enqueue_files() {
 	wp_enqueue_script( 'waypoint-inview', plugin_dir_url( __FILE__ ) . 'assets/js/inview.min.js', array( 'jquery', 'waypoint-js' ), '', true );
 
 	// loads a CSS file in the head.
-	wp_enqueue_style( 'bs-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(plugin_dir_path( __FILE__ ) . 'assets/css/bs-style.css') );
+	wp_enqueue_style( 'bs-pat-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(plugin_dir_path( __FILE__ ) . 'assets/css/bs-style.css') );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-script.js'), true );
+	wp_enqueue_script( 'bs-pat-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-script.js'), true );
 
 	if( is_singular('pat_submission') ) {
 		// loads JS files in the footer.
-		wp_enqueue_script( 'bs-ajax', plugin_dir_url( __FILE__ ) . 'assets/js/bs-results-ajax.js', array( 'jquery', 'bs-script' ), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-results-ajax.js'), true );
+		wp_enqueue_script( 'bs-pat-ajax', plugin_dir_url( __FILE__ ) . 'assets/js/bs-results-ajax.js', array( 'jquery', 'bs-script' ), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-results-ajax.js'), true );
 		wp_localize_script('bs-ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
 	}
 
@@ -242,7 +242,7 @@ function opsi_acf_save_post_pat( $post_id ) {
 	}
 
 	if ( isset( $_POST['csf_action'] ) && $_POST['csf_action'] == 'submit' ) {
-		if( $status_slug == 'draft_module2' ) {
+		if( $status_slug == 'draft_module2' || $status_slug == 'publish' ) {
 			$content['post_status'] = 'publish_module2';
 		} else {
 			$content['post_status'] = 'publish';
@@ -252,7 +252,11 @@ function opsi_acf_save_post_pat( $post_id ) {
 	wp_update_post($content);
 
 	if ( isset( $_POST['csf_action'] ) && $_POST['csf_action'] == 'submit' ) {
-		wp_redirect( get_permalink($post_id), 301);
+		if( $status_slug == 'publish' ) {
+			wp_redirect( get_permalink($post_id), 301 );
+		} else {
+			wp_redirect( get_permalink($post_id) . '#module-2', 301 );
+		}
 		exit;
 	}
 
@@ -786,9 +790,6 @@ add_action( 'init', 'bs_set_pdf_format_mpdf' );
 // Add menu item for CSV export (all items)
 function add_csv_export_menu_item() {
 	global $submenu;
-  // $page_title, $menu_title, $capability, $menu_slug, $callback_function
-  // add_posts_page(__('CSV Export'), __('CSV Export'), 'manage_options', 'https://staging.oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
 	$submenu['edit.php?post_type=pat_submission'][] = array( 'CSV Export', 'manage_options', 'https://staging.oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
 }
 add_action('admin_menu', 'add_csv_export_menu_item');
-// add_submenu_page( 'edit.php?post_type=pat_submission', __('CSV Export'), __('CSV Export'), 'manage_options', 'pat_csv_export', )
