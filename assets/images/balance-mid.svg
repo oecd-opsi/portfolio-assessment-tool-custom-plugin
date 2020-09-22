@@ -1,18 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="740.864" height="113.5" viewBox="0 0 740.864 113.5">
   <defs>
-    <linearGradient id="linear-gradient" x1="0.488" y1="1" x2="0.501" y2="1" gradientUnits="objectBoundingBox">
+    <linearGradient id="linear-gradient" x1="0.545" y1="1" x2="0.413" y2="1" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#4c1659"/>
-      <stop offset="0.489" stop-color="#9330ab"/>
-      <stop offset="1" stop-color="#dc4aff"/>
+      <stop offset="0.46" stop-color="#dc4aff"/>
+      <stop offset="0.481" stop-color="#dc4aff"/>
+      <stop offset="1" stop-color="#4c1659"/>
     </linearGradient>
-    <filter id="Tracciato_132" x="0" y="16.5" width="740.864" height="69" filterUnits="userSpaceOnUse">
+    <filter id="Tracciato_132" x="0" y="7.5" width="740.864" height="69" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-opacity="0.161"/>
       <feComposite operator="in" in2="blur"/>
       <feComposite in="SourceGraphic"/>
     </filter>
-    <filter id="Tracciato_133" x="345" y="0" width="50.979" height="60" filterUnits="userSpaceOnUse">
+    <filter id="Tracciato_133" x="332" y="0" width="50.979" height="60" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur-2"/>
       <feFlood flood-opacity="0.161"/>
@@ -20,15 +21,15 @@
       <feComposite in="SourceGraphic"/>
     </filter>
   </defs>
-  <g id="Raggruppa_203" data-name="Raggruppa 203" transform="translate(-5726 -6031.5)">
-    <g transform="matrix(1, 0, 0, 1, 5726, 6031.5)" filter="url(#Tracciato_132)">
-      <path id="Tracciato_132-2" data-name="Tracciato 132" d="M0,0H678l20.885,25.873L678,51H0L-23.979,25.873Z" transform="translate(32.98 22.5)" fill="url(#linear-gradient)"/>
+  <g id="Raggruppa_205" data-name="Raggruppa 205" transform="translate(-5739 -6031.5)">
+    <g transform="matrix(1, 0, 0, 1, 5739, 6031.5)" filter="url(#Tracciato_132)">
+      <path id="Tracciato_132-2" data-name="Tracciato 132" d="M0,0H678l20.885,25.873L678,51H0L-23.979,25.873Z" transform="translate(32.98 13.5)" fill="url(#linear-gradient)"/>
     </g>
-    <text id="MEDIUM" transform="translate(6033.901 6138)" fill="#4c1659" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MEDIUM</tspan></text>
+    <text id="MEDIUM" transform="translate(6033.901 6138)" fill="#4c1659" font-size="26" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">MEDIUM</tspan></text>
     <text id="HIGH" transform="translate(6350.553 6138)" fill="#4c1659" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">HIGH</tspan></text>
     <g id="Raggruppa_198" data-name="Raggruppa 198" transform="translate(293.511 968.99)">
-      <g transform="matrix(1, 0, 0, 1, 5432.49, 5062.51)" filter="url(#Tracciato_133)">
-        <path id="Tracciato_133-2" data-name="Tracciato 133" d="M42,0V32.979L0,16.731Z" transform="translate(354 48) rotate(-90)" fill="#fff"/>
+      <g transform="matrix(1, 0, 0, 1, 5445.49, 5062.51)" filter="url(#Tracciato_133)">
+        <path id="Tracciato_133-2" data-name="Tracciato 133" d="M42,0V32.979L0,16.731Z" transform="translate(341 48) rotate(-90)" fill="#fff"/>
       </g>
     </g>
     <text id="LOW" transform="translate(5784.479 6138)" fill="#4c1659" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">LOW</tspan></text>
