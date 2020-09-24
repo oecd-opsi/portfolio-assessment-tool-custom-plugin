@@ -41,11 +41,14 @@ function bs_enqueue_files() {
 	// Loads Waypoints
 	wp_enqueue_script( 'waypoint-inview', plugin_dir_url( __FILE__ ) . 'assets/js/inview.min.js', array( 'jquery', 'waypoint-js' ), '', true );
 
+	// Load Canvg
+	wp_enqueue_script( 'canvg-js', 'https://cdn.jsdelivr.net/npm/canvg/dist/browser/canvg.min.js', array( 'jquery' ), '', false );
+
 	// loads a CSS file in the head.
 	wp_enqueue_style( 'bs-pat-style', plugin_dir_url( __FILE__ ) . 'assets/css/bs-style.css', array(), filemtime(plugin_dir_path( __FILE__ ) . 'assets/css/bs-style.css') );
 
 	// loads JS files in the footer.
-	wp_enqueue_script( 'bs-pat-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-script.js'), true );
+	wp_enqueue_script( 'bs-pat-script', plugin_dir_url( __FILE__ ) . 'assets/js/bs-script.js', array( 'jquery', 'jquery-ui-sortable', 'waypoint-js', 'waypoint-inview', 'canvg-js'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-script.js'), true );
 
 	if( is_singular('pat_submission') ) {
 		// loads JS files in the footer.
@@ -454,9 +457,13 @@ function bp_pat_list() {
 				<td>
 					<?php
 					if ( $post_status_obj->label == 'Published' ) {
-						echo 'Module 1 Complete';
+						echo 'Quick Snapshot complete';
 					} elseif ( $post_status_obj->label == 'Draft' ) {
-						echo 'Module 1 Draft';
+						echo 'Quick Snapshot draft';
+					} elseif ( $post_status_obj->label == 'Published with Module 2' ) {
+						echo 'Project-based mapping complete';
+					} elseif ( $post_status_obj->label == 'Draft of Module 2' ) {
+						echo 'Project-based Mapping draft';
 					} else {
 						echo $post_status_obj->label;
 					}

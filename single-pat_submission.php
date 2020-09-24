@@ -5,6 +5,28 @@
   $has_sidebar = 0;
 	$layout = 'fullpage';
 
+// If the current user is not the author or an admin, do not show the content
+$current_user = wp_get_current_user();
+$current_user_id = $current_user->ID;
+$current_user_roles = $current_user->roles;
+$author_id = $post->post_author;
+if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $author_id ) {
+	?>
+	<div class="col-sm-12">
+		<div class="alert alert-warning text-center">
+			<h3><?php echo __( 'Sorry, you cannot see a questionnaire results that was submitted by someone else. In case of issues, please contact the OPSI team at', 'opsi' ); ?> <a href="mailto:opsi@oecd.org">opsi@oecd.org</a></h3>
+		</div>
+
+		<br />
+		<a href="<?php echo $bp->loggedin_user->domain . 'pat/'; ?>" title="<?php echo __( 'Back', 'opsi' ); ?>" class="button btn btn-default flipicon">
+          <i class="fa fa-chevron-left" aria-hidden="true"></i>  <?php echo __( 'Back', 'opsi' ); ?>
+		</a>
+
+	</div>
+	<?php
+	get_footer();
+	return;
+}
 ?>
 
 
@@ -49,16 +71,6 @@
   $nav_menu .= '
       <li><a href="#download-and-share">Download and Share Results</a></li>
       <li><a href="#interpretation">Interpretation and Next Steps</a></li>
-      <li class="nav-share-item">
-      <!-- AddToAny BEGIN -->
-      <a class="a2a_dd" href="https://www.addtoany.com/share">Share Results</a>
-      <script>
-      var a2a_config = a2a_config || {};
-      a2a_config.onclick = 1;
-      </script>
-      <script async src="https://static.addtoany.com/menu/page.js"></script>
-      <!-- AddToAny END -->
-      </li>
       <li class="nav-start-again-item"><a href="#" data-post_id="'.$postid.'">Start again</a></li>
     </ul>
   ';
@@ -5403,12 +5415,20 @@
                 <div class="pat-results-content">
                   <h2>Download and share results</h2>
                   <?php the_field( 'download_and_share_results_text', 'option' ) ?>
-                  <?php if(function_exists('mpdf_pdfbutton')) {
-                    mpdf_pdfbutton( false, 'Download PDF' );
-                  }
-                  ?>
-                   -
-                  <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>" class="download-csv">Download CSV</a>
+                  <div>
+                    <?php if(function_exists('mpdf_pdfbutton')) {
+                      mpdf_pdfbutton( false, 'Download PDF' );
+                    }
+                    ?>
+                     -
+                    <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>" class="download-csv">Download CSV</a>
+                  </div>
+                  <div>
+                    <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1" class="dl-svg-as-jpg">Download your Organisational Portfolio graph</a>
+                    <?php if( $status_slug == 'publish_module2' ) : ?>
+                       - <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2" class="dl-svg-as-jpg">Download your Project Based Mapping graph</a>
+                    <?php endif; ?>
+                  </div>
                 </div>
               </section>
 

@@ -82,17 +82,28 @@ $has_sidebar = 0;
 
 
 	<?php
+	$post_status_obj = get_post_status_object( get_post_status( $_GET['edit'] ) );
 	// Post status
-	$status = $post_status->label;
+	if ( $post_status_obj->label == 'Published' ) {
+		$status = 'Quick Snapshot complete';
+	} elseif ( $post_status_obj->label == 'Draft' ) {
+		$status = 'Quick Snapshot draft';
+	} elseif ( $post_status_obj->label == 'Published with Module 2' ) {
+		$status = 'Project-based mapping complete';
+	} elseif ( $post_status_obj->label == 'Draft of Module 2' ) {
+		$status = 'Project-based Mapping draft';
+	} else {
+		$status = $post_status->label;
+	}
 	// Last modified
 	$last_save = get_the_modified_date( get_option( 'date_format' ) . ', ' . get_option( 'time_format' ) . ' a', $_GET['edit'] );
 	 ?>
 
-	<!-- <div class="pat-status-widget">
+	<div class="pat-status-widget">
 		<h2>Status</h2>
 		<div class="pat-status-meta pat-status-label"><?php echo $status ?></div>
-		<div class="pat-status-meta pat-status-last-save"><?php echo $last_save ?></div>
-	</div> -->
+		<div class="pat-status-meta pat-status-last-save">Last saved on <?php echo $last_save ?></div>
+	</div>
 
 	<div class="save-submit-wrapper">
 		<button class="button saveform" title="Save">Save</button>

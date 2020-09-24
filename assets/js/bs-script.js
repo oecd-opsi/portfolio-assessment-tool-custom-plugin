@@ -189,7 +189,6 @@ function showPatStep( newID ) {
 
     // get from URL the step to display or display step zero
     currentStepN = window.location.hash.replace( /^\D+/g, '');
-    console.log(currentStepN);
     // choose which step zero to show, based on submission status (step 1 or 10)
     if( !currentStepN ) {
       if( document.querySelector( '[id="pat-step-1"]:not(.hidden)' ) ) {
