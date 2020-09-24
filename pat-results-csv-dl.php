@@ -330,5 +330,5 @@ header('Content-Disposition: attachment; filename="results.csv";');
 $f = fopen('php://output', 'w');
 
 foreach ($csv_array as $line) {
-	fputcsv($f, $line, ";");
+	fputcsv($f, $line);
 }
