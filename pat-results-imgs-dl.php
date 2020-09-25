@@ -1884,6 +1884,7 @@ $fp = fopen($file_output_url, 'rb');
 
 header("Content-Type: image/png");
 header("Content-Length: " . filesize($file_output_url));
+header('Content-Disposition: attachment; filename="graph-'.$module.'.png";');
 
 fpassthru($fp);
 exit;
