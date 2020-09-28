@@ -5424,9 +5424,9 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                     <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>" class="download-csv">Download CSV</a>
                   </div>
                   <div>
-                    <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1" class="dl-svg-as-jpg" download>Download your Organisational Portfolio image file</a>
+                    <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Organisational Portfolio image file</a>
                     <?php if( $status_slug == 'publish_module2' ) : ?>
-                       - <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2" class="dl-svg-as-jpg" download>Download your Project Based Mapping image file</a>
+                       - <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Project Based Mapping image file</a>
                     <?php endif; ?>
                   </div>
                 </div>
