@@ -6,7 +6,7 @@ define('WP_USE_THEMES', false);
 require(''.$fPath[0].'/wp-blog-header.php');
 
 if ( !isset($_GET['module']) && empty($_GET['module']) && !isset($_GET['id']) && empty($_GET['id']) ) {
-	return;
+	wp_die('You are not allowed to see this content or your section has expired.');
 }
 
 if ( isset($_GET['module']) && !empty($_GET['module']) ) {
@@ -15,10 +15,20 @@ if ( isset($_GET['module']) && !empty($_GET['module']) ) {
 
 if ( isset($_GET['id']) && !empty($_GET['id']) ) {
 	$id = $_GET['id'];
+	$post = get_post( $id );
 }
 
 if ( isset($_GET['org']) && !empty($_GET['org']) ) {
 	$org = $_GET['org'];
+}
+
+// If the current user is not the author or an admin, do not show the content
+$current_user = wp_get_current_user();
+$current_user_id = $current_user->ID;
+$current_user_roles = $current_user->roles;
+$author_id = $post->post_author;
+if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $author_id ) {
+	wp_die('You are not allowed to see this content or your section has expired.');
 }
 
 $scores = pat_score($id);

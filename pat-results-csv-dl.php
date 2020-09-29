@@ -5,6 +5,34 @@ $fPath = explode("wp-content",$realPath);
 define('WP_USE_THEMES', false);
 require(''.$fPath[0].'/wp-blog-header.php');
 
+// WP_Query arguments
+$args = array(
+	'post_type'              => array( 'pat_submission' ),
+	'post_status'            => array( 'publish', 'publish_module2' ),
+	'nopaging'               => true,
+	'posts_per_page'         => '-1',
+);
+
+if ( isset($_GET['pat_author']) && !empty($_GET['pat_author']) ) {
+	$author_id = $args['author'] = $_GET['pat_author'];
+}
+
+if ( isset($_GET['pat_result_id']) && !empty($_GET['pat_result_id']) ) {
+	$post_id = $_GET['pat_result_id'];
+	$args['p'] = $post_id;
+}
+
+
+// The Query
+$query = new WP_Query( $args );
+
+// If the current user is not the author or an admin, do not show the content
+$current_user = wp_get_current_user();
+$current_user_id = $current_user->ID;
+if ( !is_user_logged_in() ) {
+	wp_die('You are not allowed to see this content or your section has expired.');
+}
+
 // declare array
 $csv_array = array(
 	array(
@@ -131,27 +159,6 @@ $csv_array = array(
 		'Link to Results Page'
 	)
 );
-
-// WP_Query arguments
-$args = array(
-	'post_type'              => array( 'pat_submission' ),
-	'post_status'            => array( 'publish', 'publish_module2' ),
-	'nopaging'               => true,
-	'posts_per_page'         => '-1',
-);
-
-if ( isset($_GET['pat_author']) && !empty($_GET['pat_author']) ) {
-	$args['author'] = $_GET['pat_author'];
-}
-
-if ( isset($_GET['pat_result_id']) && !empty($_GET['pat_result_id']) ) {
-	$post_id = $_GET['pat_result_id'];
-	$args['p'] = $post_id;
-}
-
-
-// The Query
-$query = new WP_Query( $args );
 
 // The Loop
 if ( $query->have_posts() ) {

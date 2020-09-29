@@ -377,57 +377,62 @@ window.addEventListener( 'hashchange', function(e){
           }
         },
       });
-      var pmgRow = new Waypoint({
-        element: $('#module-2'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
-          $('#module-2 .pat-results-side').addClass('show');
-          $('#module-2 .pat-results-content').addClass('show');
-        },
-        offset: '50%',
-      });
-      var mod2combRow = new Waypoint({
-        element: $('#module-2-combined'),
-        handler: function(direction) {
-          $('#module-2 .pat-results-side').removeClass('show');
-          $('#module-2 .pat-results-content').removeClass('show');
-          $('#module-2-combined .pat-results-side').addClass('show');
-          $('#module-2-combined .pat-results-content').addClass('show');
-        },
-        offset: '50%',
-      });
-      var module2Inview = new Waypoint.Inview({
-        element: $('#module-2-combined'),
-        exited: function(direction) {
-          if ( direction == 'down' ) {
-            $('.pat-results-top-nav').removeClass('show');
-          }
-        },
-        enter: function(direction) {
-          if ( direction == 'up' ) {
-            $('.pat-results-top-nav').addClass('show');
-            $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
-          }
-        },
-      });
 
-      // Module 2 graph tooltip
-      $('#module-2').append('<span id="m2-graph-tooltip"></span>');
-      $('g[data-name="main-group"] circle').on('mouseenter', function(e){
-        var mouseX = e.clientX;
-        var mouseY = e.clientY;
-        var text = $(this).data('project-title');
-        var span = $('#m2-graph-tooltip');
-        var spanH = span.outerHeight();
-        span.text(text);
-        span.addClass('active');
-        span.css('left', mouseX);
-        span.css('top', mouseY - spanH);
-      });
-      $('g[data-name="main-group"] circle').on('mouseleave', function(e){
-        $('#m2-graph-tooltip').removeClass('active');
-      });
+      if($('#module-2').length) {
+
+        var pmgRow = new Waypoint({
+          element: $('#module-2'),
+          handler: function(direction) {
+            $('.facet-row .pat-results-side').removeClass('show');
+            $('.facet-row .pat-results-content').removeClass('show');
+            $('#module-2 .pat-results-side').addClass('show');
+            $('#module-2 .pat-results-content').addClass('show');
+          },
+          offset: '50%',
+        });
+        var mod2combRow = new Waypoint({
+          element: $('#module-2-combined'),
+          handler: function(direction) {
+            $('#module-2 .pat-results-side').removeClass('show');
+            $('#module-2 .pat-results-content').removeClass('show');
+            $('#module-2-combined .pat-results-side').addClass('show');
+            $('#module-2-combined .pat-results-content').addClass('show');
+          },
+          offset: '50%',
+        });
+        var module2Inview = new Waypoint.Inview({
+          element: $('#module-2-combined'),
+          exited: function(direction) {
+            if ( direction == 'down' ) {
+              $('.pat-results-top-nav').removeClass('show');
+            }
+          },
+          enter: function(direction) {
+            if ( direction == 'up' ) {
+              $('.pat-results-top-nav').addClass('show');
+              $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
+            }
+          },
+        });
+
+        // Module 2 graph tooltip
+        $('#module-2').append('<span id="m2-graph-tooltip"></span>');
+        $('g[data-name="main-group"] circle').on('mouseenter', function(e){
+          var mouseX = e.clientX;
+          var mouseY = e.clientY;
+          var text = $(this).data('project-title');
+          var span = $('#m2-graph-tooltip');
+          var spanH = span.outerHeight();
+          span.text(text);
+          span.addClass('active');
+          span.css('left', mouseX);
+          span.css('top', mouseY - spanH);
+        });
+        $('g[data-name="main-group"] circle').on('mouseleave', function(e){
+          $('#m2-graph-tooltip').removeClass('active');
+        });
+
+      } // end if module-2
 
     }
 
