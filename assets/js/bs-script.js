@@ -22,13 +22,13 @@ for (var k in steps){
 (function($){
   $(document).ready( function() {
     $( ".pat-sortable-field .acf-input .acf-fields" ).sortable({
-      stop: function() {
+      update: function(event, ui) {
         var nbElems = $(this).find( "input[type='number']" ).length;
         $(this).find( "input[type='number']" ).each( function(i) {
           if ( i == 0 ) {
-            $(this).val( nbElems - i );
+            $(this).val( parseInt(nbElems - i) ).attr( 'value', parseInt(nbElems - i) );
           } else {
-            $(this).val( nbElems - i - 1 );
+            $(this).val( parseInt(nbElems - i - 1) ).attr( 'value', parseInt(nbElems - i - 1) );
           }
         });
       }
