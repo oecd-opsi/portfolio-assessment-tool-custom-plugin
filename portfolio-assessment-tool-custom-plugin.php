@@ -52,8 +52,8 @@ function bs_enqueue_files() {
 
 	if( is_singular('pat_submission') ) {
 		// loads JS files in the footer.
-		wp_enqueue_script( 'bs-pat-ajax', plugin_dir_url( __FILE__ ) . 'assets/js/bs-results-ajax.js', array( 'jquery', 'bs-script' ), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-results-ajax.js'), true );
-		wp_localize_script('bs-ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' )));
+		wp_enqueue_script( 'bs-pat-ajax', plugin_dir_url( __FILE__ ) . 'assets/js/bs-results-ajax.js', array( 'jquery', 'bs-pat-script' ), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/bs-results-ajax.js'), true );
+		wp_localize_script( 'bs-pat-ajax', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 	}
 
 }
@@ -618,7 +618,7 @@ function bs_pat_submission_date( $post ) {
 	}
 
 	// get current date and populate Submission field
-	$now = date( 'd/m/Y' );
+	$now = date( 'Y-m-d' );
 	update_field( 'submission_date', $now, $post->ID );
 
 }

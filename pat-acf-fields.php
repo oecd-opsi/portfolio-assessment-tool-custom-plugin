@@ -3942,7 +3942,7 @@ acf_add_local_field_group(array(
 					'message' => '<div class="pat-step-nav-wrapper">
 		<a href="#pat-step-8" class="button">Back</a>
 		<button class="button saveform">Save</button>
-		<button class="button submitform" id="submitcasestudy">See results</button>
+		<button class="button submitform" id="submitcasestudy">Finish and See Results</button>
 <span class="acf-spinner"></span>
 </div>',
 					'new_lines' => 'wpautop',

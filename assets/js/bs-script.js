@@ -230,8 +230,10 @@ window.addEventListener( 'hashchange', function(e){
 (function($){
   $(document).ready( function() {
 
+    var mediaQuery = window.matchMedia("(min-width: 960px)")
+
     // check if it PAT results page
-    if ( $('.pat-results').length > 0 ) {
+    if ( $('.pat-results').length > 0 && mediaQuery.matches ) {
 
       // Fix top nav when Introduction sectione exited
       var introInview = new Waypoint.Inview({
@@ -273,87 +275,104 @@ window.addEventListener( 'hashchange', function(e){
           }
         },
       });
-      var enhRowInview = new Waypoint({
+      var enhRowInview = new Waypoint.Inview({
         element: $('#enh-row'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
+        enter: function(direction) {
           $('#enh-row .pat-results-side').addClass('show');
           $('#enh-row .pat-results-content').addClass('show');
         },
-        offset: '50%',
+        entered: function(direction) {
+          $('#enh-row .pat-results-side').addClass('show');
+          $('#enh-row .pat-results-content').addClass('show');
+        },
+        exit: function(direction) {
+          $('#enh-row .pat-results-side').removeClass('show');
+          $('#enh-row .pat-results-content').removeClass('show');
+        },
       });
-      var misRowInview = new Waypoint({
+      var misRowInview = new Waypoint.Inview({
         element: $('#mis-row'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
+        enter: function(direction) {
           $('#mis-row .pat-results-side').addClass('show');
           $('#mis-row .pat-results-content').addClass('show');
         },
-        offset: '50%',
+        entered: function(direction) {
+          $('#mis-row .pat-results-side').addClass('show');
+          $('#mis-row .pat-results-content').addClass('show');
+        },
+        exit: function(direction) {
+          $('#mis-row .pat-results-side').removeClass('show');
+          $('#mis-row .pat-results-content').removeClass('show');
+        },
       });
-      var adaRowInview = new Waypoint({
+      var adaRowInview = new Waypoint.Inview({
         element: $('#ada-row'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
+        enter: function(direction) {
           $('#ada-row .pat-results-side').addClass('show');
           $('#ada-row .pat-results-content').addClass('show');
         },
-        offset: '50%',
+        entered: function(direction) {
+          $('#ada-row .pat-results-side').addClass('show');
+          $('#ada-row .pat-results-content').addClass('show');
+        },
+        exit: function(direction) {
+          $('#ada-row .pat-results-side').removeClass('show');
+          $('#ada-row .pat-results-content').removeClass('show');
+        },
       });
-      var antRowInview = new Waypoint({
+      var antRowInview = new Waypoint.Inview({
         element: $('#ant-row'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
+        enter: function(direction) {
           $('#ant-row .pat-results-side').addClass('show');
           $('#ant-row .pat-results-content').addClass('show');
         },
-        offset: '50%',
-      });
-      var tendencyRow = new Waypoint({
-        element: $('#tendency-row'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
-          $('#tendency-row .pat-results-side').addClass('show');
-          $('#tendency-row .pat-results-content').addClass('show');
+        entered: function(direction) {
+          $('#ant-row .pat-results-side').addClass('show');
+          $('#ant-row .pat-results-content').addClass('show');
         },
-        offset: '50%',
+        exit: function(direction) {
+          $('#ant-row .pat-results-side').removeClass('show');
+          $('#ant-row .pat-results-content').removeClass('show');
+        },
       });
       var tendencyRowInview = new Waypoint.Inview({
         element: $('#tendency-row'),
         enter: function(direction) {
+          $('#tendency-row .pat-results-side').addClass('show');
+          $('#tendency-row .pat-results-content').addClass('show');
           if( direction == 'up' ) {
             $('#pmg-row .pat-results-side').removeClass('fixed');
-            // $('#pmg-row .pat-results-content .section-title').removeClass('fixed');
           }
         },
-      });
-      var pmgRow = new Waypoint({
-        element: $('#pmg-row'),
-        handler: function(direction) {
-          $('.facet-row .pat-results-side').removeClass('show');
-          $('.facet-row .pat-results-content').removeClass('show');
-          $('#pmg-row .pat-results-side').addClass('show');
-          $('#pmg-row .pat-results-content').addClass('show');
+        entered: function(direction) {
+          $('#tendency-row .pat-results-side').addClass('show');
+          $('#tendency-row .pat-results-content').addClass('show');
+          if( direction == 'up' ) {
+            $('#pmg-row .pat-results-side').removeClass('show');
+            $('#pmg-row .pat-results-content').removeClass('show');
+          }
         },
-        offset: '50%',
+        exit: function(direction) {
+          $('#tendency-row .pat-results-side').removeClass('show');
+          $('#tendency-row .pat-results-content').removeClass('show');
+          if( direction == 'down' ) {
+            $('#pmg-row .pat-results-side').addClass('show');
+            $('#pmg-row .pat-results-content').addClass('show');
+          }
+        },
       });
       var pmgRowInview = new Waypoint.Inview({
         element: $('#pmg-row'),
         exit: function(direction) {
+          $('#pmg-row .pat-results-side').addClass('show');
+          $('#pmg-row .pat-results-content').addClass('show');
           if(direction == 'down') {
             $('#pmg-row .pat-results-side').addClass('fixed');
-            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
           }
         },
         enter: function(direction) {
           if( direction == 'up' ) {
             $('#pmg-row .pat-results-side').addClass('fixed');
-            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
             $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
             $('#module-2 .pat-results-side').removeClass('fixed');
           }
@@ -361,12 +380,8 @@ window.addEventListener( 'hashchange', function(e){
         exited: function(direction) {
           if(direction == 'down') {
             $('#pmg-row .pat-results-side').addClass('fixed');
-            // $('#pmg-row .pat-results-content .section-title').addClass('fixed');
             $('#module-2 .pat-results-side').addClass('fixed');
           }
-        },
-        offset: {
-          bottom: -300,
         }
       });
       var downloadInview = new Waypoint.Inview({
@@ -374,8 +389,38 @@ window.addEventListener( 'hashchange', function(e){
         exit: function(direction) {
           if ( direction == 'down' ) {
             $('.second-side-nav .pat-results-nav-menu').addClass('fixed');
+            if($('#module-2').length) {
+              $('#module-2-combined .pat-results-side').addClass('show');
+              $('#module-2-combined .pat-results-content').addClass('show');
+            }
+          } else if( direction == 'up' ) {
+            $('#pmg-row .pat-results-side').addClass('show');
+            $('#pmg-row .pat-results-content').addClass('show');
           }
         },
+      });
+      var interpretationInview = new Waypoint.Inview({
+        element: $('#interpretation'),
+        enter: function(direction) {
+          if ( direction == 'down' ) {
+            $('#pmg-row .pat-results-side').removeClass('show');
+            $('#pmg-row .pat-results-content').removeClass('show');
+            if($('#module-2').length) {
+              $('#module-2-combined .pat-results-side').removeClass('show');
+              $('#module-2-combined .pat-results-content').removeClass('show');
+            }
+          }
+        },
+        exit: function(direction) {
+          if( direction == 'up' ) {
+            $('#pmg-row .pat-results-side').addClass('show');
+            $('#pmg-row .pat-results-content').addClass('show');
+            if($('#module-2').length) {
+              $('#module-2-combined .pat-results-side').addClass('show');
+              $('#module-2-combined .pat-results-content').addClass('show');
+            }
+          }
+        }
       });
 
       if($('#module-2').length) {
@@ -383,8 +428,6 @@ window.addEventListener( 'hashchange', function(e){
         var pmgRow = new Waypoint({
           element: $('#module-2'),
           handler: function(direction) {
-            $('.facet-row .pat-results-side').removeClass('show');
-            $('.facet-row .pat-results-content').removeClass('show');
             $('#module-2 .pat-results-side').addClass('show');
             $('#module-2 .pat-results-content').addClass('show');
           },
@@ -393,8 +436,6 @@ window.addEventListener( 'hashchange', function(e){
         var mod2combRow = new Waypoint({
           element: $('#module-2-combined'),
           handler: function(direction) {
-            $('#module-2 .pat-results-side').removeClass('show');
-            $('#module-2 .pat-results-content').removeClass('show');
             $('#module-2-combined .pat-results-side').addClass('show');
             $('#module-2-combined .pat-results-content').addClass('show');
           },
@@ -413,6 +454,12 @@ window.addEventListener( 'hashchange', function(e){
               $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
             }
           },
+          exit: function(direction) {
+            if( direction == 'up' ) {
+              $('#module-2 .pat-results-side').addClass('show');
+              $('#module-2 .pat-results-content').addClass('show');
+            }
+          }
         });
 
         // Module 2 graph tooltip

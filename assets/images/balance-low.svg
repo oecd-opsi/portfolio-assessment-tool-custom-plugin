@@ -24,13 +24,13 @@
     <g transform="matrix(1, 0, 0, 1, 6811, 5797.5)" filter="url(#Tracciato_132)">
       <path id="Tracciato_132-2" data-name="Tracciato 132" d="M0,0H678l20.885,25.873L678,51H0L-23.979,25.873Z" transform="translate(707.89 73.5) rotate(180)" fill="url(#linear-gradient)"/>
     </g>
-    <text id="MEDIUM" transform="translate(7118.901 5904)" fill="#4c1659" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">MEDIUM</tspan></text>
-    <text id="HIGH" transform="translate(7435.553 5904)" fill="#4c1659" font-size="26" font-family="Roboto-Regular, Roboto"><tspan x="0" y="0">HIGH</tspan></text>
+    <text id="MEDIUM" transform="translate(7118.901 5904)" fill="#4c1659" font-size="26" font-family="Lato, Roboto-Regular, Roboto"><tspan x="0" y="0">MEDIUM</tspan></text>
+    <text id="HIGH" transform="translate(7435.553 5904)" fill="#4c1659" font-size="26" font-family="Lato, Roboto-Regular, Roboto"><tspan x="0" y="0">HIGH</tspan></text>
     <g id="Raggruppa_80" data-name="Raggruppa 80" transform="translate(1104.01 734.99)">
       <g transform="matrix(1, 0, 0, 1, 5706.99, 5062.51)" filter="url(#Tracciato_133)">
         <path id="Tracciato_133-2" data-name="Tracciato 133" d="M42,0V32.979L0,16.731Z" transform="translate(79.5 48) rotate(-90)" fill="#fff"/>
       </g>
     </g>
-    <text id="LOW" transform="translate(6869.479 5904)" fill="#4c1659" font-size="26" font-family="Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">LOW</tspan></text>
+    <text id="LOW" transform="translate(6869.479 5904)" fill="#4c1659" font-size="26" font-family="Lato, Roboto-Bold, Roboto" font-weight="700"><tspan x="0" y="0">LOW</tspan></text>
   </g>
 </svg>

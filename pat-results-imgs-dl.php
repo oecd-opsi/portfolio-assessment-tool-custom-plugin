@@ -1894,12 +1894,12 @@ $file_input_path = $upload_path.'/graph-'.$module.'-'.$post->ID.'.svg';
 $file_output_path = $upload_path.'/graph-'.$module.'-'.$post->ID.'.png';
 $handle = file_put_contents( $file_input_path, $svg );
 exec("inkscape $file_input_path --export-png $file_output_path");
-$file_output_url = $upload_dir['baseurl'].'/pat-temp/graph-'.$module.'-'.$post->ID.'.png';
+// $file_output_url = $upload_dir['basedir'].'/pat-temp/graph-'.$module.'-'.$post->ID.'.png';
 
-$fp = fopen($file_output_url, 'rb');
+$fp = fopen($file_output_path, 'rb');
 
 header("Content-Type: image/png");
-header("Content-Length: " . filesize($file_output_url));
+header("Content-Length: " . filesize($file_output_path));
 header('Content-Disposition: attachment; filename="graph-'.$module.'.png";');
 
 fpassthru($fp);

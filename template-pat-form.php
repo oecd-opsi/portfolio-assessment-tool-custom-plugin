@@ -100,9 +100,11 @@ $has_sidebar = 0;
 	 ?>
 
 	<div class="pat-status-widget">
+		<?php if( isset( $_GET['edit'] ) && intval( $_GET['edit'] ) > 0 ): ?>
 		<h2>Status</h2>
 		<div class="pat-status-meta pat-status-label"><?php echo $status ?></div>
 		<div class="pat-status-meta pat-status-last-save">Last saved on <?php echo $last_save ?></div>
+		<?php endif; ?>
 	</div>
 
 	<div class="save-submit-wrapper">
