@@ -325,6 +325,9 @@ window.addEventListener( 'hashchange', function(e){
         enter: function(direction) {
           $('#ant-row .pat-results-side').addClass('show');
           $('#ant-row .pat-results-content').addClass('show');
+          if( direction == 'up' ) {
+            $('#tendency-row .pat-results-side').removeClass('fixed');
+          }
         },
         entered: function(direction) {
           $('#ant-row .pat-results-side').addClass('show');
@@ -342,6 +345,7 @@ window.addEventListener( 'hashchange', function(e){
           $('#tendency-row .pat-results-content').addClass('show');
           if( direction == 'up' ) {
             $('#pmg-row .pat-results-side').removeClass('fixed');
+            $('#tendency-row .pat-results-side').addClass('fixed');
           }
         },
         entered: function(direction) {
@@ -356,6 +360,7 @@ window.addEventListener( 'hashchange', function(e){
           if( direction == 'down' ) {
             $('#pmg-row .pat-results-side').addClass('show');
             $('#pmg-row .pat-results-content').addClass('show');
+            $('#tendency-row .pat-results-side').addClass('fixed');
           }
         },
         exited: function(direction) {
@@ -391,6 +396,7 @@ window.addEventListener( 'hashchange', function(e){
         exit: function(direction) {
           if ( direction == 'down' ) {
             $('.second-side-nav .pat-results-nav-menu').addClass('fixed');
+            $('#tendency-row .pat-results-side').removeClass('fixed');
             if($('#module-2').length) {
               $('#module-2-combined .pat-results-side').addClass('show');
               $('#module-2-combined .pat-results-content').addClass('show');
@@ -454,6 +460,9 @@ window.addEventListener( 'hashchange', function(e){
             if ( direction == 'up' ) {
               $('.pat-results-top-nav').addClass('show');
               $('.second-side-nav .pat-results-nav-menu').removeClass('fixed');
+            }
+            if( direction == 'down' ) {
+              $('#tendency-row .pat-results-side').removeClass('fixed');
             }
           },
           exit: function(direction) {

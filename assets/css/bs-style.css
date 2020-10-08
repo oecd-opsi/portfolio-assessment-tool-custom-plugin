@@ -960,7 +960,7 @@ div[id^="pat-step-"].active-pat-step {
 #tendency-row.pat-results-row .pat-results-side.fixed {
   display: block !important;
   position: fixed;
-  top: 34px;
+  top: 164px;
   width: calc( 1110px / 4 + 60px );
 }
 
