@@ -1,5 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="762" height="395" viewBox="0 0 762 395">
   <defs>
+    <style>
+      .svg-hide {
+        display: none;
+      }
+    </style>
     <filter id="border" x="89.168" y="13.933" width="590.185" height="373.532" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
@@ -1113,568 +1118,568 @@
         <path id="border-2" data-name="border" d="M2575.51,3513.15l281.833-176.833L3142.01,3515.65l-284.667,172.667Z" transform="translate(-2474.51 -3314.61)" fill="none" stroke="#fff" stroke-width="3"/>
       </g>
       <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#facet-1)">
-        <path id="facet-1-2" data-name="facet-1" d="M749.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-430.63 -1226.53)" fill="#4c1659"/>
+        <path id="facet-1-2" data-name="facet-1" d="M749.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-430.63 -1226.53)" fill="<?php echo $scores['enh_color'] ?>"/>
       </g>
       <g id="Componente_4_15" data-name="Componente 4 – 15" transform="translate(5444.824 2470.887)">
         <g transform="matrix(1, 0, 0, 1, -278.32, -32.93)" filter="url(#facet-2)">
-          <path id="facet-2-2" data-name="facet-2" d="M871.043,1347.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.93 -1251.07)" fill="#6c1f7f"/>
+          <path id="facet-2-2" data-name="facet-2" d="M871.043,1347.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.93 -1251.07)" fill="<?php echo $scores['mis_color'] ?>"/>
         </g>
       </g>
       <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#facet-3)">
-        <path id="facet-3-2" data-name="facet-3" d="M871.043,1500.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.92 -1199.89)" fill="#c338e5"/>
+        <path id="facet-3-2" data-name="facet-3" d="M871.043,1500.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.92 -1199.89)" fill="<?php echo $scores['ada_color'] ?>"/>
       </g>
       <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#facet-4)">
-        <path id="facet-4-2" data-name="facet-4" d="M994.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-340.31 -1224.53)" fill="#993eaf"/>
+        <path id="facet-4-2" data-name="facet-4" d="M994.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-340.31 -1224.53)" fill="<?php echo $scores['ant_color'] ?>"/>
       </g>
       <g id="data-facet-1">
-        <g id="data-dots-1">
+        <g id="data-dots-1" class="<?php echo (count($scores['m2']['1-enh']) == 0 || count($scores['m2']['1-enh']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-1)">
-            <circle id="dot-1-1-2" data-name="dot-1-1" cx="6" cy="6" r="6" transform="translate(213 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-1-2" data-name="dot-1-1" data-project-title="<?php echo $scores['m2']['1-enh'][0]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][0]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][0]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][0]['circle'] ?>" transform="translate(213 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-2)">
-            <circle id="dot-1-2-2" data-name="dot-1-2" cx="6" cy="6" r="6" transform="translate(230 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-2-2" data-name="dot-1-2" data-project-title="<?php echo $scores['m2']['1-enh'][1]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][1]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][1]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][1]['circle'] ?>" transform="translate(230 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-3)">
-            <circle id="dot-1-3-2" data-name="dot-1-3" cx="6" cy="6" r="6" transform="translate(230 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-3-2" data-name="dot-1-3" data-project-title="<?php echo $scores['m2']['1-enh'][2]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][2]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][2]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][2]['circle'] ?>" transform="translate(230 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-4)">
-            <circle id="dot-1-4-2" data-name="dot-1-4" cx="6" cy="6" r="6" transform="translate(213 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-4-2" data-name="dot-1-4" data-project-title="<?php echo $scores['m2']['1-enh'][3]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][3]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][3]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][3]['circle'] ?>" transform="translate(213 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-5)">
-            <circle id="dot-1-5-2" data-name="dot-1-5" cx="6" cy="6" r="6" transform="translate(213 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-5-2" data-name="dot-1-5" data-project-title="<?php echo $scores['m2']['1-enh'][4]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][4]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][4]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][4]['circle'] ?>" transform="translate(213 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-6)">
-            <circle id="dot-1-6-2" data-name="dot-1-6" cx="6" cy="6" r="6" transform="translate(247 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-6-2" data-name="dot-1-6" data-project-title="<?php echo $scores['m2']['1-enh'][5]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][5]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][5]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][5]['circle'] ?>" transform="translate(247 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-7)">
-            <circle id="dot-1-7-2" data-name="dot-1-7" cx="6" cy="6" r="6" transform="translate(213 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-7-2" data-name="dot-1-7" data-project-title="<?php echo $scores['m2']['1-enh'][6]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][6]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][6]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][6]['circle'] ?>" transform="translate(213 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-8)">
-            <circle id="dot-1-8-2" data-name="dot-1-8" cx="6" cy="6" r="6" transform="translate(196 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-8-2" data-name="dot-1-8" data-project-title="<?php echo $scores['m2']['1-enh'][7]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][7]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][7]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][7]['circle'] ?>" transform="translate(196 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-9)">
-            <circle id="dot-1-9-2" data-name="dot-1-9" cx="6" cy="6" r="6" transform="translate(230 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-9-2" data-name="dot-1-9" data-project-title="<?php echo $scores['m2']['1-enh'][8]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][8]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][8]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][8]['circle'] ?>" transform="translate(230 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-10)">
-            <circle id="dot-1-10-2" data-name="dot-1-10" cx="6" cy="6" r="6" transform="translate(247 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-10-2" data-name="dot-1-10" data-project-title="<?php echo $scores['m2']['1-enh'][9]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][9]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][9]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][9]['circle'] ?>" transform="translate(247 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-11)">
-            <circle id="dot-1-11-2" data-name="dot-1-11" cx="6" cy="6" r="6" transform="translate(230 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-11-2" data-name="dot-1-11" data-project-title="<?php echo $scores['m2']['1-enh'][10]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][10]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][10]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][10]['circle'] ?>" transform="translate(230 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-12)">
-            <circle id="dot-1-12-2" data-name="dot-1-12" cx="6" cy="6" r="6" transform="translate(196 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-12-2" data-name="dot-1-12" data-project-title="<?php echo $scores['m2']['1-enh'][11]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][11]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][11]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][11]['circle'] ?>" transform="translate(196 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-13)">
-            <circle id="dot-1-13-2" data-name="dot-1-13" cx="6" cy="6" r="6" transform="translate(196 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-13-2" data-name="dot-1-13" data-project-title="<?php echo $scores['m2']['1-enh'][12]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][12]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][12]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][12]['circle'] ?>" transform="translate(196 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-14)">
-            <circle id="dot-1-14-2" data-name="dot-1-14" cx="6" cy="6" r="6" transform="translate(247 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-14-2" data-name="dot-1-14" data-project-title="<?php echo $scores['m2']['1-enh'][13]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][13]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][13]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][13]['circle'] ?>" transform="translate(247 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-15)">
-            <circle id="dot-1-15-2" data-name="dot-1-15" cx="6" cy="6" r="6" transform="translate(247 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-15-2" data-name="dot-1-15" data-project-title="<?php echo $scores['m2']['1-enh'][14]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][14]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][14]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][14]['circle'] ?>" transform="translate(247 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#dot-1-16)">
-            <circle id="dot-1-16-2" data-name="dot-1-16" cx="6" cy="6" r="6" transform="translate(196 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-1-16-2" data-name="dot-1-16" data-project-title="<?php echo $scores['m2']['1-enh'][15]['title'] ?>" cx="<?php echo $scores['m2']['1-enh'][15]['circle'] ?>" cy="<?php echo $scores['m2']['1-enh'][15]['circle'] ?>" r="<?php echo $scores['m2']['1-enh'][15]['circle'] ?>" transform="translate(196 217.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-1" transform="translate(-722.2 660.8)">
+        <g id="cluster-1" class="<?php echo (count($scores['m2']['1-enh']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -198.3, -180.84)" filter="url(#Ellisse_53)">
               <circle id="Ellisse_53-10" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(232.5 181.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_01" data-name="01" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">01</tspan></text>
+          <text id="_01" data-name="01" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['1-enh']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-2" transform="translate(166 -102)">
-        <g id="data-dots-2">
+        <g id="data-dots-2" class="<?php echo (count($scores['m2']['2-mis']) == 0 || count($scores['m2']['2-mis']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-1)">
-            <circle id="dot-2-1-2" data-name="dot-2-1" cx="6" cy="6" r="6" transform="translate(379 81.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-1-2" data-name="dot-2-1" data-project-title="<?php echo $scores['m2']['2-mis'][0]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][0]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][0]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][0]['circle'] ?>" transform="translate(379 81.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-2)">
-            <circle id="dot-2-2-2" data-name="dot-2-2" cx="6" cy="6" r="6" transform="translate(396 98.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-2-2" data-name="dot-2-2" data-project-title="<?php echo $scores['m2']['2-mis'][1]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][1]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][1]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][1]['circle'] ?>" transform="translate(396 98.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-3)">
-            <circle id="dot-2-3-2" data-name="dot-2-3" cx="6" cy="6" r="6" transform="translate(396 81.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-3-2" data-name="dot-2-3" data-project-title="<?php echo $scores['m2']['2-mis'][2]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][2]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][2]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][2]['circle'] ?>" transform="translate(396 81.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-4)">
-            <circle id="dot-2-4-2" data-name="dot-2-4" cx="6" cy="6" r="6" transform="translate(379 98.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-4-2" data-name="dot-2-4" data-project-title="<?php echo $scores['m2']['2-mis'][3]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][3]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][3]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][3]['circle'] ?>" transform="translate(379 98.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-5)">
-            <circle id="dot-2-5-2" data-name="dot-2-5" cx="6" cy="6" r="6" transform="translate(379 64.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-5-2" data-name="dot-2-5" data-project-title="<?php echo $scores['m2']['2-mis'][4]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][4]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][4]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][4]['circle'] ?>" transform="translate(379 64.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-6)">
-            <circle id="dot-2-6-2" data-name="dot-2-6" cx="6" cy="6" r="6" transform="translate(413 98.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-6-2" data-name="dot-2-6" data-project-title="<?php echo $scores['m2']['2-mis'][5]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][5]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][5]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][5]['circle'] ?>" transform="translate(413 98.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-7)">
-            <circle id="dot-2-7-2" data-name="dot-2-7" cx="6" cy="6" r="6" transform="translate(379 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-7-2" data-name="dot-2-7" data-project-title="<?php echo $scores['m2']['2-mis'][6]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][6]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][6]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][6]['circle'] ?>" transform="translate(379 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-8)">
-            <circle id="dot-2-8-2" data-name="dot-2-8" cx="6" cy="6" r="6" transform="translate(362 81.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-8-2" data-name="dot-2-8" data-project-title="<?php echo $scores['m2']['2-mis'][7]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][7]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][7]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][7]['circle'] ?>" transform="translate(362 81.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-9)">
-            <circle id="dot-2-9-2" data-name="dot-2-9" cx="6" cy="6" r="6" transform="translate(396 64.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-9-2" data-name="dot-2-9" data-project-title="<?php echo $scores['m2']['2-mis'][8]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][8]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][8]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][8]['circle'] ?>" transform="translate(396 64.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-10)">
-            <circle id="dot-2-10-2" data-name="dot-2-10" cx="6" cy="6" r="6" transform="translate(413 81.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-10-2" data-name="dot-2-10" data-project-title="<?php echo $scores['m2']['2-mis'][9]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][9]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][9]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][9]['circle'] ?>" transform="translate(413 81.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-11)">
-            <circle id="dot-2-11-2" data-name="dot-2-11" cx="6" cy="6" r="6" transform="translate(396 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-11-2" data-name="dot-2-11" data-project-title="<?php echo $scores['m2']['2-mis'][10]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][10]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][10]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][10]['circle'] ?>" transform="translate(396 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-12)">
-            <circle id="dot-2-12-2" data-name="dot-2-12" cx="6" cy="6" r="6" transform="translate(362 98.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-12-2" data-name="dot-2-12" data-project-title="<?php echo $scores['m2']['2-mis'][11]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][11]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][11]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][11]['circle'] ?>" transform="translate(362 98.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-13)">
-            <circle id="dot-2-13-2" data-name="dot-2-13" cx="6" cy="6" r="6" transform="translate(362 64.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-13-2" data-name="dot-2-13" data-project-title="<?php echo $scores['m2']['2-mis'][12]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][12]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][12]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][12]['circle'] ?>" transform="translate(362 64.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-14)">
-            <circle id="dot-2-14-2" data-name="dot-2-14" cx="6" cy="6" r="6" transform="translate(413 64.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-14-2" data-name="dot-2-14" data-project-title="<?php echo $scores['m2']['2-mis'][13]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][13]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][13]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][13]['circle'] ?>" transform="translate(413 64.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-15)">
-            <circle id="dot-2-15-2" data-name="dot-2-15" cx="6" cy="6" r="6" transform="translate(413 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-15-2" data-name="dot-2-15" data-project-title="<?php echo $scores['m2']['2-mis'][14]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][14]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][14]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][14]['circle'] ?>" transform="translate(413 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2539.96)" filter="url(#dot-2-16)">
-            <circle id="dot-2-16-2" data-name="dot-2-16" cx="6" cy="6" r="6" transform="translate(362 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-2-16-2" data-name="dot-2-16" data-project-title="<?php echo $scores['m2']['2-mis'][15]['title'] ?>" cx="<?php echo $scores['m2']['2-mis'][15]['circle'] ?>" cy="<?php echo $scores['m2']['2-mis'][15]['circle'] ?>" r="<?php echo $scores['m2']['2-mis'][15]['circle'] ?>" transform="translate(362 115.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-2" transform="translate(-722.2 660.8)">
+        <g id="cluster-2" class="<?php echo (count($scores['m2']['2-mis']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-2" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -364.3, -78.84)" filter="url(#Ellisse_53-2)">
               <circle id="Ellisse_53-11" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(398.5 79.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_02" data-name="02" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">02</tspan></text>
+          <text id="_02" data-name="02" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['2-mis']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-3" transform="translate(335)">
-        <g id="data-dots-3">
+        <g id="data-dots-3" class="<?php echo (count($scores['m2']['3-ant']) == 0 || count($scores['m2']['3-ant']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-1)">
-            <circle id="dot-3-1-2" data-name="dot-3-1" cx="6" cy="6" r="6" transform="translate(548 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-1-2" data-name="dot-3-1" data-project-title="<?php echo $scores['m2']['3-ant'][0]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][0]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][0]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][0]['circle'] ?>" transform="translate(548 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-2)">
-            <circle id="dot-3-2-2" data-name="dot-3-2" cx="6" cy="6" r="6" transform="translate(565 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-2-2" data-name="dot-3-2" data-project-title="<?php echo $scores['m2']['3-ant'][1]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][1]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][1]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][1]['circle'] ?>" transform="translate(565 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-3)">
-            <circle id="dot-3-3-2" data-name="dot-3-3" cx="6" cy="6" r="6" transform="translate(565 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-3-2" data-name="dot-3-3" data-project-title="<?php echo $scores['m2']['3-ant'][2]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][2]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][2]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][2]['circle'] ?>" transform="translate(565 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-4)">
-            <circle id="dot-3-4-2" data-name="dot-3-4" cx="6" cy="6" r="6" transform="translate(548 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-4-2" data-name="dot-3-4" data-project-title="<?php echo $scores['m2']['3-ant'][3]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][3]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][3]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][3]['circle'] ?>" transform="translate(548 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-5)">
-            <circle id="dot-3-5-2" data-name="dot-3-5" cx="6" cy="6" r="6" transform="translate(548 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-5-2" data-name="dot-3-5" data-project-title="<?php echo $scores['m2']['3-ant'][4]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][4]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][4]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][4]['circle'] ?>" transform="translate(548 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-6)">
-            <circle id="dot-3-6-2" data-name="dot-3-6" cx="6" cy="6" r="6" transform="translate(582 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-6-2" data-name="dot-3-6" data-project-title="<?php echo $scores['m2']['3-ant'][5]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][5]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][5]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][5]['circle'] ?>" transform="translate(582 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-7)">
-            <circle id="dot-3-7-2" data-name="dot-3-7" cx="6" cy="6" r="6" transform="translate(548 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-7-2" data-name="dot-3-7" data-project-title="<?php echo $scores['m2']['3-ant'][6]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][6]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][6]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][6]['circle'] ?>" transform="translate(548 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-8)">
-            <circle id="dot-3-8-2" data-name="dot-3-8" cx="6" cy="6" r="6" transform="translate(531 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-8-2" data-name="dot-3-8" data-project-title="<?php echo $scores['m2']['3-ant'][7]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][7]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][7]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][7]['circle'] ?>" transform="translate(531 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-9)">
-            <circle id="dot-3-9-2" data-name="dot-3-9" cx="6" cy="6" r="6" transform="translate(565 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-9-2" data-name="dot-3-9" data-project-title="<?php echo $scores['m2']['3-ant'][8]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][8]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][8]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][8]['circle'] ?>" transform="translate(565 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-10)">
-            <circle id="dot-3-10-2" data-name="dot-3-10" cx="6" cy="6" r="6" transform="translate(582 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-10-2" data-name="dot-3-10" data-project-title="<?php echo $scores['m2']['3-ant'][9]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][9]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][9]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][9]['circle'] ?>" transform="translate(582 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-11)">
-            <circle id="dot-3-11-2" data-name="dot-3-11" cx="6" cy="6" r="6" transform="translate(565 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-11-2" data-name="dot-3-11" data-project-title="<?php echo $scores['m2']['3-ant'][10]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][10]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][10]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][10]['circle'] ?>" transform="translate(565 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-12)">
-            <circle id="dot-3-12-2" data-name="dot-3-12" cx="6" cy="6" r="6" transform="translate(531 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-12-2" data-name="dot-3-12" data-project-title="<?php echo $scores['m2']['3-ant'][11]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][11]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][11]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][11]['circle'] ?>" transform="translate(531 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-13)">
-            <circle id="dot-3-13-2" data-name="dot-3-13" cx="6" cy="6" r="6" transform="translate(531 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-13-2" data-name="dot-3-13" data-project-title="<?php echo $scores['m2']['3-ant'][12]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][12]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][12]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][12]['circle'] ?>" transform="translate(531 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-14)">
-            <circle id="dot-3-14-2" data-name="dot-3-14" cx="6" cy="6" r="6" transform="translate(582 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-14-2" data-name="dot-3-14" data-project-title="<?php echo $scores['m2']['3-ant'][13]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][13]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][13]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][13]['circle'] ?>" transform="translate(582 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-15)">
-            <circle id="dot-3-15-2" data-name="dot-3-15" cx="6" cy="6" r="6" transform="translate(582 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-15-2" data-name="dot-3-15" data-project-title="<?php echo $scores['m2']['3-ant'][14]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][14]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][14]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][14]['circle'] ?>" transform="translate(582 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4831.5, 2437.96)" filter="url(#dot-3-16)">
-            <circle id="dot-3-16-2" data-name="dot-3-16" cx="6" cy="6" r="6" transform="translate(531 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-3-16-2" data-name="dot-3-16" data-project-title="<?php echo $scores['m2']['3-ant'][15]['title'] ?>" cx="<?php echo $scores['m2']['3-ant'][15]['circle'] ?>" cy="<?php echo $scores['m2']['3-ant'][15]['circle'] ?>" r="<?php echo $scores['m2']['3-ant'][15]['circle'] ?>" transform="translate(531 217.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-3" transform="translate(-722.2 660.8)">
+        <g id="cluster-3" class="<?php echo (count($scores['m2']['3-ant']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-3" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -533.3, -180.84)" filter="url(#Ellisse_53-3)">
               <circle id="Ellisse_53-12" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(567.5 181.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_03" data-name="03" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">03</tspan></text>
+          <text id="_03" data-name="03" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['3-ant']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-4" transform="translate(166 102)">
-        <g id="facet-dots-4">
+        <g id="facet-dots-4" class="<?php echo (count($scores['m2']['4-ada']) == 0 || count($scores['m2']['4-ada']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-1)">
-            <circle id="dot-4-1-2" data-name="dot-4-1" cx="6" cy="6" r="6" transform="translate(379 285.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-1-2" data-name="dot-4-1" data-project-title="<?php echo $scores['m2']['4-ada'][0]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][0]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][0]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][0]['circle'] ?>" transform="translate(379 285.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-2)">
-            <circle id="dot-4-2-2" data-name="dot-4-2" cx="6" cy="6" r="6" transform="translate(396 302.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-2-2" data-name="dot-4-2" data-project-title="<?php echo $scores['m2']['4-ada'][1]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][1]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][1]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][1]['circle'] ?>" transform="translate(396 302.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-3)">
-            <circle id="dot-4-3-2" data-name="dot-4-3" cx="6" cy="6" r="6" transform="translate(396 285.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-3-2" data-name="dot-4-3" data-project-title="<?php echo $scores['m2']['4-ada'][2]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][2]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][2]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][2]['circle'] ?>" transform="translate(396 285.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-4)">
-            <circle id="dot-4-4-2" data-name="dot-4-4" cx="6" cy="6" r="6" transform="translate(379 302.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-4-2" data-name="dot-4-4" data-project-title="<?php echo $scores['m2']['4-ada'][3]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][3]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][3]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][3]['circle'] ?>" transform="translate(379 302.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-5)">
-            <circle id="dot-4-5-2" data-name="dot-4-5" cx="6" cy="6" r="6" transform="translate(379 268.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-5-2" data-name="dot-4-5" data-project-title="<?php echo $scores['m2']['4-ada'][4]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][4]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][4]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][4]['circle'] ?>" transform="translate(379 268.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-6)">
-            <circle id="dot-4-6-2" data-name="dot-4-6" cx="6" cy="6" r="6" transform="translate(413 302.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-6-2" data-name="dot-4-6" data-project-title="<?php echo $scores['m2']['4-ada'][5]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][5]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][5]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][5]['circle'] ?>" transform="translate(413 302.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-7)">
-            <circle id="dot-4-7-2" data-name="dot-4-7" cx="6" cy="6" r="6" transform="translate(379 319.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-7-2" data-name="dot-4-7" data-project-title="<?php echo $scores['m2']['4-ada'][6]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][6]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][6]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][6]['circle'] ?>" transform="translate(379 319.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-8)">
-            <circle id="dot-4-8-2" data-name="dot-4-8" cx="6" cy="6" r="6" transform="translate(362 285.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-8-2" data-name="dot-4-8" data-project-title="<?php echo $scores['m2']['4-ada'][7]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][7]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][7]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][7]['circle'] ?>" transform="translate(362 285.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-9)">
-            <circle id="dot-4-9-2" data-name="dot-4-9" cx="6" cy="6" r="6" transform="translate(396 268.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-9-2" data-name="dot-4-9" data-project-title="<?php echo $scores['m2']['4-ada'][8]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][8]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][8]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][8]['circle'] ?>" transform="translate(396 268.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-10)">
-            <circle id="dot-4-10-2" data-name="dot-4-10" cx="6" cy="6" r="6" transform="translate(413 285.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-10-2" data-name="dot-4-10" data-project-title="<?php echo $scores['m2']['4-ada'][9]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][9]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][9]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][9]['circle'] ?>" transform="translate(413 285.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-11)">
-            <circle id="dot-4-11-2" data-name="dot-4-11" cx="6" cy="6" r="6" transform="translate(396 319.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-11-2" data-name="dot-4-11" data-project-title="<?php echo $scores['m2']['4-ada'][10]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][10]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][10]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][10]['circle'] ?>" transform="translate(396 319.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-12)">
-            <circle id="dot-4-12-2" data-name="dot-4-12" cx="6" cy="6" r="6" transform="translate(362 302.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-12-2" data-name="dot-4-12" data-project-title="<?php echo $scores['m2']['4-ada'][11]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][11]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][11]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][11]['circle'] ?>" transform="translate(362 302.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-13)">
-            <circle id="dot-4-13-2" data-name="dot-4-13" cx="6" cy="6" r="6" transform="translate(362 268.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-13-2" data-name="dot-4-13" data-project-title="<?php echo $scores['m2']['4-ada'][12]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][12]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][12]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][12]['circle'] ?>" transform="translate(362 268.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-14)">
-            <circle id="dot-4-14-2" data-name="dot-4-14" cx="6" cy="6" r="6" transform="translate(413 268.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-14-2" data-name="dot-4-14" data-project-title="<?php echo $scores['m2']['4-ada'][13]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][13]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][13]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][13]['circle'] ?>" transform="translate(413 268.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-15)">
-            <circle id="dot-4-15-2" data-name="dot-4-15" cx="6" cy="6" r="6" transform="translate(413 319.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-15-2" data-name="dot-4-15" data-project-title="<?php echo $scores['m2']['4-ada'][14]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][14]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][14]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][14]['circle'] ?>" transform="translate(413 319.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2335.96)" filter="url(#dot-4-16)">
-            <circle id="dot-4-16-2" data-name="dot-4-16" cx="6" cy="6" r="6" transform="translate(362 319.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-4-16-2" data-name="dot-4-16" data-project-title="<?php echo $scores['m2']['4-ada'][15]['title'] ?>" cx="<?php echo $scores['m2']['4-ada'][15]['circle'] ?>" cy="<?php echo $scores['m2']['4-ada'][15]['circle'] ?>" r="<?php echo $scores['m2']['4-ada'][15]['circle'] ?>" transform="translate(362 319.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-4" transform="translate(-722.2 660.8)">
+        <g id="cluster-4" class="<?php echo (count($scores['m2']['4-ada']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-4" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -364.3, -282.84)" filter="url(#Ellisse_53-4)">
               <circle id="Ellisse_53-13" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(398.5 283.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_04" data-name="04" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">04</tspan></text>
+          <text id="_04" data-name="04" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['4-ada']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-5" transform="translate(85 -51)">
-        <g id="data-dots-5">
+        <g id="data-dots-5" class="<?php echo (count($scores['m2']['5-sus']) == 0 || count($scores['m2']['5-sus']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-1)">
-            <circle id="dot-5-1-2" data-name="dot-5-1" cx="6" cy="6" r="6" transform="translate(298 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-1-2" data-name="dot-5-1" data-project-title="<?php echo $scores['m2']['5-sus'][0]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][0]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][0]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][0]['circle'] ?>" transform="translate(298 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-2)">
-            <circle id="dot-5-2-2" data-name="dot-5-2" cx="6" cy="6" r="6" transform="translate(315 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-2-2" data-name="dot-5-2" data-project-title="<?php echo $scores['m2']['5-sus'][1]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][1]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][1]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][1]['circle'] ?>" transform="translate(315 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-3)">
-            <circle id="dot-5-3-2" data-name="dot-5-3" cx="6" cy="6" r="6" transform="translate(315 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-3-2" data-name="dot-5-3" data-project-title="<?php echo $scores['m2']['5-sus'][2]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][2]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][2]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][2]['circle'] ?>" transform="translate(315 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-4)">
-            <circle id="dot-5-4-2" data-name="dot-5-4" cx="6" cy="6" r="6" transform="translate(298 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-4-2" data-name="dot-5-4" data-project-title="<?php echo $scores['m2']['5-sus'][3]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][3]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][3]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][3]['circle'] ?>" transform="translate(298 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-5)">
-            <circle id="dot-5-5-2" data-name="dot-5-5" cx="6" cy="6" r="6" transform="translate(298 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-5-2" data-name="dot-5-5" data-project-title="<?php echo $scores['m2']['5-sus'][4]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][4]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][4]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][4]['circle'] ?>" transform="translate(298 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-6)">
-            <circle id="dot-5-6-2" data-name="dot-5-6" cx="6" cy="6" r="6" transform="translate(332 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-6-2" data-name="dot-5-6" data-project-title="<?php echo $scores['m2']['5-sus'][5]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][5]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][5]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][5]['circle'] ?>" transform="translate(332 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-7)">
-            <circle id="dot-5-7-2" data-name="dot-5-7" cx="6" cy="6" r="6" transform="translate(298 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-7-2" data-name="dot-5-7" data-project-title="<?php echo $scores['m2']['5-sus'][6]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][6]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][6]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][6]['circle'] ?>" transform="translate(298 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-8)">
-            <circle id="dot-5-8-2" data-name="dot-5-8" cx="6" cy="6" r="6" transform="translate(281 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-8-2" data-name="dot-5-8" data-project-title="<?php echo $scores['m2']['5-sus'][7]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][7]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][7]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][7]['circle'] ?>" transform="translate(281 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-9)">
-            <circle id="dot-5-9-2" data-name="dot-5-9" cx="6" cy="6" r="6" transform="translate(315 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-9-2" data-name="dot-5-9" data-project-title="<?php echo $scores['m2']['5-sus'][8]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][8]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][8]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][8]['circle'] ?>" transform="translate(315 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-10)">
-            <circle id="dot-5-10-2" data-name="dot-5-10" cx="6" cy="6" r="6" transform="translate(332 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-10-2" data-name="dot-5-10" data-project-title="<?php echo $scores['m2']['5-sus'][9]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][9]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][9]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][9]['circle'] ?>" transform="translate(332 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-11)">
-            <circle id="dot-5-11-2" data-name="dot-5-11" cx="6" cy="6" r="6" transform="translate(315 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-11-2" data-name="dot-5-11" data-project-title="<?php echo $scores['m2']['5-sus'][10]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][10]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][10]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][10]['circle'] ?>" transform="translate(315 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-12)">
-            <circle id="dot-5-12-2" data-name="dot-5-12" cx="6" cy="6" r="6" transform="translate(281 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-12-2" data-name="dot-5-12" data-project-title="<?php echo $scores['m2']['5-sus'][11]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][11]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][11]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][11]['circle'] ?>" transform="translate(281 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-13)">
-            <circle id="dot-5-13-2" data-name="dot-5-13" cx="6" cy="6" r="6" transform="translate(281 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-13-2" data-name="dot-5-13" data-project-title="<?php echo $scores['m2']['5-sus'][12]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][12]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][12]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][12]['circle'] ?>" transform="translate(281 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-14)">
-            <circle id="dot-5-14-2" data-name="dot-5-14" cx="6" cy="6" r="6" transform="translate(332 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-14-2" data-name="dot-5-14" data-project-title="<?php echo $scores['m2']['5-sus'][13]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][13]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][13]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][13]['circle'] ?>" transform="translate(332 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-15)">
-            <circle id="dot-5-15-2" data-name="dot-5-15" cx="6" cy="6" r="6" transform="translate(332 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-15-2" data-name="dot-5-15" data-project-title="<?php echo $scores['m2']['5-sus'][14]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][14]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][14]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][14]['circle'] ?>" transform="translate(332 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2488.96)" filter="url(#dot-5-16)">
-            <circle id="dot-5-16-2" data-name="dot-5-16" cx="6" cy="6" r="6" transform="translate(281 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-5-16-2" data-name="dot-5-16" data-project-title="<?php echo $scores['m2']['5-sus'][15]['title'] ?>" cx="<?php echo $scores['m2']['5-sus'][15]['circle'] ?>" cy="<?php echo $scores['m2']['5-sus'][15]['circle'] ?>" r="<?php echo $scores['m2']['5-sus'][15]['circle'] ?>" transform="translate(281 166.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-5" transform="translate(-722.2 660.8)">
+        <g id="cluster-5" class="<?php echo (count($scores['m2']['5-sus']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-5" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -283.3, -129.84)" filter="url(#Ellisse_53-5)">
               <circle id="Ellisse_53-14" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(317.5 130.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_05" data-name="05" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">05</tspan></text>
+          <text id="_05" data-name="05" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['5-sus']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-6" transform="translate(251 -51)">
-        <g id="data-dots-6">
+        <g id="data-dots-6" class="<?php echo (count($scores['m2']['6-tra']) == 0 || count($scores['m2']['6-tra']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-1)">
-            <circle id="dot-6-1-2" data-name="dot-6-1" cx="6" cy="6" r="6" transform="translate(464 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-1-2" data-name="dot-6-1" data-project-title="<?php echo $scores['m2']['6-tra'][0]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][0]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][0]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][0]['circle'] ?>" transform="translate(464 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-2)">
-            <circle id="dot-6-2-2" data-name="dot-6-2" cx="6" cy="6" r="6" transform="translate(481 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-2-2" data-name="dot-6-2" data-project-title="<?php echo $scores['m2']['6-tra'][1]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][1]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][1]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][1]['circle'] ?>" transform="translate(481 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-3)">
-            <circle id="dot-6-3-2" data-name="dot-6-3" cx="6" cy="6" r="6" transform="translate(481 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-3-2" data-name="dot-6-3" data-project-title="<?php echo $scores['m2']['6-tra'][2]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][2]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][2]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][2]['circle'] ?>" transform="translate(481 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-4)">
-            <circle id="dot-6-4-2" data-name="dot-6-4" cx="6" cy="6" r="6" transform="translate(464 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-4-2" data-name="dot-6-4" data-project-title="<?php echo $scores['m2']['6-tra'][3]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][3]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][3]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][3]['circle'] ?>" transform="translate(464 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-5)">
-            <circle id="dot-6-5-2" data-name="dot-6-5" cx="6" cy="6" r="6" transform="translate(464 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-5-2" data-name="dot-6-5" data-project-title="<?php echo $scores['m2']['6-tra'][4]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][4]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][4]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][4]['circle'] ?>" transform="translate(464 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-6)">
-            <circle id="dot-6-6-2" data-name="dot-6-6" cx="6" cy="6" r="6" transform="translate(498 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-6-2" data-name="dot-6-6" data-project-title="<?php echo $scores['m2']['6-tra'][5]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][5]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][5]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][5]['circle'] ?>" transform="translate(498 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-7)">
-            <circle id="dot-6-7-2" data-name="dot-6-7" cx="6" cy="6" r="6" transform="translate(464 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-7-2" data-name="dot-6-7" data-project-title="<?php echo $scores['m2']['6-tra'][6]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][6]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][6]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][6]['circle'] ?>" transform="translate(464 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-8)">
-            <circle id="dot-6-8-2" data-name="dot-6-8" cx="6" cy="6" r="6" transform="translate(447 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-8-2" data-name="dot-6-8" data-project-title="<?php echo $scores['m2']['6-tra'][7]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][7]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][7]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][7]['circle'] ?>" transform="translate(447 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-9)">
-            <circle id="dot-6-9-2" data-name="dot-6-9" cx="6" cy="6" r="6" transform="translate(481 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-9-2" data-name="dot-6-9" data-project-title="<?php echo $scores['m2']['6-tra'][8]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][8]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][8]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][8]['circle'] ?>" transform="translate(481 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-10)">
-            <circle id="dot-6-10-2" data-name="dot-6-10" cx="6" cy="6" r="6" transform="translate(498 132.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-10-2" data-name="dot-6-10" data-project-title="<?php echo $scores['m2']['6-tra'][9]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][9]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][9]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][9]['circle'] ?>" transform="translate(498 132.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-11)">
-            <circle id="dot-6-11-2" data-name="dot-6-11" cx="6" cy="6" r="6" transform="translate(481 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-11-2" data-name="dot-6-11" data-project-title="<?php echo $scores['m2']['6-tra'][10]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][10]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][10]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][10]['circle'] ?>" transform="translate(481 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-12)">
-            <circle id="dot-6-12-2" data-name="dot-6-12" cx="6" cy="6" r="6" transform="translate(447 149.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-12-2" data-name="dot-6-12" data-project-title="<?php echo $scores['m2']['6-tra'][11]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][11]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][11]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][11]['circle'] ?>" transform="translate(447 149.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-13)">
-            <circle id="dot-6-13-2" data-name="dot-6-13" cx="6" cy="6" r="6" transform="translate(447 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-13-2" data-name="dot-6-13" data-project-title="<?php echo $scores['m2']['6-tra'][12]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][12]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][12]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][12]['circle'] ?>" transform="translate(447 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-14)">
-            <circle id="dot-6-14-2" data-name="dot-6-14" cx="6" cy="6" r="6" transform="translate(498 115.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-14-2" data-name="dot-6-14" data-project-title="<?php echo $scores['m2']['6-tra'][13]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][13]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][13]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][13]['circle'] ?>" transform="translate(498 115.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-15)">
-            <circle id="dot-6-15-2" data-name="dot-6-15" cx="6" cy="6" r="6" transform="translate(498 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-15-2" data-name="dot-6-15" data-project-title="<?php echo $scores['m2']['6-tra'][14]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][14]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][14]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][14]['circle'] ?>" transform="translate(498 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2488.96)" filter="url(#dot-6-16)">
-            <circle id="dot-6-16-2" data-name="dot-6-16" cx="6" cy="6" r="6" transform="translate(447 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-6-16-2" data-name="dot-6-16" data-project-title="<?php echo $scores['m2']['6-tra'][15]['title'] ?>" cx="<?php echo $scores['m2']['6-tra'][15]['circle'] ?>" cy="<?php echo $scores['m2']['6-tra'][15]['circle'] ?>" r="<?php echo $scores['m2']['6-tra'][15]['circle'] ?>" transform="translate(447 166.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-6" transform="translate(-722.2 660.8)">
+        <g id="cluster-6" class="<?php echo (count($scores['m2']['6-tra']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-6" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -449.3, -129.84)" filter="url(#Ellisse_53-6)">
               <circle id="Ellisse_53-15" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(483.5 130.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_06" data-name="06" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">06</tspan></text>
+          <text id="_06" data-name="06" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['6-tra']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-7" transform="translate(251 55)">
-        <g id="data-dots-7">
+        <g id="data-dots-7" class="<?php echo (count($scores['m2']['7-dis']) == 0 || count($scores['m2']['7-dis']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-1)">
-            <circle id="dot-7-1-2" data-name="dot-7-1" cx="6" cy="6" r="6" transform="translate(464 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-1-2" data-name="dot-7-1" data-project-title="<?php echo $scores['m2']['7-dis'][0]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][0]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][0]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][0]['circle'] ?>" transform="translate(464 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-2)">
-            <circle id="dot-7-2-2" data-name="dot-7-2" cx="6" cy="6" r="6" transform="translate(481 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-2-2" data-name="dot-7-2" data-project-title="<?php echo $scores['m2']['7-dis'][1]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][1]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][1]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][1]['circle'] ?>" transform="translate(481 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-3)">
-            <circle id="dot-7-3-2" data-name="dot-7-3" cx="6" cy="6" r="6" transform="translate(481 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-3-2" data-name="dot-7-3" data-project-title="<?php echo $scores['m2']['7-dis'][2]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][2]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][2]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][2]['circle'] ?>" transform="translate(481 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-4)">
-            <circle id="dot-7-4-2" data-name="dot-7-4" cx="6" cy="6" r="6" transform="translate(464 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-4-2" data-name="dot-7-4" data-project-title="<?php echo $scores['m2']['7-dis'][3]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][3]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][3]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][3]['circle'] ?>" transform="translate(464 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-5)">
-            <circle id="dot-7-5-2" data-name="dot-7-5" cx="6" cy="6" r="6" transform="translate(464 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-5-2" data-name="dot-7-5" data-project-title="<?php echo $scores['m2']['7-dis'][4]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][4]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][4]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][4]['circle'] ?>" transform="translate(464 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-6)">
-            <circle id="dot-7-6-2" data-name="dot-7-6" cx="6" cy="6" r="6" transform="translate(498 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-6-2" data-name="dot-7-6" data-project-title="<?php echo $scores['m2']['7-dis'][5]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][5]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][5]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][5]['circle'] ?>" transform="translate(498 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-7)">
-            <circle id="dot-7-7-2" data-name="dot-7-7" cx="6" cy="6" r="6" transform="translate(464 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-7-2" data-name="dot-7-7" data-project-title="<?php echo $scores['m2']['7-dis'][6]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][6]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][6]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][6]['circle'] ?>" transform="translate(464 272.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-8)">
-            <circle id="dot-7-8-2" data-name="dot-7-8" cx="6" cy="6" r="6" transform="translate(447 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-8-2" data-name="dot-7-8" data-project-title="<?php echo $scores['m2']['7-dis'][7]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][7]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][7]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][7]['circle'] ?>" transform="translate(447 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-9)">
-            <circle id="dot-7-9-2" data-name="dot-7-9" cx="6" cy="6" r="6" transform="translate(481 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-9-2" data-name="dot-7-9" data-project-title="<?php echo $scores['m2']['7-dis'][8]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][8]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][8]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][8]['circle'] ?>" transform="translate(481 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-10)">
-            <circle id="dot-7-10-2" data-name="dot-7-10" cx="6" cy="6" r="6" transform="translate(498 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-10-2" data-name="dot-7-10" data-project-title="<?php echo $scores['m2']['7-dis'][9]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][9]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][9]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][9]['circle'] ?>" transform="translate(498 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-11)">
-            <circle id="dot-7-11-2" data-name="dot-7-11" cx="6" cy="6" r="6" transform="translate(481 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-11-2" data-name="dot-7-11" data-project-title="<?php echo $scores['m2']['7-dis'][10]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][10]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][10]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][10]['circle'] ?>" transform="translate(481 272.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-12)">
-            <circle id="dot-7-12-2" data-name="dot-7-12" cx="6" cy="6" r="6" transform="translate(447 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-12-2" data-name="dot-7-12" data-project-title="<?php echo $scores['m2']['7-dis'][11]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][11]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][11]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][11]['circle'] ?>" transform="translate(447 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-13)">
-            <circle id="dot-7-13-2" data-name="dot-7-13" cx="6" cy="6" r="6" transform="translate(447 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-13-2" data-name="dot-7-13" data-project-title="<?php echo $scores['m2']['7-dis'][12]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][12]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][12]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][12]['circle'] ?>" transform="translate(447 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-14)">
-            <circle id="dot-7-14-2" data-name="dot-7-14" cx="6" cy="6" r="6" transform="translate(498 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-14-2" data-name="dot-7-14" data-project-title="<?php echo $scores['m2']['7-dis'][13]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][13]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][13]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][13]['circle'] ?>" transform="translate(498 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-15)">
-            <circle id="dot-7-15-2" data-name="dot-7-15" cx="6" cy="6" r="6" transform="translate(498 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-15-2" data-name="dot-7-15" data-project-title="<?php echo $scores['m2']['7-dis'][14]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][14]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][14]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][14]['circle'] ?>" transform="translate(498 272.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 4915.5, 2382.96)" filter="url(#dot-7-16)">
-            <circle id="dot-7-16-2" data-name="dot-7-16" cx="6" cy="6" r="6" transform="translate(447 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-7-16-2" data-name="dot-7-16" data-project-title="<?php echo $scores['m2']['7-dis'][15]['title'] ?>" cx="<?php echo $scores['m2']['7-dis'][15]['circle'] ?>" cy="<?php echo $scores['m2']['7-dis'][15]['circle'] ?>" r="<?php echo $scores['m2']['7-dis'][15]['circle'] ?>" transform="translate(447 272.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-7" transform="translate(-722.2 660.8)">
+        <g id="cluster-7" class="<?php echo (count($scores['m2']['7-dis']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-7" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -449.3, -235.84)" filter="url(#Ellisse_53-7)">
               <circle id="Ellisse_53-16" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(483.5 236.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_07" data-name="07" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">07</tspan></text>
+          <text id="_07" data-name="07" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['7-dis']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-8" transform="translate(85 55)">
-        <g id="data-dots-8">
+        <g id="data-dots-8" class="<?php echo (count($scores['m2']['8-opt']) == 0 || count($scores['m2']['8-opt']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-1)">
-            <circle id="dot-8-1-2" data-name="dot-8-1" cx="6" cy="6" r="6" transform="translate(298 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-1-2" data-name="dot-8-1" data-project-title="<?php echo $scores['m2']['8-opt'][0]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][0]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][0]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][0]['circle'] ?>" transform="translate(298 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-2)">
-            <circle id="dot-8-2-2" data-name="dot-8-2" cx="6" cy="6" r="6" transform="translate(315 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-2-2" data-name="dot-8-2" data-project-title="<?php echo $scores['m2']['8-opt'][1]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][1]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][1]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][1]['circle'] ?>" transform="translate(315 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-3)">
-            <circle id="dot-8-3-2" data-name="dot-8-3" cx="6" cy="6" r="6" transform="translate(315 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-3-2" data-name="dot-8-3" data-project-title="<?php echo $scores['m2']['8-opt'][2]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][2]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][2]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][2]['circle'] ?>" transform="translate(315 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-4)">
-            <circle id="dot-8-4-2" data-name="dot-8-4" cx="6" cy="6" r="6" transform="translate(298 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-4-2" data-name="dot-8-4" data-project-title="<?php echo $scores['m2']['8-opt'][3]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][3]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][3]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][3]['circle'] ?>" transform="translate(298 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-5)">
-            <circle id="dot-8-5-2" data-name="dot-8-5" cx="6" cy="6" r="6" transform="translate(298 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-5-2" data-name="dot-8-5" data-project-title="<?php echo $scores['m2']['8-opt'][4]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][4]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][4]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][4]['circle'] ?>" transform="translate(298 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-6)">
-            <circle id="dot-8-6-2" data-name="dot-8-6" cx="6" cy="6" r="6" transform="translate(332 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-6-2" data-name="dot-8-6" data-project-title="<?php echo $scores['m2']['8-opt'][5]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][5]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][5]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][5]['circle'] ?>" transform="translate(332 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-7)">
-            <circle id="dot-8-7-2" data-name="dot-8-7" cx="6" cy="6" r="6" transform="translate(298 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-7-2" data-name="dot-8-7" data-project-title="<?php echo $scores['m2']['8-opt'][6]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][6]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][6]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][6]['circle'] ?>" transform="translate(298 272.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-8)">
-            <circle id="dot-8-8-2" data-name="dot-8-8" cx="6" cy="6" r="6" transform="translate(281 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-8-2" data-name="dot-8-8" data-project-title="<?php echo $scores['m2']['8-opt'][7]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][7]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][7]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][7]['circle'] ?>" transform="translate(281 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-9)">
-            <circle id="dot-8-9-2" data-name="dot-8-9" cx="6" cy="6" r="6" transform="translate(315 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-9-2" data-name="dot-8-9" data-project-title="<?php echo $scores['m2']['8-opt'][8]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][8]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][8]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][8]['circle'] ?>" transform="translate(315 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-10)">
-            <circle id="dot-8-10-2" data-name="dot-8-10" cx="6" cy="6" r="6" transform="translate(332 238.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-10-2" data-name="dot-8-10" data-project-title="<?php echo $scores['m2']['8-opt'][9]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][9]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][9]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][9]['circle'] ?>" transform="translate(332 238.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-11)">
-            <circle id="dot-8-11-2" data-name="dot-8-11" cx="6" cy="6" r="6" transform="translate(315 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-11-2" data-name="dot-8-11" data-project-title="<?php echo $scores['m2']['8-opt'][10]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][10]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][10]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][10]['circle'] ?>" transform="translate(315 272.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-12)">
-            <circle id="dot-8-12-2" data-name="dot-8-12" cx="6" cy="6" r="6" transform="translate(281 255.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-12-2" data-name="dot-8-12" data-project-title="<?php echo $scores['m2']['8-opt'][11]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][11]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][11]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][11]['circle'] ?>" transform="translate(281 255.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-13)">
-            <circle id="dot-8-13-2" data-name="dot-8-13" cx="6" cy="6" r="6" transform="translate(281 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-13-2" data-name="dot-8-13" data-project-title="<?php echo $scores['m2']['8-opt'][12]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][12]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][12]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][12]['circle'] ?>" transform="translate(281 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-14)">
-            <circle id="dot-8-14-2" data-name="dot-8-14" cx="6" cy="6" r="6" transform="translate(332 221.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-14-2" data-name="dot-8-14" data-project-title="<?php echo $scores['m2']['8-opt'][13]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][13]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][13]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][13]['circle'] ?>" transform="translate(332 221.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-15)">
-            <circle id="dot-8-15-2" data-name="dot-8-15" cx="6" cy="6" r="6" transform="translate(332 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-15-2" data-name="dot-8-15" data-project-title="<?php echo $scores['m2']['8-opt'][14]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][14]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][14]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][14]['circle'] ?>" transform="translate(332 272.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5081.5, 2382.96)" filter="url(#dot-8-16)">
-            <circle id="dot-8-16-2" data-name="dot-8-16" cx="6" cy="6" r="6" transform="translate(281 272.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-8-16-2" data-name="dot-8-16" data-project-title="<?php echo $scores['m2']['8-opt'][15]['title'] ?>" cx="<?php echo $scores['m2']['8-opt'][15]['circle'] ?>" cy="<?php echo $scores['m2']['8-opt'][15]['circle'] ?>" r="<?php echo $scores['m2']['8-opt'][15]['circle'] ?>" transform="translate(281 272.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-8" transform="translate(-722.2 660.8)">
+        <g id="cluster-8" class="<?php echo (count($scores['m2']['8-opt']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-8" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -283.3, -235.84)" filter="url(#Ellisse_53-8)">
               <circle id="Ellisse_53-17" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(317.5 236.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_08" data-name="08" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">08</tspan></text>
+          <text id="_08" data-name="08" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['8-opt']); ?></tspan></text>
         </g>
       </g>
       <g id="data-facet-9" transform="translate(166)">
-        <g id="data-dots-9">
+        <g id="data-dots-9" class="<?php echo (count($scores['m2']['9-mix']) == 0 || count($scores['m2']['9-mix']) > 16 ) ? 'svg-hide' : ''; ?>">
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-1)">
-            <circle id="dot-9-1-2" data-name="dot-9-1" cx="6" cy="6" r="6" transform="translate(379 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-1-2" data-name="dot-9-1" data-project-title="<?php echo $scores['m2']['9-mix'][0]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][0]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][0]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][0]['circle'] ?>" transform="translate(379 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-2)">
-            <circle id="dot-9-2-2" data-name="dot-9-2" cx="6" cy="6" r="6" transform="translate(396 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-2-2" data-name="dot-9-2" data-project-title="<?php echo $scores['m2']['9-mix'][1]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][1]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][1]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][1]['circle'] ?>" transform="translate(396 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-3)">
-            <circle id="dot-9-3-2" data-name="dot-9-3" cx="6" cy="6" r="6" transform="translate(396 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-3-2" data-name="dot-9-3" data-project-title="<?php echo $scores['m2']['9-mix'][2]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][2]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][2]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][2]['circle'] ?>" transform="translate(396 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-4)">
-            <circle id="dot-9-4-2" data-name="dot-9-4" cx="6" cy="6" r="6" transform="translate(379 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-4-2" data-name="dot-9-4" data-project-title="<?php echo $scores['m2']['9-mix'][3]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][3]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][3]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][3]['circle'] ?>" transform="translate(379 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-5)">
-            <circle id="dot-9-5-2" data-name="dot-9-5" cx="6" cy="6" r="6" transform="translate(379 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-5-2" data-name="dot-9-5" data-project-title="<?php echo $scores['m2']['9-mix'][4]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][4]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][4]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][4]['circle'] ?>" transform="translate(379 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-6)">
-            <circle id="dot-9-6-2" data-name="dot-9-6" cx="6" cy="6" r="6" transform="translate(413 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-6-2" data-name="dot-9-6" data-project-title="<?php echo $scores['m2']['9-mix'][5]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][5]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][5]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][5]['circle'] ?>" transform="translate(413 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-7)">
-            <circle id="dot-9-7-2" data-name="dot-9-7" cx="6" cy="6" r="6" transform="translate(379 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-7-2" data-name="dot-9-7" data-project-title="<?php echo $scores['m2']['9-mix'][6]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][6]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][6]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][6]['circle'] ?>" transform="translate(379 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-8)">
-            <circle id="dot-9-8-2" data-name="dot-9-8" cx="6" cy="6" r="6" transform="translate(362 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-8-2" data-name="dot-9-8" data-project-title="<?php echo $scores['m2']['9-mix'][7]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][7]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][7]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][7]['circle'] ?>" transform="translate(362 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-9)">
-            <circle id="dot-9-9-2" data-name="dot-9-9" cx="6" cy="6" r="6" transform="translate(396 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-9-2" data-name="dot-9-9" data-project-title="<?php echo $scores['m2']['9-mix'][8]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][8]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][8]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][8]['circle'] ?>" transform="translate(396 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-10)">
-            <circle id="dot-9-10-2" data-name="dot-9-10" cx="6" cy="6" r="6" transform="translate(413 183.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-10-2" data-name="dot-9-10" data-project-title="<?php echo $scores['m2']['9-mix'][9]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][9]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][9]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][9]['circle'] ?>" transform="translate(413 183.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-11)">
-            <circle id="dot-9-11-2" data-name="dot-9-11" cx="6" cy="6" r="6" transform="translate(396 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-11-2" data-name="dot-9-11" data-project-title="<?php echo $scores['m2']['9-mix'][10]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][10]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][10]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][10]['circle'] ?>" transform="translate(396 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-12)">
-            <circle id="dot-9-12-2" data-name="dot-9-12" cx="6" cy="6" r="6" transform="translate(362 200.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-12-2" data-name="dot-9-12" data-project-title="<?php echo $scores['m2']['9-mix'][11]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][11]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][11]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][11]['circle'] ?>" transform="translate(362 200.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-13)">
-            <circle id="dot-9-13-2" data-name="dot-9-13" cx="6" cy="6" r="6" transform="translate(362 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-13-2" data-name="dot-9-13" data-project-title="<?php echo $scores['m2']['9-mix'][12]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][12]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][12]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][12]['circle'] ?>" transform="translate(362 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-14)">
-            <circle id="dot-9-14-2" data-name="dot-9-14" cx="6" cy="6" r="6" transform="translate(413 166.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-14-2" data-name="dot-9-14" data-project-title="<?php echo $scores['m2']['9-mix'][13]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][13]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][13]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][13]['circle'] ?>" transform="translate(413 166.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-15)">
-            <circle id="dot-9-15-2" data-name="dot-9-15" cx="6" cy="6" r="6" transform="translate(413 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-15-2" data-name="dot-9-15" data-project-title="<?php echo $scores['m2']['9-mix'][14]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][14]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][14]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][14]['circle'] ?>" transform="translate(413 217.54) rotate(90)" fill="#fff"/>
           </g>
           <g transform="matrix(1, 0, 0, 1, 5000.5, 2437.96)" filter="url(#dot-9-16)">
-            <circle id="dot-9-16-2" data-name="dot-9-16" cx="6" cy="6" r="6" transform="translate(362 217.54) rotate(90)" fill="#fff"/>
+            <circle id="dot-9-16-2" data-name="dot-9-16" data-project-title="<?php echo $scores['m2']['9-mix'][15]['title'] ?>" cx="<?php echo $scores['m2']['9-mix'][15]['circle'] ?>" cy="<?php echo $scores['m2']['9-mix'][15]['circle'] ?>" r="<?php echo $scores['m2']['9-mix'][15]['circle'] ?>" transform="translate(362 217.54) rotate(90)" fill="#fff"/>
           </g>
         </g>
-        <g id="cluster-9" transform="translate(-722.2 660.8)">
+        <g id="cluster-9" class="<?php echo (count($scores['m2']['9-mix']) <= 16 ) ? 'svg-hide' : ''; ?>" transform="translate(-722.2 660.8)">
           <g id="Raggruppa_126-9" data-name="Raggruppa 126" transform="translate(6087 1958)">
             <g transform="matrix(1, 0, 0, 1, -364.3, -180.84)" filter="url(#Ellisse_53-9)">
               <circle id="Ellisse_53-18" data-name="Ellisse 53" cx="17" cy="17" r="17" transform="translate(398.5 181.03) rotate(90)" fill="#fff"/>
             </g>
           </g>
-          <text id="_09" data-name="09" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">09</tspan></text>
+          <text id="_09" data-name="09" transform="translate(6093.149 1982.255)" fill="#605f5f" font-size="20" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0"><?php echo count($scores['m2']['9-mix']); ?></tspan></text>
         </g>
       </g>
     </g>
-    <text id="ANTICIPATORY" transform="translate(7215 3759.295)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">ANTICIPATORY</tspan></text>
+    <text id="ANTICIPATORY" transform="translate(7215 3759.295)" fill="#dc4aff" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="0" y="0">ANTICIPATORY</tspan></text>
     <text id="ENHANCEMENT-_ORIENTED" data-name="ENHANCEMENT-
-ORIENTED" transform="translate(6627 3750.295)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-90.328" y="0">ENHANCEMENT-</tspan><tspan x="-56.203" y="14">ORIENTED</tspan></text>
-    <text id="MISSION-ORIENTED" transform="translate(6920 3564.295)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-54.354" y="0">MISSION-ORIENTED</tspan></text>
-    <text id="ADAPTIVE" transform="translate(6920 3945.295)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-28.289" y="0">ADAPTIVE</tspan></text>
-    <text id="SUSTAINING" transform="matrix(0.809, 0.588, -0.588, 0.809, 6741.649, 3640.531)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-34.427" y="0">SUSTAINING</tspan></text>
-    <text id="DISRUPTIVE" transform="matrix(0.809, 0.588, -0.588, 0.809, 7089.649, 3873.531)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-33.334" y="0">DISRUPTIVE</tspan></text>
-    <text id="TRASFORMATIVE" transform="translate(7104.571 3632.359) rotate(-40)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-47.739" y="0">TRASFORMATIVE</tspan></text>
-    <text id="OPTIMISING" transform="translate(6747.571 3875.359) rotate(-40)" fill="#605f5f" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-33.917" y="0">OPTIMISING</tspan></text>
+ORIENTED" transform="translate(6627 3750.295)" fill="#dc4aff" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-90.328" y="0">ENHANCEMENT-</tspan><tspan x="-56.203" y="14">ORIENTED</tspan></text>
+    <text id="MISSION-ORIENTED" transform="translate(6920 3564.295)" fill="#dc4aff" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-54.354" y="0">MISSION-ORIENTED</tspan></text>
+    <text id="ADAPTIVE" transform="translate(6920 3945.295)" fill="#dc4aff" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-28.289" y="0">ADAPTIVE</tspan></text>
+    <text id="SUSTAINING" transform="translate(6741.593 3640.49) rotate(37)" fill="#9ec5e0" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-34.427" y="0">SUSTAINING</tspan></text>
+    <text id="DISRUPTIVE" transform="matrix(0.799, 0.602, -0.602, 0.799, 7089.593, 3873.49)" fill="#9ec5e0" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-33.334" y="0">DISRUPTIVE</tspan></text>
+    <text id="TRASFORMATIVE" transform="matrix(0.788, -0.616, 0.616, 0.788, 7104.463, 3632.447)" fill="#9ec5e0" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-47.739" y="0">TRASFORMATIVE</tspan></text>
+    <text id="OPTIMISING" transform="matrix(0.788, -0.616, 0.616, 0.788, 6747.463, 3875.447)" fill="#9ec5e0" font-size="12" font-family="Roboto-Medium, Roboto" font-weight="500"><tspan x="-33.917" y="0">OPTIMISING</tspan></text>
   </g>
 </svg>

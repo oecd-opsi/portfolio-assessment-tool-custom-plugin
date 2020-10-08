@@ -1134,6 +1134,10 @@ div[id^="pat-step-"].active-pat-step {
   margin-bottom: 24px;
 }
 
+.pat-results-fullwidth-section h3.projects-list-title.primary_title {
+  color: #DC4AFF;
+}
+
 .module-2-lists-container {
   margin-bottom: 120px;
 }

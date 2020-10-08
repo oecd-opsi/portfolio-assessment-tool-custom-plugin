@@ -353,12 +353,14 @@ window.addEventListener( 'hashchange', function(e){
           }
         },
         exit: function(direction) {
-          $('#tendency-row .pat-results-side').removeClass('show');
-          $('#tendency-row .pat-results-content').removeClass('show');
           if( direction == 'down' ) {
             $('#pmg-row .pat-results-side').addClass('show');
             $('#pmg-row .pat-results-content').addClass('show');
           }
+        },
+        exited: function(direction) {
+          $('#tendency-row .pat-results-side').removeClass('show');
+          $('#tendency-row .pat-results-content').removeClass('show');
         },
       });
       var pmgRowInview = new Waypoint.Inview({
