@@ -343,6 +343,29 @@ function pat_score( $id ) {
 
 		$scores['m2'] = $mod2_chart_array;
 
+		// Calculate M2 facets colors
+		// The resultant color will have hue=288, saturation=75, brightness between 35 and 90
+		$min_brightness = 90;
+		$max_brightness = 35;
+		$delta_brightness = $max_brightness - $min_brightness;
+
+		$enh_count = count($scores['m2']['1-enh']);
+		$mis_count = count($scores['m2']['2-mis']);
+		$ant_count = count($scores['m2']['3-ant']);
+		$ada_count = count($scores['m2']['4-ada']);
+		$max_num_project = max( array($enh_count, $mis_count, $ant_count, $ada_count) );
+		$min_num_project = min( array($enh_count, $mis_count, $ant_count, $ada_count) );
+		$delta_project = $max_num_project - $min_num_project;
+
+		$enh_brightness = round( ( $delta_brightness * ( $enh_count - $min_num_project ) / $delta_project ) + $min_brightness );
+		$mis_brightness = round( ( $delta_brightness * ( $mis_count - $min_num_project ) / $delta_project ) + $min_brightness );
+		$ant_brightness = round( ( $delta_brightness * ( $ant_count - $min_num_project ) / $delta_project ) + $min_brightness );
+		$ada_brightness = round( ( $delta_brightness * ( $ada_count - $min_num_project ) / $delta_project ) + $min_brightness );
+
+		$scores['m2-colors']['enh'] = ColorHSLToRGB( 288, 75, $enh_brightness );
+		$scores['m2-colors']['mis'] = ColorHSLToRGB( 288, 75, $mis_brightness );
+		$scores['m2-colors']['ant'] = ColorHSLToRGB( 288, 75, $ant_brightness );
+		$scores['m2-colors']['ada'] = ColorHSLToRGB( 288, 75, $ada_brightness );
 	}
 
   return $scores;

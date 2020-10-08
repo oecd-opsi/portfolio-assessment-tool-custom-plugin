@@ -1423,18 +1423,18 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                         <path id="Tracciato_141-2" data-name="border" d="M2575.507,3513.15l281.833-176.833,284.667,179.333-284.667,172.667Z" transform="translate(-2563.68 -3328.55)" fill="none" stroke="#fff" stroke-width="3"/>
                       </g>
                       <g transform="matrix(1, 0, 0, 1, 5255.67, 2451.9)" filter="url(#Tracciato_144)">
-                        <path id="Tracciato_144-2" data-name="facet-1" d="M749.043,1424.834l-102.9,62.941-102.9-62.941L646.142,1361Z" transform="translate(-519.8 -1240.47)" fill="<?php echo $scores['enh_color'] ?>"/>
+                        <path id="Tracciato_144-2" data-name="facet-1" d="M749.043,1424.834l-102.9,62.941-102.9-62.941L646.142,1361Z" transform="translate(-519.8 -1240.47)" fill="<?php echo $scores['m2-colors']['enh'] ?>"/>
                       </g>
                       <g id="Componente_4_15" data-name="Componente 4 – 15" transform="translate(5444.824 2470.887)">
                         <g transform="matrix(1, 0, 0, 1, -189.16, -18.99)" filter="url(#Tracciato_14)">
-                          <path id="Tracciato_14-2" data-name="facet-2" d="M871.043,1347.834l-102.9,62.941-102.9-62.941L768.142,1284Z" transform="translate(-476.09 -1265.01)" fill="<?php echo $scores['mis_color'] ?>"/>
+                          <path id="Tracciato_14-2" data-name="facet-2" d="M871.043,1347.834l-102.9,62.941-102.9-62.941L768.142,1284Z" transform="translate(-476.09 -1265.01)" fill="<?php echo $scores['m2-colors']['mis'] ?>"/>
                         </g>
                       </g>
                       <g transform="matrix(1, 0, 0, 1, 5255.67, 2451.9)" filter="url(#Tracciato_142)">
-                        <path id="Tracciato_142-2" data-name="facet-3" d="M871.043,1500.834l-102.9,62.941-102.9-62.941L768.142,1437Z" transform="translate(-476.09 -1213.83)" fill="<?php echo $scores['ada_color'] ?>"/>
+                        <path id="Tracciato_142-2" data-name="facet-3" d="M871.043,1500.834l-102.9,62.941-102.9-62.941L768.142,1437Z" transform="translate(-476.09 -1213.83)" fill="<?php echo $scores['m2-colors']['ada'] ?>"/>
                       </g>
                       <g transform="matrix(1, 0, 0, 1, 5255.67, 2451.9)" filter="url(#Tracciato_143)">
-                        <path id="Tracciato_143-2" data-name="facet-4" d="M994.043,1424.834l-102.9,62.941-102.9-62.941L891.142,1361Z" transform="translate(-429.48 -1238.47)" fill="<?php echo $scores['ant_color'] ?>"/>
+                        <path id="Tracciato_143-2" data-name="facet-4" d="M994.043,1424.834l-102.9,62.941-102.9-62.941L891.142,1361Z" transform="translate(-429.48 -1238.47)" fill="<?php echo $scores['m2-colors']['ant'] ?>"/>
                       </g>
                       <g id="Raggruppa_171" data-name="data-facet-1">
                         <g id="Raggruppa_161" class="<?php echo (count($scores['m2']['1-enh']) == 0 || count($scores['m2']['1-enh']) > 16 ) ? 'svg-hide' : ''; ?>" data-name="data-dots-1">
@@ -3105,18 +3105,18 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                             <path id="border-2" data-name="border" d="M2575.51,3513.15l281.833-176.833L3142.01,3515.65l-284.667,172.667Z" transform="translate(-2474.51 -3314.61)" fill="none" stroke="#fff" stroke-width="3"/>
                           </g>
                           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#facet-1)">
-                            <path id="facet-1-2" data-name="facet-1" d="M749.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-430.63 -1226.53)" fill="<?php echo $scores['enh_color'] ?>"/>
+                            <path id="facet-1-2" data-name="facet-1" d="M749.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-430.63 -1226.53)" fill="<?php echo $scores['m2-colors']['enh'] ?>"/>
                           </g>
                           <g id="Componente_4_15" data-name="Componente 4 – 15" transform="translate(5444.824 2470.887)">
                             <g transform="matrix(1, 0, 0, 1, -278.32, -32.93)" filter="url(#facet-2)">
-                              <path id="facet-2-2" data-name="facet-2" d="M871.043,1347.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.93 -1251.07)" fill="<?php echo $scores['mis_color'] ?>"/>
+                              <path id="facet-2-2" data-name="facet-2" d="M871.043,1347.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.93 -1251.07)" fill="<?php echo $scores['m2-colors']['mis'] ?>"/>
                             </g>
                           </g>
                           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#facet-3)">
-                            <path id="facet-3-2" data-name="facet-3" d="M871.043,1500.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.92 -1199.89)" fill="<?php echo $scores['ada_color'] ?>"/>
+                            <path id="facet-3-2" data-name="facet-3" d="M871.043,1500.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-386.92 -1199.89)" fill="<?php echo $scores['m2-colors']['ada'] ?>"/>
                           </g>
                           <g transform="matrix(1, 0, 0, 1, 5166.5, 2437.96)" filter="url(#facet-4)">
-                            <path id="facet-4-2" data-name="facet-4" d="M994.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-340.31 -1224.53)" fill="<?php echo $scores['ant_color'] ?>"/>
+                            <path id="facet-4-2" data-name="facet-4" d="M994.043,1424.83l-102.9,62.941-102.9-62.941,102.9-63.83Z" transform="translate(-340.31 -1224.53)" fill="<?php echo $scores['m2-colors']['ant'] ?>"/>
                           </g>
                           <g id="data-facet-1">
                             <g id="data-dots-1" class="<?php echo (count($scores['m2']['1-enh']) == 0 || count($scores['m2']['1-enh']) > 16 ) ? 'svg-hide' : ''; ?>">
@@ -3672,7 +3672,7 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                     </svg>
 
                   </div>
-                  <div class="module-2-lists-container row">
+                  <div class="module-2-lists-container">
                     <?php
                     foreach ($scores['m2'] as $key => $value) {
                       $list_title = '';
@@ -3715,7 +3715,7 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                         $title_class="primary_title";
                       }
                       if( count($scores['m2'][$key]) > 0 ) {
-                        echo '<div class="col-sm-3 projects-list">';
+                        echo '<div class="projects-list">';
                         echo '<h3 class="projects-list-title '.$title_class.'">'. $list_title .'</h3>';
                         echo '<ul>';
                         foreach ($scores['m2'][$key] as $i => $project) {
@@ -4859,18 +4859,18 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                             <path id="Tracciato_141-2" data-name="border" d="M2575.507,3513.15l281.833-176.833,284.667,179.333-284.667,172.667Z" transform="translate(-2563.68 -3328.55)" fill="none" stroke="#fff" stroke-width="3"/>
                           </g>
                           <g transform="matrix(1, 0, 0, 1, 5255.67, 2451.9)" filter="url(#Tracciato_144)">
-                            <path id="Tracciato_144-2" data-name="facet-1" d="M749.043,1424.834l-102.9,62.941-102.9-62.941L646.142,1361Z" transform="translate(-519.8 -1240.47)" fill="<?php echo $scores['enh_color'] ?>"/>
+                            <path id="Tracciato_144-2" data-name="facet-1" d="M749.043,1424.834l-102.9,62.941-102.9-62.941L646.142,1361Z" transform="translate(-519.8 -1240.47)" fill="<?php echo $scores['m2-colors']['enh'] ?>"/>
                           </g>
                           <g id="Componente_4_15" data-name="Componente 4 – 15" transform="translate(5444.824 2470.887)">
                             <g transform="matrix(1, 0, 0, 1, -189.16, -18.99)" filter="url(#Tracciato_14)">
-                              <path id="Tracciato_14-2" data-name="facet-2" d="M871.043,1347.834l-102.9,62.941-102.9-62.941L768.142,1284Z" transform="translate(-476.09 -1265.01)" fill="<?php echo $scores['mis_color'] ?>"/>
+                              <path id="Tracciato_14-2" data-name="facet-2" d="M871.043,1347.834l-102.9,62.941-102.9-62.941L768.142,1284Z" transform="translate(-476.09 -1265.01)" fill="<?php echo $scores['m2-colors']['mis'] ?>"/>
                             </g>
                           </g>
                           <g transform="matrix(1, 0, 0, 1, 5255.67, 2451.9)" filter="url(#Tracciato_142)">
-                            <path id="Tracciato_142-2" data-name="facet-3" d="M871.043,1500.834l-102.9,62.941-102.9-62.941L768.142,1437Z" transform="translate(-476.09 -1213.83)" fill="<?php echo $scores['ada_color'] ?>"/>
+                            <path id="Tracciato_142-2" data-name="facet-3" d="M871.043,1500.834l-102.9,62.941-102.9-62.941L768.142,1437Z" transform="translate(-476.09 -1213.83)" fill="<?php echo $scores['m2-colors']['ada'] ?>"/>
                           </g>
                           <g transform="matrix(1, 0, 0, 1, 5255.67, 2451.9)" filter="url(#Tracciato_143)">
-                            <path id="Tracciato_143-2" data-name="facet-4" d="M994.043,1424.834l-102.9,62.941-102.9-62.941L891.142,1361Z" transform="translate(-429.48 -1238.47)" fill="<?php echo $scores['ant_color'] ?>"/>
+                            <path id="Tracciato_143-2" data-name="facet-4" d="M994.043,1424.834l-102.9,62.941-102.9-62.941L891.142,1361Z" transform="translate(-429.48 -1238.47)" fill="<?php echo $scores['m2-colors']['ant'] ?>"/>
                           </g>
                           <g id="Raggruppa_171" data-name="data-facet-1">
                             <g id="Raggruppa_161" class="<?php echo (count($scores['m2']['1-enh']) == 0 || count($scores['m2']['1-enh']) > 16 ) ? 'svg-hide' : ''; ?>" data-name="data-dots-1">
