@@ -5428,20 +5428,34 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                 <div class="pat-results-content">
                   <h2>Download and share results</h2>
                   <?php the_field( 'download_and_share_results_text', 'option' ) ?>
-                  <div>
-                    <?php if(function_exists('mpdf_pdfbutton')) {
-                      mpdf_pdfbutton( false, 'Download PDF' );
-                    }
-                    ?>
-                     -
-                    <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>" class="download-csv">Download CSV</a>
-                  </div>
-                  <div>
-                    <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Organisational Portfolio image file</a>
+                  <ul>
+                    <li>
+                      <?php if(function_exists('mpdf_pdfbutton')) {
+                        mpdf_pdfbutton( false, 'Download a PDF report of your results' );
+                      }
+                      ?>
+                    </li>
                     <?php if( $status_slug == 'publish_module2' ) : ?>
-                       - <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Project Based Mapping image file</a>
+                      <li>
+                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>&pat_module=2&pat_csv_type=comb" class="download-csv">Download a CSV file of your Portfolio Balance data and summary Project Mapping data</a>
+                      </li>
+                      <li>
+                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>&pat_result_id=<?php the_ID()  ?>&pat_module=2&pat_csv_type=solo" class="download-csv">Download a CSV of your detailed Project Mapping data</a>
+                      </li>
+                    <?php else: ?>
+                      <li>
+                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>&pat_module=1&pat_csv_type=solo" class="download-csv">Download a CSV file of your Portfolio Balance data</a>
+                      </li>
                     <?php endif; ?>
-                  </div>
+                    <li>
+                      <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Portfolio Balance image file</a>
+                    </li>
+                    <?php if( $status_slug == 'publish_module2' ) : ?>
+                      <li>
+                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Project Mapping image file</a>
+                      </li>
+                    <?php endif; ?>
+                  </ul>
                 </div>
               </section>
 

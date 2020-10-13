@@ -4057,7 +4057,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'vertical',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -4085,7 +4085,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'vertical',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 						array(
@@ -4112,7 +4112,7 @@ acf_add_local_field_group(array(
 							'other_choice' => 0,
 							'default_value' => '',
 							'layout' => 'vertical',
-							'return_format' => 'value',
+							'return_format' => 'array',
 							'save_other_choice' => 0,
 						),
 					),

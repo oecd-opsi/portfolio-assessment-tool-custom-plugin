@@ -291,9 +291,9 @@ function pat_score( $id ) {
 		$project_lists = $fields['projects']['value']['projects_list'];
 		foreach ($project_lists as $project) {
 			$title = $project['project_title'];
-			$q1 = $project['this_project_was_primarily_created_to:'];
-			$q2 = $project['the_project_has_been_mainly_pushed_forward_by:'];
-			$priority = $project['what_level_of_priority_would_you_say_this_project_has_in_your_organisation'];
+			$q1 = $project['this_project_was_primarily_created_to:']['value'];
+			$q2 = $project['the_project_has_been_mainly_pushed_forward_by:']['value'];
+			$priority = $project['what_level_of_priority_would_you_say_this_project_has_in_your_organisation']['value'];
 			$circle = 3;
 			if( $priority == 'h' ) {
 				$circle = 7;
