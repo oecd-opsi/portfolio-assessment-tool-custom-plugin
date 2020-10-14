@@ -94,7 +94,7 @@ function pat_submission_post_type() {
 		'label'                 => __( 'Portfolio Assessment Tool submission', 'opsi' ),
 		'description'           => __( 'Portfolio Assessment Tool submission', 'opsi' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'author' ),
+		'supports'              => array( 'title', 'author', 'thumbnail' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -254,11 +254,25 @@ function opsi_acf_save_post_pat( $post_id ) {
 
 	wp_update_post($content);
 
+	// Update post status variable
+	$post_status = get_post_status_object( get_post_status( $post_id ) );
+	$status_slug = $post_status->name;
+
 	if ( isset( $_POST['csf_action'] ) && $_POST['csf_action'] == 'submit' ) {
 		if( $status_slug == 'publish' ) {
+			// Generate diamond png
+			$image_url = pat_generate_m1_img($post_id);
+			// Set image as featured
+			generate_featured_image( $image_url, $post_id );
+			// Redirect to results page
 			wp_redirect( get_permalink($post_id), 301 );
 		} else {
-			wp_redirect( get_permalink($post_id) . '#module-2', 301 );
+			// Generate diamond png
+			$image_url = pat_generate_m2_img($post_id);
+			// Set image as featured
+			generate_featured_image( $image_url, $post_id );
+			// Redirect to results page
+			wp_redirect( get_permalink($post_id) . '?module-2=true', 301 );
 		}
 		exit;
 	}
@@ -719,6 +733,9 @@ function ColorHSLToRGB($h, $s, $l){
 // Call Calculate score helper functions
 require_once('pat-calculate-score.php');
 
+// Call helper functions that generates results images
+require_once('pat-generate-imgs-functions.php');
+
 // Helper function to know if the user can edit the PAT form
 function can_edit_pat_form(
 	$post_id = 0,
@@ -810,3 +827,25 @@ function add_csv_export_menu_item() {
 	$submenu['edit.php?post_type=pat_submission'][] = array( 'CSV Export', 'manage_options', 'https://staging.oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
 }
 add_action('admin_menu', 'add_csv_export_menu_item');
+
+// Edit SEO and social title on PET single template for not logged users
+function filter_pet_wpseo_title($title) {
+  if( is_singular( 'pat_submission' ) && !is_user_logged_in() ) {
+    $title = 'Portfolio Exploration Tool - Observatory of Public Sector Innovation';
+  }
+  return $title;
+}
+add_filter('wpseo_title', 'filter_pet_wpseo_title');
+add_filter('wpseo_opengraph_title', 'filter_pet_wpseo_title');
+add_filter('wpseo_twitter_title', 'filter_pet_wpseo_title');
+
+// Edit SEO and social title on PET single template for not logged users
+function filter_pet_wpseo_desc($meta_desc) {
+  if( is_singular( 'pat_submission' ) && !is_user_logged_in() ) {
+    $meta_desc = 'OECD @OPSIgov\'s Portfolio Exploration Tool for understanding your organisation\'s innovation portfolio.';
+  }
+  return $meta_desc;
+}
+add_filter('wpseo_title', 'filter_pet_wpseo_desc');
+add_filter('wpseo_opengraph_title', 'filter_pet_wpseo_desc');
+add_filter('wpseo_twitter_title', 'filter_pet_wpseo_desc');

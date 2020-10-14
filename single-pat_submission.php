@@ -13,15 +13,11 @@ $author_id = $post->post_author;
 if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $author_id ) {
 	?>
 	<div class="col-sm-12">
-		<div class="alert alert-warning text-center">
-			<h3><?php echo __( 'Sorry, you cannot see a questionnaire results that was submitted by someone else. In case of issues, please contact the OPSI team at', 'opsi' ); ?> <a href="mailto:opsi@oecd.org">opsi@oecd.org</a></h3>
+		<div class="text-center">
+      <?php the_post_thumbnail( 'full', ['alt' => '']) ?>
+      <h1>Portfolio Exploration Tool</h1>
+			<h3><?php echo __( 'OECD @OPSIgov\'s Portfolio Exploration Tool for understanding your organisation\'s innovation portfolio - ', 'opsi' ); ?> <a href="https://oe.cd/pet">https://oe.cd/pet</a></h3>
 		</div>
-
-		<br />
-		<a href="<?php echo $bp->loggedin_user->domain . 'pat/'; ?>" title="<?php echo __( 'Back', 'opsi' ); ?>" class="button btn btn-default flipicon">
-          <i class="fa fa-chevron-left" aria-hidden="true"></i>  <?php echo __( 'Back', 'opsi' ); ?>
-		</a>
-
 	</div>
 	<?php
 	get_footer();
@@ -71,6 +67,16 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
   $nav_menu .= '
       <li><a href="#download-and-share">Download and Share Results</a></li>
       <li><a href="#interpretation">Interpretation and Next Steps</a></li>
+      <li class="nav-share-item">
+      <!-- AddToAny BEGIN -->
+      <a class="a2a_dd" href="https://www.addtoany.com/share">Share Results</a>
+      <script>
+      var a2a_config = a2a_config || {};
+      a2a_config.onclick = 1;
+      </script>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+      <!-- AddToAny END -->
+      </li>
       <li class="nav-start-again-item"><a href="#" data-post_id="'.$postid.'">Start again</a></li>
     </ul>
   ';
