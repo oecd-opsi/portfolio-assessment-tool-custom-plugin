@@ -422,7 +422,7 @@ function bp_pat_list() {
 					<th><?php echo __( 'Title', 'opsi' ); ?></th>
 					<th><?php echo __( 'Organisation', 'opsi' ); ?></th>
 					<th><?php echo __( 'Status', 'opsi' ); ?></th>
-					<th class="text-center" colspan="4"><?php echo __( 'Actions', 'opsi' ); ?></th>
+					<th class="text-center" colspan="5"><?php echo __( 'Actions', 'opsi' ); ?></th>
 				</thead>
 				<tbody>
 
@@ -487,12 +487,22 @@ function bp_pat_list() {
 					?>
 				</td>
 				<td>
-					<?php
-						if ( get_post_status( get_the_ID() ) != 'draft' ) { ?>
-						<a href="/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php?pat_author=<?php echo get_the_author_meta( 'ID' ) ?>&pat_result_id=<?php echo get_the_ID() ?>" title="<?php echo __( 'csv', 'opsi' ); ?>">
+					<?php	if ( get_post_status( get_the_ID() ) == 'publish' ) : ?>
+						<a href="/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php?pat_author=<?php echo get_the_author_meta( 'ID' ) ?>&pat_result_id=<?php echo get_the_ID() ?>&pat_module=1&pat_csv_type=solo" title="<?php echo __( 'Portfolio Balance CSV', 'opsi' ); ?>">
 							<i class="fa fa-table" aria-hidden="true"></i>
 						</a>
-					<?php } ?>
+					<?php	elseif ( get_post_status( get_the_ID() ) == 'publish_module2' ) : ?>
+						<a href="/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php?pat_author=<?php echo get_the_author_meta( 'ID' ) ?>&pat_result_id=<?php echo get_the_ID() ?>&pat_module=2&pat_csv_type=comb" title="<?php echo __( 'Portfolio Balance CSV', 'opsi' ); ?>">
+							<i class="fa fa-table" aria-hidden="true"></i>
+						</a>
+					<?php endif; ?>
+				</td>
+				<td>
+					<?php	if ( get_post_status( get_the_ID() ) == 'publish_module2' ) : ?>
+						<a href="/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php?pat_author=<?php echo get_the_author_meta( 'ID' ) ?>&pat_result_id=<?php echo get_the_ID() ?>&pat_module=2&pat_csv_type=solo" title="<?php echo __( 'Project Mapping CSV', 'opsi' ); ?>">
+							<i class="fa fa-th-list" aria-hidden="true"></i>
+						</a>
+					<?php endif; ?>
 				</td>
 				<td>
 					<?php
