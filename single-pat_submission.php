@@ -5437,7 +5437,7 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                   <ul>
                     <li>
                       <?php if(function_exists('mpdf_pdfbutton')) {
-                        mpdf_pdfbutton( false, 'Download a PDF report of your results' );
+                        mpdf_pdfbutton( true, 'Download a PDF report of your results' );
                       }
                       ?>
                     </li>
@@ -5446,7 +5446,7 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                         <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>&pat_module=2&pat_csv_type=comb" class="download-csv">Download a CSV file of your Portfolio Balance data and summary Project Mapping data</a>
                       </li>
                       <li>
-                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>&pat_result_id=<?php the_ID()  ?>&pat_module=2&pat_csv_type=solo" class="download-csv">Download a CSV of your detailed Project Mapping data</a>
+                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-csv-dl.php?pat_author=<?php echo $post->post_author ?>&pat_module=2&pat_csv_type=solo" class="download-csv">Download a CSV of your detailed Project Mapping data</a>
                       </li>
                     <?php else: ?>
                       <li>

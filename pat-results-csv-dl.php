@@ -57,6 +57,8 @@ if ( $module == 1 ) {
 		'Last name',
 		'Date submitted',
 		'Organisation Explored',
+		'Number of people',
+		'Sector or topic',
 		'Country',
 		'Facet Q1',
 		'Facet Q1a - Achieving overarching societal goals and solving big problems',
@@ -164,15 +166,9 @@ if ( $module == 1 ) {
 		'Results - Facets Orientation Percentage Score - Anticipatory',
 		'Results - Facets Orientation Percentage Score - Adaptive',
 		'Results - Facets Orientation Percentage Group',
-		'Results - Facets Orientation Narrative - How these strengths fit into a broader innovation portfolio',
-		'Results - Facets Orientation Narrative - Types of innovation that may be missing',
-		'Results - Facets Orientation Narrative - Potential threats and vulnerabilities to watch out for',
-		'Results - Facets Orientation Narrative - How to sustain these types of innovation in the long term',
-		'Results - Facets Orientation Narrative - Ways to diversify or transition the portfolio',
-		'Results - Facets Orientation Narrative - Who might be supporting other areas of the portfolio',
 		'Results - Portfolio Management Percentage Score',
 		'Results - Portfolio Management Group',
-		'Link to Results Page'
+		'Link to Results Page (must be logged on to access)'
 	)
 );
 } elseif ( $module == 2 ) {
@@ -183,6 +179,8 @@ if ( $module == 1 ) {
 			'Last Name',
 			'Date submitted',
 			'Organisation Explored',
+			'Number of people',
+			'Sector or topic',
 			'Country',
 			'Project',
 			'Project created to',
@@ -197,6 +195,8 @@ if ( $module == 1 ) {
 			'Last name',
 			'Date submitted',
 			'Organisation Explored',
+			'Number of people',
+			'Sector or topic',
 			'Country',
 			'Facet Q1',
 			'Facet Q1a - Achieving overarching societal goals and solving big problems',
@@ -304,12 +304,6 @@ if ( $module == 1 ) {
 			'Results - Facets Orientation Percentage Score - Anticipatory',
 			'Results - Facets Orientation Percentage Score - Adaptive',
 			'Results - Facets Orientation Percentage Group',
-			'Results - Facets Orientation Narrative - How these strengths fit into a broader innovation portfolio',
-			'Results - Facets Orientation Narrative - Types of innovation that may be missing',
-			'Results - Facets Orientation Narrative - Potential threats and vulnerabilities to watch out for',
-			'Results - Facets Orientation Narrative - How to sustain these types of innovation in the long term',
-			'Results - Facets Orientation Narrative - Ways to diversify or transition the portfolio',
-			'Results - Facets Orientation Narrative - Who might be supporting other areas of the portfolio',
 			'Results - Portfolio Management Percentage Score',
 			'Results - Portfolio Management Group',
 			'Mapping - Total projects',
@@ -322,9 +316,18 @@ if ( $module == 1 ) {
 			'Mapping - Disruptive change',
 			'Mapping - Optimising change',
 			'Mapping - Mixed or unclear',
-			'Link to Results Page'
+			'Link to Results Page (must be logged on to access)'
 		);
 	}
+}
+
+// Helper function to print checkbox selected options
+function checkbox_get_all_options( $field ) {
+	$output = array();
+	foreach ($field as $option) {
+		$output[] = $option['label'];
+	}
+	return implode( '; ', $output );
 }
 
 // The Loop
@@ -333,16 +336,6 @@ if ( $query->have_posts() ) {
 		$query->the_post();
 
     $scores = pat_score(get_the_ID());
-
-		// Divide tendency text to six mini-text
-		$scores['portfolio_tendency_group_text'] = preg_replace('#<h3>(.*?)</h3>#', '', $scores['portfolio_tendency_group_text']);
-		$group_text_splitted = explode( '<div class="tendency-section">', $scores['portfolio_tendency_group_text'] );
-		$group_text_splitted = str_replace( '</div>', '', $group_text_splitted);
-		$i = 1;
-		foreach ($group_text_splitted as $text) {
-			${'portfolio_tendency_group_text_'.$i} = strip_tags($text);
-			$index++;
-		}
 
 		if( $module == 1 || $csv_type == 'comb' || !isset($_GET['pat_author']) ) {
 			$general_questions = get_field('general_questions');
@@ -362,6 +355,8 @@ if ( $query->have_posts() ) {
 				get_the_author_meta('last_name'),
 				get_the_date(),
 				$general_questions['organisation'],
+				$general_questions['n_people'],
+				implode( '; ', $general_questions['in_which_sector_or_topic_does_this_group_of_people_focus_its_work']),
 				$general_questions['country']->name,
 				'My organisation tends to focus on...',
 				$facet_1['my_organisation_tends_to_focus_on']['mis_achieving_overarching_societal_goals_and_solving_big_problems']['label'],
@@ -431,7 +426,7 @@ if ( $query->have_posts() ) {
 				$facet_4['how_does_your_organisation_engage_with_technology']['mis_the_organisations_does_not_have_preferred_technology_partners']['label'],
 				$facet_4['how_does_your_organisation_engage_with_technology']['ada_the_organisation_enables_small-scale_tests_of_different_technologies_based_on_employees_or_usersrecommendation']['label'],
 				$facet_4['how_does_your_organisation_engage_with_technology']['ada_the_organisation_tends_to_work_together_with_a_multitude_of_small_agile_development_teams_with_user-driven_design_skills']['label'],
-				$facet_4['how_does_your_organisation_engage_with_technology']['ant_the_organisation_tries_to_be_at_the_forefront_of_technological_developments_in_its_sector_and_has_a_very_good_overview_of_all_possible_technological_opportunities_in_the_field']['label'],
+				$facet_4['how_does_your_organisation_engage_with_technology']['ant_the_organisation_tries_to_be_at_the_forefront_of_technological_developments']['label'],
 				$facet_4['how_does_your_organisation_engage_with_technology']['ant_the_organisation_tends_to_work_with_early_to_the_market_technology_vendors_close_to_universities_and_other_basic_research_teams']['label'],
 				$pmq_1['does_your_organisation_have_a_clear_understanding_of_innovation_and_why_it_is_needed']['label'],
 				'How does your organisation create space for new things?',
@@ -469,12 +464,6 @@ if ( $query->have_posts() ) {
 				$scores['ant_percentage'],
 				$scores['ada_percentage'],
 				'Your organisational portfolio tends to '.$scores['portfolio_tendency_statement'],
-				$portfolio_tendency_group_text_1,
-				$portfolio_tendency_group_text_2,
-				$portfolio_tendency_group_text_3,
-				$portfolio_tendency_group_text_4,
-				$portfolio_tendency_group_text_5,
-				$portfolio_tendency_group_text_6,
 				$scores['pmq_score'],
 				$scores['level'],
 			);
@@ -537,6 +526,8 @@ if ( $query->have_posts() ) {
 						get_the_author_meta('last_name'),
 						get_the_date(),
 						$general_questions['organisation'],
+						$general_questions['n_people'],
+						implode( ' | ', $general_questions['in_which_sector_or_topic_does_this_group_of_people_focus_its_work']),
 						$general_questions['country']->name,
 						$project['project_title'],
 						$project['this_project_was_primarily_created_to:']['label'],

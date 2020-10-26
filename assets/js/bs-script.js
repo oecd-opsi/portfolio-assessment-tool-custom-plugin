@@ -230,6 +230,15 @@ window.addEventListener( 'hashchange', function(e){
 (function($){
   $(document).ready( function() {
 
+    if ( $('.pat-results').length ) {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const module2 = urlParams.get('module-2');
+      if( module2 ) {
+
+      }
+    }
+
     var mediaQuery = window.matchMedia("(min-width: 960px)")
 
     // check if it PAT results page
