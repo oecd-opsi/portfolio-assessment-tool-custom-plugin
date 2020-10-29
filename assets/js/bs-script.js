@@ -21,6 +21,24 @@ for (var k in steps){
 // Make Ranking fields item sortable
 (function($){
   $(document).ready( function() {
+    // Ranking fields initial items position
+    var rankQuestions = document.querySelectorAll('.pat-sortable-field .acf-input .acf-fields');
+    rankQuestions.forEach((rankQuestion, i) => {
+      var rankItemObj = [];
+      var numFields = rankQuestion.querySelectorAll('.acf-field-number');
+      numFields.forEach((field, i) => {
+        var dataName = field.getAttribute('data-name');
+        var value = field.querySelector('input[type="number"]').getAttribute('value');
+        rankItemObj[i] = [dataName, value];
+      });
+      rankItemObj.sort( function(a,b) {
+        if ( a[1] < b[1] ) { return 1; } else { return -1; }
+      });
+      rankItemObj.forEach((item, i) => {
+        rankQuestion.append($('[data-name="'+item[0]+'"]')[0]);
+      });
+    });
+    // Enable sortable widget
     $( ".pat-sortable-field .acf-input .acf-fields" ).sortable({
       update: function(event, ui) {
         var nbElems = $(this).find( "input[type='number']" ).length;
@@ -110,6 +128,8 @@ if (jQuery("#pat-form").length > 0) {
 
     setTimeout(function () {
       if( jQuery( '.acf-notice.acf-error-message' ).length > 0 ) {
+
+        jQuery( '.acf-spinner').removeClass('is-active');
 
         jQuery( '.pat-step' ).each( function(i) {
 
@@ -230,16 +250,17 @@ window.addEventListener( 'hashchange', function(e){
 (function($){
   $(document).ready( function() {
 
+    // In results page, if coming from module 2 completion, scroll to module 2 section
     if ( $('.pat-results').length ) {
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       const module2 = urlParams.get('module-2');
       if( module2 ) {
-
+        location.hash = '#module-2';
       }
     }
 
-    var mediaQuery = window.matchMedia("(min-width: 960px)")
+    var mediaQuery = window.matchMedia("(min-width: 960px)");
 
     // check if it PAT results page
     if ( $('.pat-results').length > 0 && mediaQuery.matches ) {
@@ -484,7 +505,7 @@ window.addEventListener( 'hashchange', function(e){
 
         // Module 2 graph tooltip
         $('#module-2').append('<span id="m2-graph-tooltip"></span>');
-        $('g[data-name="main-group"] circle').on('mouseenter', function(e){
+        $('.module-2-graph-container g[data-name="main-group"] circle').on('mouseenter', function(e){
           var mouseX = e.clientX;
           var mouseY = e.clientY;
           var text = $(this).data('project-title');
@@ -493,9 +514,9 @@ window.addEventListener( 'hashchange', function(e){
           span.text(text);
           span.addClass('active');
           span.css('left', mouseX);
-          span.css('top', mouseY - spanH);
+          span.css('top', mouseY + spanH - 116);
         });
-        $('g[data-name="main-group"] circle').on('mouseleave', function(e){
+        $('.module-2-graph-container g[data-name="main-group"] circle').on('mouseleave', function(e){
           $('#m2-graph-tooltip').removeClass('active');
         });
 
@@ -542,7 +563,7 @@ window.addEventListener( 'hashchange', function(e){
     window.addEventListener( 'scroll', function(e){
       idArray.forEach((item, i) => {
         let section = $(item);
-        let menuItem = $('[href='+item+']');
+        let menuItem = $('[href="'+item+'"]');
 
         let percent = Math.floor( 100 * ($(document).scrollTop() - section.offset().top ) / section.height() );
 

@@ -545,6 +545,7 @@ function bp_pat_list() {
 				</tbody>
 			</table>
 		</div>
+		<p><a href="/portfolio-exploration">Click here to conduct a new portfolio exploration with OPSI’s Portfolio Exploration Tool.</a></p>
 		<?php
 
 	} else {
@@ -553,6 +554,7 @@ function bp_pat_list() {
 		<div id="message" class="info">
 			<p><?php echo __( 'Sorry, there was no entries found.', 'opsi' ); ?></p>
 		</div>
+		<p><a href="/portfolio-exploration">Click here to conduct a new portfolio exploration with OPSI’s Portfolio Exploration Tool.</a></p>
 		<?php
 	}
 
@@ -647,7 +649,7 @@ function bs_pat_submission_date( $post ) {
 
 }
 
-// force login for case study form
+// force login for PET form
 add_action( 'template_redirect', 'bs_pat_form_template_redirect' );
 function bs_pat_form_template_redirect() {
 	if ( is_page( 'portfolio-exploration' ) && ! is_user_logged_in() ) {
@@ -831,7 +833,7 @@ add_action('admin_menu', 'add_csv_export_menu_item');
 // Edit SEO and social title on PET single template for not logged users
 function filter_pet_wpseo_title($title) {
   if( is_singular( 'pat_submission' ) && !is_user_logged_in() ) {
-    $title = 'Portfolio Exploration Tool - Observatory of Public Sector Innovation';
+    $title = 'OECD OPSI Portfolio Exploration Tool';
   }
   return $title;
 }
@@ -842,7 +844,7 @@ add_filter('wpseo_twitter_title', 'filter_pet_wpseo_title');
 // Edit SEO and social title on PET single template for not logged users
 function filter_pet_wpseo_desc($meta_desc) {
   if( is_singular( 'pat_submission' ) && !is_user_logged_in() ) {
-    $meta_desc = 'OECD @OPSIgov\'s Portfolio Exploration Tool for understanding your organisation\'s innovation portfolio.';
+    $meta_desc = 'Better understand your innovation portfolio with OECD OPSI Portfolio Exploration Tool.';
   }
   return $meta_desc;
 }

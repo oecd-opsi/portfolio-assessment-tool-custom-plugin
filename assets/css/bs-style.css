@@ -423,8 +423,10 @@
   width: 100%;
 }
 
-#portfolio-assessment-tool-form .acf-field:not([id="pat-step-1"]) .acf-field-checkbox.two-cols-checkbox > .acf-input .acf-checkbox-list {
-  columns: 2;
+@media screen and (min-width: 960px) {
+  #portfolio-assessment-tool-form .acf-field:not([id="pat-step-1"]) .acf-field-checkbox.two-cols-checkbox > .acf-input .acf-checkbox-list {
+    columns: 2;
+  }
 }
 
 #portfolio-assessment-tool-form .acf-field-checkbox > .acf-input .acf-checkbox-list li {
@@ -513,6 +515,10 @@
   border-color: #AB0DB6;
 }
 
+#portfolio-assessment-tool-form .acf-field-repeater .acf-table tr.acf-row .acf-row-handle.ui-sortable-handle {
+  pointer-events: none;
+}
+
 /* Form pagination */
 div[id^="pat-step-"],
 .hide-pat-step {
@@ -570,6 +576,13 @@ div[id^="pat-step-"].active-pat-step {
 .pat-step-nav-container .pat-step-nav-wrapper .button:hover {
   background: #6681DA;
   text-decoration: none;
+}
+
+@media screen and (max-width: 959px) {
+  .pat-step-nav-container .pat-step-nav-wrapper button,
+  .pat-step-nav-container .pat-step-nav-wrapper .button {
+    width: 100%;
+  }
 }
 
 /* Results page */
@@ -1105,7 +1118,7 @@ div[id^="pat-step-"].active-pat-step {
 
 .projects-list li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .projects-list li::before {
@@ -1113,19 +1126,27 @@ div[id^="pat-step-"].active-pat-step {
   display: inline-block;
   width: 12px;
   height: 12px;
+  flex: 0 0 12px;
   border-radius: 100%;
   background: #fff;
   margin-right: 6px;
+  margin-top: 9px;
 }
 .projects-list li.priority-m::before {
   width: 10px;
   height: 10px;
+  flex: 0 0 10px;
   margin-left: 2px;
 }
 .projects-list li.priority-l::before {
   width: 8px;
   height: 8px;
+  flex: 0 0 8px;
   margin-left: 4px;
+}
+
+.projects-list li span.priority-text {
+  text-transform: uppercase;
 }
 
 .pat-results-fullwidth-section h3.projects-list-title {

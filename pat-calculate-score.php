@@ -44,7 +44,7 @@ function pat_score( $id ) {
 			if( !empty($answers) ) {
 				foreach ( $answers as $key => $value ) {
 					if ( is_array($value) ) {
-						// checkbox or radio
+						// is checkbox or radio?
 						$splitted_value = explode( '-', $value['value'] );
 						if ( count($splitted_value) > 1 ) {
 							// here we have a checkbox
@@ -60,7 +60,6 @@ function pat_score( $id ) {
 								$$facets_ref += (float)$value['value'];
 							}
 						}
-
 					} else {
 						// here we have an number input (ranking field)
 						// here we have a radio input

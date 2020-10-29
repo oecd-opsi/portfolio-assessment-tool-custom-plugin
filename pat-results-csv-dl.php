@@ -330,6 +330,26 @@ function checkbox_get_all_options( $field ) {
 	return implode( '; ', $output );
 }
 
+// Helper function to print ranking field position
+function ranking_field_position( $value ) {
+	$position = 0;
+	switch ($value) {
+		case 4:
+			$position = 1;
+			break;
+		case 2:
+			$position = 2;
+			break;
+		case 1:
+			$position = 3;
+			break;
+		case 0:
+			$position = 4;
+			break;
+	}
+	return $position;
+}
+
 // The Loop
 if ( $query->have_posts() ) {
 	while ( $query->have_posts() ) {
@@ -364,10 +384,10 @@ if ( $query->have_posts() ) {
 				$facet_1['my_organisation_tends_to_focus_on']['ant_preparing_for_potential_future_changes_and_exploring_new_scenarios']['label'],
 				$facet_1['my_organisation_tends_to_focus_on']['ada_responding_to_changes_already_happening_in_its_external_operating_environment']['label'],
 				'What does the leadership of my organisation tend to prefer or promote?',
-				$facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['enh_delivering_projects_on_time_and_on_budget'],
-				$facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['mis_maximum_impact_on_high-profile_projects'],
-				$facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['ant_changing_course_based_on_external_demands_or_needs'],
-				$facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['ada_being_ahead_of_the_curve_on_things_that_could_impact_the_organisation_in_the_future'],
+				ranking_field_position($facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['enh_delivering_projects_on_time_and_on_budget']),
+				ranking_field_position($facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['mis_maximum_impact_on_high-profile_projects']),
+				ranking_field_position($facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['ant_changing_course_based_on_external_demands_or_needs']),
+				ranking_field_position($facet_1['what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote']['ada_being_ahead_of_the_curve_on_things_that_could_impact_the_organisation_in_the_future']),
 				'How does your organisation tend to manage projects?',
 				$facet_1['how_does_your_organisation_tend_to_manage_projects']['enh_focussing_on_precise_milestones_deadlines_and_outputs']['label'],
 				$facet_1['how_does_your_organisation_tend_to_manage_projects']['mis_focussing_on_showing_results_toward_a_broad_societal_outcome']['label'],
@@ -379,10 +399,10 @@ if ( $query->have_posts() ) {
 				$facet_1['in_my_organisation…']['ant_people_are_welcome_to_question_the_mission_or_strategy_of_the_organisation']['label'],
 				$facet_1['in_my_organisation…']['mis_people_know_the_overall_organsational_goals_and_are_focused_on_delivering_them_across_the_organisation']['label'],
 				'What is most difficult to get done in your organisation?',
-				$facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['enh_fundamentally_change_things_that_are_no_longer_relevant_or_suitable_but_are_kept_working'],
-				$facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['mis_changing_course_on_overall_strategy_when_new_or_contradictory_information_becomes_available'],
-				$facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['ant_keeping_focus_on_urgent_and_immediate_issues_or_crises'],
-				$facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['ada_keeping_different_parts_of_the_organisation_coherent_with_each_other_or_an_overall_goal'],
+				ranking_field_position($facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['enh_fundamentally_change_things_that_are_no_longer_relevant_or_suitable_but_are_kept_working']),
+				ranking_field_position($facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['mis_changing_course_on_overall_strategy_when_new_or_contradictory_information_becomes_available']),
+				ranking_field_position($facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['ant_keeping_focus_on_urgent_and_immediate_issues_or_crises']),
+				ranking_field_position($facet_2['what_is_most_difficult_to_get_done_in_your_organisation']['ada_keeping_different_parts_of_the_organisation_coherent_with_each_other_or_an_overall_goal']),
 				'Risks my organisation tends to take most seriously are…',
 				$facet_2['risks_my_organisation_tends_to_take_most_seriously_are…']['ada_negative_feedback_from_stakeholders']['label'],
 				$facet_2['risks_my_organisation_tends_to_take_most_seriously_are…']['ada_our_service_users_disengaging_or_going_elsewhere_for_solutions']['label'],
@@ -396,29 +416,29 @@ if ( $query->have_posts() ) {
 				$facet_2['what_can_people_in_your_organisation_do_without_asking_for_explicit_permission']['ada_people_can_explore_different_options_based_on_user_needs']['label'],
 				$facet_2['what_can_people_in_your_organisation_do_without_asking_for_explicit_permission']['enh_people_can_make_policy_or_operational_adjustments_for_efficiency_or_effectiveness']['label'],
 				'Which negative news, articles or external reports would get the most attention inside the organisation?',
-				$facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['mis_the_organisation_or_its_leader_fails_to_deliver_on_a_stated outcom'],
-				$facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['enh_embarrassing_news_about_money_waste'],
-				$facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['ada_service_delivery_failure_and_user_dissatisfaction'],
-				$facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['ant_failed_to_anticipate_or_prepare_for_a_crisis'],
+				ranking_field_position($facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['mis_the_organisation_or_its_leader_fails_to_deliver_on_a_stated outcom']),
+				ranking_field_position($facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['enh_embarrassing_news_about_money_waste']),
+				ranking_field_position($facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['ada_service_delivery_failure_and_user_dissatisfaction']),
+				ranking_field_position($facet_2['which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation']['ant_failed_to_anticipate_or_prepare_for_a_crisis']),
 				'What gets punished in your organisation?',
 				$facet_3['what_gets_punished_in_your_organisation']['enh_missing_deadlines_or_going_over_budget']['label'],
 				$facet_3['what_gets_punished_in_your_organisation']['mis_not_being_able_to_demonstrate_the_impact_expected']['label'],
 				$facet_3['what_gets_punished_in_your_organisation']['ada_partners_or_service_users_were_left_waiting_or_their_needs_were_not_met_fast_enough']['label'],
 				$facet_3['what_gets_punished_in_your_organisation']['ant_failure_to_foresee_something_that_created_crises_or_missed_opportunities']['label'],
-				$facet_3['which_innovation_initiatives_tend_to_get_funded_in_your_organisation'][0]['label'],
+				checkbox_get_all_options($facet_3['which_innovation_initiatives_tend_to_get_funded_in_your_organisation']),
 				'Which procurement options does your organisation tend to use most often to achieve its strategic objectives?',
 				$facet_3['which_procurement_options_does_your_organisation_tend_to_use_most_often_to_achieve_its_strategic_objectives']['enh_waterfall']['label'],
 				$facet_3['which_procurement_options_does_your_organisation_tend_to_use_most_often_to_achieve_its_strategic_objectives']['ada_agile']['label'],
 				$facet_3['which_procurement_options_does_your_organisation_tend_to_use_most_often_to_achieve_its_strategic_objectives']['mis_challenge-based']['label'],
 				$facet_3['which_procurement_options_does_your_organisation_tend_to_use_most_often_to_achieve_its_strategic_objectives']['ant_sandbox']['label'],
 				'Which time horizons does your organisation tend to work with?',
-				$facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['ada_3-6_months'],
-				$facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['enh_fiscal_year'],
-				$facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['mis_outcome_based'],
-				$facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['ant_long-term'],
-				$facet_4['what_data_does_your_organisation_tend_to_use'][0]['label'],
-				$facet_4['what_gets_evaluated_in_your_organisation'][0]['label'],
-				$facet_4['what_kind_of_tools_and_methods_does_your_organisation_tend_to_use_on_a_regular_basis'][0]['label'],
+				ranking_field_position($facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['ada_3-6_months']),
+				ranking_field_position($facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['enh_fiscal_year']),
+				ranking_field_position($facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['mis_outcome_based']),
+				ranking_field_position($facet_3['which_time_horizons_does_your_organisation_tend_to_work_with']['ant_long-term']),
+				checkbox_get_all_options($facet_4['what_data_does_your_organisation_tend_to_use']),
+				checkbox_get_all_options($facet_4['what_gets_evaluated_in_your_organisation']),
+				checkbox_get_all_options($facet_4['what_kind_of_tools_and_methods_does_your_organisation_tend_to_use_on_a_regular_basis']),
 				'How does your organisation engage with technology?',
 				$facet_4['how_does_your_organisation_engage_with_technology']['enh_the_organisations_looks_for_technology_options_that_could_make_existing_practises_more_efficient']['label'],
 				$facet_4['how_does_your_organisation_engage_with_technology']['enh_the_organisation_works_together_with_a_couple_of_big_technology_vendors_in_the_market']['label'],
@@ -527,7 +547,7 @@ if ( $query->have_posts() ) {
 						get_the_date(),
 						$general_questions['organisation'],
 						$general_questions['n_people'],
-						implode( ' | ', $general_questions['in_which_sector_or_topic_does_this_group_of_people_focus_its_work']),
+						implode( '; ', $general_questions['in_which_sector_or_topic_does_this_group_of_people_focus_its_work']),
 						$general_questions['country']->name,
 						$project['project_title'],
 						$project['this_project_was_primarily_created_to:']['label'],
