@@ -455,7 +455,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 2. What does the leadership of my organisation tend to prefer or promote?',
 					'name' => 'what_does_the_leadership_of_my_organisation_tend_to_prefer_or_promote',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
+					'instructions' => 'Rank in order of importance by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -1007,7 +1007,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 5. What is most difficult to get done in your organisation?',
 					'name' => 'what_is_most_difficult_to_get_done_in_your_organisation',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
+					'instructions' => 'Rank in order of importance by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -1572,7 +1572,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 8. Which negative news, articles or external reports would get the most attention inside the organisation?',
 					'name' => 'which_negative_news,_articles_or_external_reports_would_get_the_most_attention_inside_the_organisation',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
+					'instructions' => 'Rank in order of importance by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -2153,7 +2153,7 @@ acf_add_local_field_group(array(
 					'label' => 'Question 12. Which time horizons does your organisation tend to work with?',
 					'name' => 'which_time_horizons_does_your_organisation_tend_to_work_with',
 					'type' => 'group',
-					'instructions' => 'Rank in order of prominence by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
+					'instructions' => 'Rank in order of importance by dragging and dropping (with 1 being the highest, and 4 being the lowest).',
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
