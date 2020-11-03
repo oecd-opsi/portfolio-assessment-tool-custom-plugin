@@ -787,6 +787,9 @@ function start_again_func() {
 		$post_obj = get_post($post_id);
 		$new_post_id = duplicate_post_create_duplicate( $post_obj, 'draft' );
 		if( $new_post_id > 0 ) {
+			$original_slug = get_post_field( 'post_name', $new_post_id );
+			$new_slug = $original_slug . '-2';
+			wp_update_post( array( 'ID' => $new_post_id, 'post_name' => $new_slug ) );
 			$result['type'] = "success";
       $result['new_id'] = $new_post_id;
 		} else {

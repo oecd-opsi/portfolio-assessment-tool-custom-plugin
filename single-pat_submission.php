@@ -1,6 +1,7 @@
 <?php get_header();
 
   global $post;
+  // print_r($post->ID);
 
   $has_sidebar = 0;
 	$layout = 'fullpage';
@@ -31,6 +32,7 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
 <?php while ( have_posts() ) : the_post();
 
   $postid = get_the_ID();
+  // echo '<pre>iddd: '.print_r($postid, true).'</pre>';
 
   //*** Get all needed data ***//
 	// echo '<pre>'.print_r(get_field_objects( $postid ), true).'</pre>';
@@ -5465,13 +5467,18 @@ if ( !in_array( 'administrator', $current_user_roles ) && $current_user_id != $a
                       </li>
                     <?php endif; ?>
                     <li>
-                      <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Portfolio Balance image file</a>
+                      Image files
+                      <ul>
+                        <li>
+                          <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=1&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Portfolio Balance</a>
+                        </li>
+                        <?php if( $status_slug == 'publish_module2' ) : ?>
+                          <li>
+                            <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Project-based Mapping</a>
+                          </li>
+                        <?php endif; ?>
+                      </ul>
                     </li>
-                    <?php if( $status_slug == 'publish_module2' ) : ?>
-                      <li>
-                        <a href="<?php echo plugin_dir_url( __FILE__ ) ?>pat-results-imgs-dl.php?id=<?php echo $post->ID ?>&module=2&org=<?php echo $organisation ?>" class="dl-svg-as-jpg" download>Download your Project Mapping image file</a>
-                      </li>
-                    <?php endif; ?>
                   </ul>
                 </div>
               </section>
