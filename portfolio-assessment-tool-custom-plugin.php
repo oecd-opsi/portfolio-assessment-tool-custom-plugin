@@ -829,7 +829,7 @@ add_action( 'init', 'bs_set_pdf_format_mpdf' );
 // Add menu item for CSV export (all items)
 function add_csv_export_menu_item() {
 	global $submenu;
-	$submenu['edit.php?post_type=pat_submission'][] = array( 'CSV Export', 'manage_options', 'https://staging.oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
+	$submenu['edit.php?post_type=pat_submission'][] = array( 'CSV Export', 'manage_options', 'https://oecd-opsi.org/wp-content/plugins/portfolio-assessment-tool-custom-plugin/pat-results-csv-dl.php');
 }
 add_action('admin_menu', 'add_csv_export_menu_item');
 
