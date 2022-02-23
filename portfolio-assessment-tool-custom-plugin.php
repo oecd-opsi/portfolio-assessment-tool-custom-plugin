@@ -331,8 +331,8 @@ function profile_tab_pat() {
 		'post_status' => array( 'publish' ),
 	);
 
-	$all_posts = nitro_get_user_posts_count( $user_id, $count_args_owner );
-	$published_posts = nitro_get_user_posts_count( $user_id, $count_args_guest );
+	$all_posts = pet_get_user_posts_count( $user_id, $count_args_owner );
+	$published_posts = pet_get_user_posts_count( $user_id, $count_args_guest );
 
 	$count_results = 0;
 
@@ -854,3 +854,12 @@ function filter_pet_wpseo_desc($meta_desc) {
 add_filter('wpseo_title', 'filter_pet_wpseo_desc');
 add_filter('wpseo_opengraph_title', 'filter_pet_wpseo_desc');
 add_filter('wpseo_twitter_title', 'filter_pet_wpseo_desc');
+
+function pet_get_user_posts_count( $user_id, $args ) {
+	$args['author']         = $user_id;
+	$args['fields']         = 'ids';
+	$args['posts_per_page'] = - 1;
+	$ps                     = get_posts( $args );
+
+	return count( $ps );
+}
