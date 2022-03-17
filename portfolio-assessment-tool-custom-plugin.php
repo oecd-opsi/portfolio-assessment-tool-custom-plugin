@@ -522,7 +522,7 @@ function bp_pat_list() {
 					<?php
 					if ( get_post_status( get_the_ID() ) != 'draft' ) { ?>
 						<a href="<?php echo $post_url ?>?output=pdf" title="<?php echo __( 'pdf', 'opsi' ); ?>" target="_blank">
-							<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+							<i class="fa fa-file-pdf" aria-hidden="true"></i>
 						</a>
 					<?php } ?>
 				</td>
@@ -530,7 +530,7 @@ function bp_pat_list() {
 					<?php
 					if ( $post_status_obj->name == 'publish' || $post_status_obj->name == 'draft_module2' ) { ?>
 						<a href="<?php echo $edit_url ?>#pat-step-10" title="<?php echo __( 'Continue to Module 2', 'opsi' ); ?>">
-							<i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
+							<i class="fa fa-caret-square-right" aria-hidden="true"></i>
 						</a>
 					<?php } ?>
 				</td>
