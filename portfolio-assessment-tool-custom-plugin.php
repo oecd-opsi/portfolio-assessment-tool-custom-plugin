@@ -431,7 +431,7 @@ function bp_pat_list() {
 
 		?>
 		<div class="table-responsive">
-			<table class="table table-striped table-hover notifications">
+			<table class="table table-striped table-hover messages-notices">
 				<thead>
 					<th><?php echo __( 'Title', 'opsi' ); ?></th>
 					<th><?php echo __( 'Organisation', 'opsi' ); ?></th>
