@@ -1217,3 +1217,9 @@ body.single-pat_submission .footarea {
   text-decoration: none;
   background: #6681DA;
 }
+
+/* Profile submissions table */
+#buddypress #item-body table.messages-notices td a i {
+  display: block;
+  border-bottom: 2px solid white;
+}
